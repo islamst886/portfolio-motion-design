@@ -44,9 +44,16 @@ window.refreshAllPageMedia = function(showToast = false) {
 
     if (changed) {
       const wasPlaying = !video.paused;
-      video.load();
-      if (wasPlaying || video.hasAttribute('autoplay')) {
-        video.play().catch(() => {});
+      const isMuted = video.muted || video.hasAttribute('muted');
+      const isVisible = video.offsetParent !== null;
+
+      // Never auto-play audio on background or hidden modal videos
+      if (isMuted && isVisible) {
+        video.load();
+        if (wasPlaying || video.hasAttribute('autoplay')) {
+          video.muted = true;
+          video.play().catch(() => {});
+        }
       }
       updatedCount++;
     }
@@ -68,16 +75,9 @@ window.refreshAllPageMedia = function(showToast = false) {
   }
 };
 
-// Catch media changes automatically when switching back to browser tab
-window.addEventListener('focus', () => {
-  window.refreshAllPageMedia(false);
-});
-
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') {
-    window.refreshAllPageMedia(false);
-  }
-});
+// Disabled: tab-switching must NEVER auto-trigger media reload or audio playback
+// window.addEventListener('focus', () => { window.refreshAllPageMedia(false); });
+// document.addEventListener('visibilitychange', () => { ... });
 
 // Live HTTP watcher: periodically checks HEAD headers for active media assets
 function startMediaLiveWatcher() {
@@ -125,6 +125,11 @@ function startMediaLiveWatcher() {
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Kinetic Craft Studios Warm Light Engine Initialized.');
+  // Ensure all inline background videos are strictly muted
+  document.querySelectorAll('video[muted]').forEach(v => {
+    v.muted = true;
+    v.defaultMuted = true;
+  });
   window.refreshAllPageMedia(false);
   startMediaLiveWatcher();
 });
@@ -232,7 +237,14 @@ window.closeShowreel = function() {
     modal.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
     const video = document.getElementById('studio-active-video');
-    if (video) video.pause();
+    if (video) {
+      video.pause();
+      video.muted = true;
+      video.currentTime = 0;
+      video.src = '';
+      video.load();
+    }
+    modal.remove(); // Safely remove modal so hidden player cannot play sound in background
   }
 };
 
