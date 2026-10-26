@@ -1,0 +1,110 @@
+/* AURA BOTANICA — Luxury Botanical Skincare & Clinical Apothecary NYC */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-porcelain: #F7F8F6;
+  --bg-card: #FFFFFF;
+  --color-primary: #1C3326;      /* Deep Forest Sage */
+  --color-sage-soft: #E8EFEA;    /* Soft Celadon Sage */
+  --color-gold: #B89758;         /* Botanical Amber/Gold */
+  --text-heading: #121E17;
+  --text-body: #4A5750;
+  --border-light: #E2E8E4;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-porcelain);
+  color: var(--text-body);
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Luxury Botanical Button */
+.btn-botanical {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-botanical:hover {
+  background-color: #0E1E15;
+  box-shadow: 0 10px 25px -5px rgba(28, 51, 38, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-botanical-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  border: 1px solid var(--color-primary);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-botanical-outline:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* Luxury Frosted Drawer */
+.frosted-drawer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid var(--border-light);
+}
+
+/* Swatch Circles */
+.swatch-active {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(28, 51, 38, 0.15);
+}
+
+/* Smooth Image Hover */
+.product-card-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .product-card-img {
+  transform: scale(1.04);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F8F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5CD;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1C3326;
+}

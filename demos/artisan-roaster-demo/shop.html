@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curated Single Origins | KURA Coffee Roasters NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#0A0807] text-[#F8F5F0] min-h-screen flex flex-col font-sans selection:bg-[#C59B63] selection:text-black">
+
+  <!-- Top Announcement Ribbon -->
+  <div class="bg-gradient-to-r from-amber-950/90 via-[#1F1916] to-amber-950/90 border-b border-amber-900/30 text-xs py-2 px-4 text-center tracking-wider text-amber-200/90 flex items-center justify-center gap-3">
+    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+    <span>FRESH HARVEST 2026 LOTS NOW RESTOCKED • SHIPMENTS DISPATCH TUESDAYS & FRIDAYS</span>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-950/30 group-hover:border-amber-400 transition-colors">
+          <span class="font-serif text-amber-300 font-bold text-lg">K</span>
+        </div>
+        <div>
+          <span class="font-serif tracking-widest text-xl font-bold uppercase text-zinc-100 group-hover:text-amber-200 transition">KURA</span>
+          <span class="block text-[9px] tracking-[0.28em] text-amber-500/80 uppercase">Roasters • Brooklyn</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-zinc-300">
+        <a href="./shop.html" class="text-amber-400 border-b border-amber-400 pb-1">Single Origins</a>
+        <a href="./product.html" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          <span>Signature Reserve</span>
+          <span class="bg-amber-500/20 text-amber-300 text-[9px] px-1.5 py-0.5 rounded border border-amber-500/30">NEW</span>
+        </a>
+        <a href="./story.html" class="hover:text-amber-400 transition">Our Craft & Motion</a>
+        <a href="./wholesale.html" class="hover:text-amber-400 transition">Wholesale B2B</a>
+      </div>
+
+      <div class="flex items-center gap-5">
+        <button onclick="openCartDrawer()" class="relative p-2.5 rounded-full border border-zinc-800 bg-zinc-900/80 hover:border-amber-500/50 text-zinc-300 hover:text-white transition group">
+          <svg class="w-5 h-5 text-amber-200/90 group-hover:scale-105 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="cart-count-badge absolute -top-1 -right-1 w-5 h-5 rounded-full bg-amber-500 text-black text-[10px] font-extrabold flex items-center justify-center shadow-md">1</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Shop Header -->
+  <header class="py-16 px-6 max-w-7xl mx-auto w-full border-b border-zinc-900">
+    <div class="max-w-3xl">
+      <span class="badge-gold mb-3">Direct-Trade Micro-Lots</span>
+      <h1 class="text-4xl md:text-6xl font-serif text-white mb-4">The Single Origin Catalog</h1>
+      <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+        Every lot is purchased above Fair Trade minimums directly from generational producers in Ethiopia, Colombia, Kenya, and Guatemala. Roasted in small batches of 15kg in Brooklyn.
+      </p>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-zinc-800/60">
+      <button onclick="filterCatalog('all')" class="filter-btn active-filter px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-amber-500 text-black transition">
+        All Lots (6)
+      </button>
+      <button onclick="filterCatalog('africa')" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-amber-500/40 transition">
+        Africa (Floral & Bright)
+      </button>
+      <button onclick="filterCatalog('americas')" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-amber-500/40 transition">
+        Americas (Sweet & Cacao)
+      </button>
+      <button onclick="filterCatalog('anaerobic')" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-amber-500/40 transition">
+        Experimental Ferment
+      </button>
+    </div>
+  </header>
+
+  <!-- Product Catalog Grid -->
+  <main class="py-16 px-6 max-w-7xl mx-auto w-full flex-grow">
+    <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Product 1 -->
+      <div class="catalog-item card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between" data-category="africa">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80" alt="Ethiopia Guji" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute top-4 left-4"><span class="badge-gold">Natural Process</span></div>
+          <div class="absolute top-4 right-4"><span class="text-xs font-bold px-2 py-1 bg-black/70 text-amber-300 rounded border border-amber-500/20">SCA 89.2</span></div>
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button onclick="addToCart({ id: 'ethiopia-guji', name: 'Ethiopia Guji Uraga Natural', roast: 'Light Roast • Peach & Jasmine', price: 24.00, image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80' })" class="w-full btn-gold text-xs py-2.5 justify-center">Add to Bag • $24</button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500 uppercase font-semibold mb-1">Guji, Ethiopia • 2,150 MASL</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition"><a href="./product.html">Ethiopia Guji Uraga Natural</a></h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4">Candied white peach, wild jasmine blossoms, bergamot tea, and wildflower honey.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$24.00 / 12 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Origin Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="catalog-item card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between" data-category="americas anaerobic">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" alt="Colombia Pink Bourbon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute top-4 left-4"><span class="badge-gold">Anaerobic Ferment</span></div>
+          <div class="absolute top-4 right-4"><span class="text-xs font-bold px-2 py-1 bg-black/70 text-amber-300 rounded border border-amber-500/20">SCA 90.5</span></div>
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button onclick="addToCart({ id: 'colombia-pink-bourbon', name: 'Colombia Huila Pink Bourbon', roast: 'Light-Medium • Papaya & Grapefruit', price: 28.00, image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80' })" class="w-full btn-gold text-xs py-2.5 justify-center">Add to Bag • $28</button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500 uppercase font-semibold mb-1">Huila, Colombia • 1,800 MASL</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition"><a href="./product.html">Colombia Pink Bourbon Reserve</a></h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4">Tropical papaya, pink grapefruit zest, sugarcane juice, and silky cream finish.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$28.00 / 12 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Origin Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="catalog-item card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between" data-category="africa">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Kenya Peaberry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute top-4 left-4"><span class="badge-gold">Double Washed</span></div>
+          <div class="absolute top-4 right-4"><span class="text-xs font-bold px-2 py-1 bg-black/70 text-amber-300 rounded border border-amber-500/20">SCA 89.8</span></div>
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button onclick="addToCart({ id: 'kenya-peaberry', name: 'Kenya Nyeri Gondo Peaberry', roast: 'Medium-Light • Blackcurrant & Lime', price: 26.00, image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80' })" class="w-full btn-gold text-xs py-2.5 justify-center">Add to Bag • $26</button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500 uppercase font-semibold mb-1">Nyeri, Kenya • 1,950 MASL</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition"><a href="./product.html">Kenya Nyeri Peaberry Lot</a></h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4">Intense blackcurrant jam, sparkling lime acidity, and rich dark amber honey sweetness.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$26.00 / 12 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Origin Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="catalog-item card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between" data-category="americas">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80" alt="Guatemala Antigua" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute top-4 left-4"><span class="badge-gold">Volcanic Soil Washed</span></div>
+          <div class="absolute top-4 right-4"><span class="text-xs font-bold px-2 py-1 bg-black/70 text-amber-300 rounded border border-amber-500/20">SCA 88.6</span></div>
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button onclick="addToCart({ id: 'guatemala-antigua', name: 'Guatemala Finca San Sebastian', roast: 'Medium Roast • Milk Chocolate & Toasted Hazelnut', price: 23.00, image: 'https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80' })" class="w-full btn-gold text-xs py-2.5 justify-center">Add to Bag • $23</button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500 uppercase font-semibold mb-1">Antigua, Guatemala • 1,600 MASL</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition"><a href="./product.html">Guatemala Finca San Sebastian</a></h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4">Silky Swiss milk chocolate, spiced orange rind, and toasted hazelnut praline.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$23.00 / 12 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Origin Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="catalog-item card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between" data-category="anaerobic">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?auto=format&fit=crop&w=800&q=80" alt="Costa Rica Geisha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute top-4 left-4"><span class="badge-gold">Carbonic Maceration</span></div>
+          <div class="absolute top-4 right-4"><span class="text-xs font-bold px-2 py-1 bg-black/70 text-amber-300 rounded border border-amber-500/20">SCA 91.4</span></div>
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button onclick="addToCart({ id: 'costa-rica-geisha', name: 'Costa Rica Tarrazu Geisha', roast: 'Ultra-Light • Lemongrass & Apricot', price: 34.00, image: 'https://images.unsplash.com/photo-1610632380989-680fe40816c6?auto=format&fit=crop&w=800&q=80' })" class="w-full btn-gold text-xs py-2.5 justify-center">Add to Bag • $34</button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500 uppercase font-semibold mb-1">Tarrazú, Costa Rica • 1,900 MASL</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition"><a href="./product.html">Costa Rica Tarrazú Geisha</a></h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4">Exotic lemongrass, ripe apricot nectar, white tea florals, and champagne sparkle.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$34.00 / 10 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Origin Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="catalog-item card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between" data-category="americas">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=800&q=80" alt="Brooklyn House Espresso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute top-4 left-4"><span class="badge-gold">Signature House Blend</span></div>
+          <div class="absolute top-4 right-4"><span class="text-xs font-bold px-2 py-1 bg-black/70 text-amber-300 rounded border border-amber-500/20">SCA 88.0</span></div>
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button onclick="addToCart({ id: 'brooklyn-espresso', name: 'Brooklyn Roastery House Blend', roast: 'Medium • Dark Chocolate & Bourbon Molasses', price: 21.00, image: 'https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=800&q=80' })" class="w-full btn-gold text-xs py-2.5 justify-center">Add to Bag • $21</button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500 uppercase font-semibold mb-1">Brazil Cerrado + Ethiopia Sidama</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition"><a href="./product.html">Brooklyn Roastery House Espresso</a></h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4">Deep Belgian dark chocolate, roasted almond butter, and bourbon vanilla molasses.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$21.00 / 12 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Origin Details →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-[#080605] border-t border-zinc-900 py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
+      <div class="flex items-center gap-3">
+        <span class="font-serif tracking-widest text-lg font-bold uppercase text-white">KURA COFFEE</span>
+        <span>• Brooklyn NYC</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="./index.html" class="hover:text-amber-300">Home</a>
+        <a href="./shop.html" class="text-amber-300">Shop</a>
+        <a href="./product.html" class="hover:text-amber-300">Reserve</a>
+        <a href="./story.html" class="hover:text-amber-300">Our Craft</a>
+        <a href="./wholesale.html" class="hover:text-amber-300">Wholesale</a>
+      </div>
+      <p class="text-[11px] text-zinc-500">© 2026 KURA Coffee Roasters Demo.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Luxury Cart Drawer Component -->
+  <div id="cart-backdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#120F0D] border-l border-zinc-800 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="p-6 border-b border-zinc-800/80 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif text-lg text-white">Your Roastery Bag</h3>
+        <span class="cart-count-badge badge-gold">1</span>
+      </div>
+      <button onclick="closeCartDrawer()" class="p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 py-3 bg-zinc-900/50 border-b border-zinc-800/50">
+      <div class="text-[11px] text-zinc-300 mb-1.5" id="shipping-text">
+        Add <span class="text-amber-400 font-semibold">$36.00</span> more for Free NYC Delivery
+      </div>
+      <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+        <div id="shipping-progress" class="bg-gradient-to-r from-amber-600 to-amber-400 h-full transition-all duration-300" style="width: 40%"></div>
+      </div>
+    </div>
+    <div id="cart-items-container" class="flex-grow overflow-y-auto px-6 py-2"></div>
+    <div class="p-6 border-t border-zinc-800/80 bg-[#0E0C0A]">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-xs uppercase tracking-wider text-zinc-400">Subtotal</span>
+        <span id="cart-subtotal" class="font-serif text-xl font-bold text-amber-300">$24.00</span>
+      </div>
+      <button onclick="triggerDemoCheckout()" class="w-full btn-gold text-xs py-3.5 justify-center text-center font-bold tracking-wider uppercase">
+        Proceed To Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <script src="./src/js/main.js"></script>
+  <script>
+    function filterCatalog(category) {
+      const items = document.querySelectorAll('.catalog-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-black');
+        btn.classList.add('bg-zinc-900', 'border-zinc-800', 'text-zinc-300');
+      });
+      event.target.classList.remove('bg-zinc-900', 'border-zinc-800', 'text-zinc-300');
+      event.target.classList.add('bg-amber-500', 'text-black');
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category').includes(category)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

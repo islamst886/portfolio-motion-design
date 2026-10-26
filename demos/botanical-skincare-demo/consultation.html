@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Diagnostic Quiz | AURA BOTANICA LABS NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#F7F8F6] text-[#4A5750] min-h-screen flex flex-col font-sans selection:bg-[#1C3326] selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#1C3326] text-white py-2 px-4 text-center text-[10px] font-mono tracking-widest uppercase">
+    Complimentary carbon-neutral express delivery on all orders over $75 • Clean-room bottled in SoHo, NYC
+  </div>
+
+  <!-- Master Consumer Header -->
+  <header class="sticky top-0 z-40 bg-[#F7F8F6]/90 backdrop-blur-md border-b border-[#E2E8E4]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-mono uppercase tracking-wider text-[#4A5750]">
+        <a href="./catalog.html" class="hover:text-[#1C3326] transition">All Formulations</a>
+        <a href="./product-cleanser.html" class="hover:text-[#1C3326] transition">Enzyme Melt</a>
+        <a href="./product.html" class="hover:text-[#1C3326] transition">Bio-Retinoid</a>
+        <a href="./product-balm.html" class="hover:text-[#1C3326] transition">Ceramide Balm</a>
+        <a href="./consultation.html" class="text-[#1C3326] font-bold border-b border-[#1C3326] pb-1">Skin Diagnostic</a>
+      </nav>
+
+      <a href="./index.html" class="text-center group">
+        <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.25em] text-[#121E17] block uppercase group-hover:opacity-80 transition">
+          AURA BOTANICA
+        </span>
+        <span class="font-mono text-[8px] tracking-[0.35em] text-[#B89758] uppercase block mt-0.5 font-bold">
+          SoHo Atelier • New York
+        </span>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="./consultation.html" class="hidden sm:inline-flex text-xs font-mono text-[#1C3326] hover:underline uppercase tracking-wider">
+          Diagnostic Quiz
+        </a>
+        <button onclick="openRoutineDrawer()" class="flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1C3326] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#0E1E15] transition shadow-sm">
+          <span>Daily Routine</span>
+          <span class="routine-badge-count w-5 h-5 rounded-full bg-white text-[#1C3326] text-[10px] font-bold flex items-center justify-center">1</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Quiz Hero -->
+  <section class="py-16 md:py-20 px-6 border-b border-[#E2E8E4] bg-white text-center">
+    <div class="max-w-3xl mx-auto space-y-4">
+      <span class="text-[10px] font-mono uppercase text-[#B89758] font-bold tracking-widest block">
+        ALGORITHMIC DERMATOLOGICAL CONCIERGE
+      </span>
+      <h1 class="font-serif text-4xl sm:text-5xl text-[#121E17]">
+        Discover Your Custom 3-Step Routine
+      </h1>
+      <p class="text-xs sm:text-sm text-[#4A5750] max-w-lg mx-auto font-light leading-relaxed">
+        Answer three targeted questions to determine your acid mantle resistance and receive your personalized botanical bio-active routine.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Quiz Card -->
+  <main class="py-16 px-6 max-w-3xl mx-auto w-full flex-grow">
+    <div class="bg-white rounded-3xl p-8 md:p-12 border border-[#E2E8E4] shadow-sm">
+      
+      <form onsubmit="handleConsumerQuizSubmit(event)" class="space-y-8">
+        
+        <!-- Question 1 -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#1C3326] text-white font-mono text-xs font-bold flex items-center justify-center">01</span>
+            <label class="font-serif text-lg font-bold text-[#121E17]">What best describes your current skin condition?</label>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pl-9">
+            <label class="p-4 rounded-2xl border border-[#E2E8E4] flex items-center gap-3 cursor-pointer hover:border-[#1C3326] transition">
+              <input type="radio" name="profile" value="sensitive" checked class="accent-[#1C3326]" />
+              <div>
+                <strong class="text-xs font-bold text-[#121E17] block">Sensitive & Reactive</strong>
+                <span class="text-[11px] text-zinc-500 font-sans">Frequent erythema, stinging after washing</span>
+              </div>
+            </label>
+            <label class="p-4 rounded-2xl border border-[#E2E8E4] flex items-center gap-3 cursor-pointer hover:border-[#1C3326] transition">
+              <input type="radio" name="profile" value="dehydrated" class="accent-[#1C3326]" />
+              <div>
+                <strong class="text-xs font-bold text-[#121E17] block">Dehydrated & Dull</strong>
+                <span class="text-[11px] text-zinc-500 font-sans">Fine micro-cracks, tight surface feel</span>
+              </div>
+            </label>
+            <label class="p-4 rounded-2xl border border-[#E2E8E4] flex items-center gap-3 cursor-pointer hover:border-[#1C3326] transition">
+              <input type="radio" name="profile" value="combination" class="accent-[#1C3326]" />
+              <div>
+                <strong class="text-xs font-bold text-[#121E17] block">Combination / Congested</strong>
+                <span class="text-[11px] text-zinc-500 font-sans">Oily T-zone with dry peripheral cheeks</span>
+              </div>
+            </label>
+            <label class="p-4 rounded-2xl border border-[#E2E8E4] flex items-center gap-3 cursor-pointer hover:border-[#1C3326] transition">
+              <input type="radio" name="profile" value="mature" class="accent-[#1C3326]" />
+              <div>
+                <strong class="text-xs font-bold text-[#121E17] block">Loss of Elasticity</strong>
+                <span class="text-[11px] text-zinc-500 font-sans">Expression lines, solar hyperpigmentation</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="space-y-3 pt-6 border-t border-[#E2E8E4]">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#1C3326] text-white font-mono text-xs font-bold flex items-center justify-center">02</span>
+            <label class="font-serif text-lg font-bold text-[#121E17]">What is your primary treatment objective?</label>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pl-9">
+            <label class="p-4 rounded-2xl border border-[#E2E8E4] flex items-center gap-3 cursor-pointer hover:border-[#1C3326] transition">
+              <input type="radio" name="goal" value="bakuchiol" checked class="accent-[#1C3326]" />
+              <div>
+                <strong class="text-xs font-bold text-[#121E17] block">Gentle Cellular Renewal</strong>
+                <span class="text-[11px] text-zinc-500 font-sans">2.5% Bakuchiol without retinol peeling</span>
+              </div>
+            </label>
+            <label class="p-4 rounded-2xl border border-[#E2E8E4] flex items-center gap-3 cursor-pointer hover:border-[#1C3326] transition">
+              <input type="radio" name="goal" value="ceramides" class="accent-[#1C3326]" />
+              <div>
+                <strong class="text-xs font-bold text-[#121E17] block">Lipid Barrier Repair</strong>
+                <span class="text-[11px] text-zinc-500 font-sans">Triple ceramides 1, 3, 6-II nourishment</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 3: Destination -->
+        <div class="space-y-3 pt-6 border-t border-[#E2E8E4]">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#1C3326] text-white font-mono text-xs font-bold flex items-center justify-center">03</span>
+            <label class="font-serif text-lg font-bold text-[#121E17]">Where should we transmit your prescription?</label>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pl-9">
+            <div>
+              <label class="block text-xs font-mono uppercase text-zinc-500 mb-1">Your Full Name</label>
+              <input type="text" required placeholder="Elena Rostova" class="w-full bg-[#F7F8F6] border border-[#E2E8E4] rounded-xl px-4 py-3 text-xs font-sans text-[#121E17] focus:border-[#1C3326] focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase text-zinc-500 mb-1">Email Address</label>
+              <input type="email" required placeholder="elena@atelier-nyc.com" class="w-full bg-[#F7F8F6] border border-[#E2E8E4] rounded-xl px-4 py-3 text-xs font-sans text-[#121E17] focus:border-[#1C3326] focus:outline-none" />
+            </div>
+          </div>
+        </div>
+
+        <div class="pl-9 pt-4">
+          <button type="submit" class="btn-botanical w-full justify-center py-4 text-xs tracking-wider shadow-lg">
+            Generate My Custom 3-Step Routine →
+          </button>
+          <span class="text-[10px] font-mono text-zinc-400 block text-center mt-3">
+            🔒 Formulated in accordance with Good Manufacturing Practice • SoHo NYC
+          </span>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#E2E8E4] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-zinc-500">
+      <div class="flex items-center gap-3">
+        <span class="font-serif tracking-widest font-bold uppercase text-[#121E17]">AURA BOTANICA</span>
+        <span>• SoHo Atelier NYC</span>
+      </div>
+      <p class="text-zinc-400">© 2026 Aura Botanica Labs. Clean Botanical Skincare Demo.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Routine Drawer (Cart) -->
+  <div id="routine-backdrop" onclick="closeRoutineDrawer()" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="routine-drawer" class="fixed top-0 right-0 h-full w-full max-w-md frosted-drawer z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col font-sans text-[#121E17]">
+    
+    <div class="p-6 border-b border-[#E2E8E4] flex items-center justify-between bg-white">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif font-bold text-lg text-[#121E17]">Your Daily Skin Routine</h3>
+        <span class="routine-badge-count bg-[#1C3326] text-white text-[10px] font-mono px-2 py-0.5 rounded-full font-bold">1</span>
+      </div>
+      <button onclick="closeRoutineDrawer()" class="p-2 text-zinc-400 hover:text-black">✕</button>
+    </div>
+
+    <div id="routine-items-list" class="flex-grow overflow-y-auto px-6 py-2"></div>
+
+    <div class="p-6 border-t border-[#E2E8E4] bg-white space-y-4">
+      <div class="flex justify-between text-xs font-mono text-zinc-500">
+        <span>Routine Subtotal</span>
+        <span id="routine-subtotal">$68.00</span>
+      </div>
+
+      <div id="routine-discount-box"></div>
+
+      <div class="flex items-center justify-between border-t border-[#E2E8E4] pt-3">
+        <span class="text-xs uppercase font-bold text-[#121E17]">Total Billed</span>
+        <span id="routine-total" class="font-mono text-2xl font-bold text-[#1C3326]">$68.00</span>
+      </div>
+
+      <button onclick="triggerRoutineCheckout()" class="w-full btn-botanical justify-center py-4 text-xs uppercase tracking-wider font-bold shadow-lg">
+        Proceed To Clinical Checkout →
+      </button>
+    </div>
+
+  </aside>
+
+  <script src="./src/js/main.js"></script>
+  <script>
+    function handleConsumerQuizSubmit(e) {
+      e.preventDefault();
+      triggerRoutineCheckout();
+    }
+  </script>
+</body>
+</html>

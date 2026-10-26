@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Botanical Dispensary | AURA BOTANICA LABS NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#F7F8F6] text-[#4A5750] min-h-screen flex flex-col font-sans selection:bg-[#1C3326] selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#1C3326] text-white py-2 px-4 text-center text-[10px] font-mono tracking-widest uppercase">
+    Complimentary carbon-neutral express delivery on all orders over $75 • Clean-room bottled in SoHo, NYC
+  </div>
+
+  <!-- Master Consumer Header -->
+  <header class="sticky top-0 z-40 bg-[#F7F8F6]/90 backdrop-blur-md border-b border-[#E2E8E4]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-mono uppercase tracking-wider text-[#4A5750]">
+        <a href="./catalog.html" class="text-[#1C3326] font-bold border-b border-[#1C3326] pb-1">All Formulations</a>
+        <a href="./product-cleanser.html" class="hover:text-[#1C3326] transition">Enzyme Melt</a>
+        <a href="./product.html" class="hover:text-[#1C3326] transition">Bio-Retinoid</a>
+        <a href="./product-balm.html" class="hover:text-[#1C3326] transition">Ceramide Balm</a>
+        <a href="./science.html" class="hover:text-[#1C3326] transition">Clinical Proof</a>
+      </nav>
+
+      <a href="./index.html" class="text-center group">
+        <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.25em] text-[#121E17] block uppercase group-hover:opacity-80 transition">
+          AURA BOTANICA
+        </span>
+        <span class="font-mono text-[8px] tracking-[0.35em] text-[#B89758] uppercase block mt-0.5 font-bold">
+          SoHo Atelier • New York
+        </span>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="./consultation.html" class="hidden sm:inline-flex text-xs font-mono text-[#1C3326] hover:underline uppercase tracking-wider">
+          Diagnostic Quiz
+        </a>
+        <button onclick="openRoutineDrawer()" class="flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1C3326] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#0E1E15] transition shadow-sm">
+          <span>Daily Routine</span>
+          <span class="routine-badge-count w-5 h-5 rounded-full bg-white text-[#1C3326] text-[10px] font-bold flex items-center justify-center">1</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Catalog Main -->
+  <main class="py-16 px-6 max-w-7xl mx-auto w-full flex-grow">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-[#E2E8E4] pb-8 mb-12 gap-6">
+      <div>
+        <span class="text-[10px] font-mono uppercase text-[#B89758] font-bold tracking-widest block mb-1">
+          CLEAN-ROOM EXTRACTED FORMULATIONS
+        </span>
+        <h1 class="font-serif text-4xl sm:text-5xl text-[#121E17]">
+          The Botanical Formulary
+        </h1>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="filterCatalog('all')" class="cat-pill px-4 py-2 rounded-full bg-[#1C3326] text-white text-xs font-mono font-bold uppercase">
+          All 06
+        </button>
+        <button onclick="filterCatalog('treat')" class="cat-pill px-4 py-2 rounded-full bg-white border border-[#E2E8E4] text-[#4A5750] text-xs font-mono uppercase hover:border-[#1C3326]">
+          Targeted Treatments
+        </button>
+        <button onclick="filterCatalog('barrier')" class="cat-pill px-4 py-2 rounded-full bg-white border border-[#E2E8E4] text-[#4A5750] text-xs font-mono uppercase hover:border-[#1C3326]">
+          Lipid Barrier
+        </button>
+        <button onclick="filterCatalog('cleanse')" class="cat-pill px-4 py-2 rounded-full bg-white border border-[#E2E8E4] text-[#4A5750] text-xs font-mono uppercase hover:border-[#1C3326]">
+          Cleansers
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 01: Squalane Cleanser -->
+      <div class="catalog-card bg-white rounded-3xl p-6 border border-[#E2E8E4] flex flex-col justify-between group shadow-sm hover:shadow-md transition" data-category="cleanse all">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#1C3326] font-bold block mb-1">STEP 01 : CLEANSE</span>
+          <a href="./product-cleanser.html" class="hover:text-[#1C3326] transition">
+            <h3 class="font-serif text-xl font-bold text-[#121E17]">Squalane Botanical Enzyme Melt</h3>
+          </a>
+          <p class="text-xs text-zinc-500 font-mono mt-1 mb-4">Plant Squalane + Papaya Enzymes</p>
+          <div class="rounded-2xl bg-[#F7F8F6] p-6 mb-4">
+            <a href="./product-cleanser.html">
+              <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Cleanser" class="product-card-img h-48 mx-auto object-contain" />
+            </a>
+          </div>
+          <p class="text-xs text-[#4A5750] leading-relaxed mb-4">
+            A silky oil-to-milk cleanser that dissolves urban impurities without stripping the cutaneous acid mantle.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#E2E8E4] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#121E17]">$48.00 / 100ml</span>
+          <div class="flex items-center gap-2">
+            <a href="./product-cleanser.html" class="text-xs font-mono text-zinc-500 hover:text-black underline">Details</a>
+            <button onclick="addToRoutine({ id: 'squalane-cleanser', name: 'Squalane Botanical Enzyme Melt', step: 'Step 01: Cleanse', actives: 'Squalane + Papaya Enzymes', price: 48.00, volume: '100ml Pump', image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80' })" class="btn-botanical text-[10px] py-2 px-4">
+              + Add To Routine
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 02: Bio-Retinoid (Hero) -->
+      <div class="catalog-card bg-white rounded-3xl p-6 border-2 border-[#1C3326] flex flex-col justify-between group shadow-lg relative" data-category="treat all">
+        <div class="absolute -top-3 right-6 bg-[#1C3326] text-white text-[9px] font-mono uppercase px-3 py-1 rounded-full font-bold">
+          Hero Formulation
+        </div>
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#1C3326] font-bold block mb-1">STEP 02 : TREAT</span>
+          <a href="./product.html" class="hover:text-[#1C3326] transition">
+            <h3 class="font-serif text-xl font-bold text-[#121E17]">Cellular Renewal Bio-Retinoid</h3>
+          </a>
+          <p class="text-xs text-zinc-500 font-mono mt-1 mb-4">2.5% Bakuchiol + 5% Niacinamide</p>
+          <div class="rounded-2xl bg-[#F7F8F6] p-6 mb-4">
+            <a href="./product.html">
+              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80" alt="Bio-Retinoid" class="product-card-img h-48 mx-auto object-contain" />
+            </a>
+          </div>
+          <p class="text-xs text-[#4A5750] leading-relaxed mb-4">
+            Matches synthetic tretinoin in cellular remodeling velocity while delivering zero peeling, redness, or daytime photosensitivity.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#E2E8E4] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#1C3326]">$68.00 / 30ml</span>
+          <div class="flex items-center gap-2">
+            <a href="./product.html" class="text-xs font-mono text-zinc-500 hover:text-black underline">Details</a>
+            <button onclick="addToRoutine({ id: 'bio-retinoid-serum', name: 'Cellular Renewal Bio-Retinoid', step: 'Step 02: Treat', actives: '2.5% French Bakuchiol + 5% Niacinamide', price: 68.00, volume: '30ml Dropper', image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80' })" class="btn-botanical text-[10px] py-2 px-4">
+              + Add To Routine
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 03: Ceramide Balm -->
+      <div class="catalog-card bg-white rounded-3xl p-6 border border-[#E2E8E4] flex flex-col justify-between group shadow-sm hover:shadow-md transition" data-category="barrier all">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#1C3326] font-bold block mb-1">STEP 03 : FORTIFY</span>
+          <a href="./product-balm.html" class="hover:text-[#1C3326] transition">
+            <h3 class="font-serif text-xl font-bold text-[#121E17]">Ceramide NP Liposomal Velvet</h3>
+          </a>
+          <p class="text-xs text-zinc-500 font-mono mt-1 mb-4">Ceramides 1, 3, 6-II + Bio-Lipids</p>
+          <div class="rounded-2xl bg-[#F7F8F6] p-6 mb-4">
+            <a href="./product-balm.html">
+              <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80" alt="Ceramide Balm" class="product-card-img h-48 mx-auto object-contain" />
+            </a>
+          </div>
+          <p class="text-xs text-[#4A5750] leading-relaxed mb-4">
+            An identical biomimetic lipid ratio that instantly reinforces the stratum corneum and locks in moisture for 24 hours.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#E2E8E4] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#121E17]">$74.00 / 50ml</span>
+          <div class="flex items-center gap-2">
+            <a href="./product-balm.html" class="text-xs font-mono text-zinc-500 hover:text-black underline">Details</a>
+            <button onclick="addToRoutine({ id: 'ceramide-balm', name: 'Ceramide NP Liposomal Velvet', step: 'Step 03: Hydrate', actives: 'Ceramides 1, 3, 6-II', price: 74.00, volume: '50ml Opal Jar', image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80' })" class="btn-botanical text-[10px] py-2 px-4">
+              + Add To Routine
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 04: Vitamin C -->
+      <div class="catalog-card bg-white rounded-3xl p-6 border border-[#E2E8E4] flex flex-col justify-between group shadow-sm hover:shadow-md transition" data-category="treat all">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#B89758] font-bold block mb-1">TARGETED : RADIANCE</span>
+          <a href="./product-vitamin-c.html" class="hover:text-[#1C3326] transition">
+            <h3 class="font-serif text-xl font-bold text-[#121E17]">15% THD Ascorbate Vitamin C</h3>
+          </a>
+          <p class="text-xs text-zinc-500 font-mono mt-1 mb-4">Lipid-Soluble Vitamin C Ester</p>
+          <div class="rounded-2xl bg-[#F7F8F6] p-6 mb-4">
+            <a href="./product-vitamin-c.html">
+              <img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=600&q=80" alt="Vitamin C Dropper Bottle" class="product-card-img h-48 mx-auto object-contain" />
+            </a>
+          </div>
+          <p class="text-xs text-[#4A5750] leading-relaxed mb-4">
+            Ultra-stable Vitamin C ester that penetrates 50x deeper than ascorbic acid to fade solar hyperpigmentation.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#E2E8E4] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#121E17]">$82.00 / 30ml</span>
+          <div class="flex items-center gap-2">
+            <a href="./product-vitamin-c.html" class="text-xs font-mono text-zinc-500 hover:text-black underline">Details</a>
+            <button onclick="addToRoutine({ id: 'vit-c-serum', name: '15% THD Ascorbate Vitamin C', step: 'Targeted: Radiance', actives: '15% THD Ascorbate', price: 82.00, volume: '30ml Dropper', image: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=600&q=80' })" class="btn-botanical text-[10px] py-2 px-4">
+              + Add To Routine
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 05: Ectoin Hydro-Microbiome -->
+      <div class="catalog-card bg-white rounded-3xl p-6 border border-[#E2E8E4] flex flex-col justify-between group shadow-sm hover:shadow-md transition" data-category="barrier all">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#1C3326] font-bold block mb-1">TARGETED : MICROBIOME</span>
+          <a href="./product-ectoin.html" class="hover:text-[#1C3326] transition">
+            <h3 class="font-serif text-xl font-bold text-[#121E17]">Ectoin Hydro-Microbiome Elixir</h3>
+          </a>
+          <p class="text-xs text-zinc-500 font-mono mt-1 mb-4">Extremolytes + Bifida Ferment</p>
+          <div class="rounded-2xl bg-[#F7F8F6] p-6 mb-4">
+            <a href="./product-ectoin.html">
+              <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=600&q=80" alt="Ectoin Essence Bottle" class="product-card-img h-48 mx-auto object-contain" />
+            </a>
+          </div>
+          <p class="text-xs text-[#4A5750] leading-relaxed mb-4">
+            Shields skin cells against particulate pollution, dry indoor air, and electronic blue light oxidative stress.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#E2E8E4] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#121E17]">$58.00 / 50ml</span>
+          <div class="flex items-center gap-2">
+            <a href="./product-ectoin.html" class="text-xs font-mono text-zinc-500 hover:text-black underline">Details</a>
+            <button onclick="addToRoutine({ id: 'ectoin-elixir', name: 'Ectoin Hydro-Microbiome Elixir', step: 'Targeted: Microbiome', actives: 'Ectoin + Bifida Ferment', price: 58.00, volume: '50ml Bottle', image: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=600&q=80' })" class="btn-botanical text-[10px] py-2 px-4">
+              + Add To Routine
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 06: Bio-Peptide Eye Matrix -->
+      <div class="catalog-card bg-white rounded-3xl p-6 border border-[#E2E8E4] flex flex-col justify-between group shadow-sm hover:shadow-md transition" data-category="treat all">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#B89758] font-bold block mb-1">TARGETED : EYE ZONE</span>
+          <a href="./product-eye-matrix.html" class="hover:text-[#1C3326] transition">
+            <h3 class="font-serif text-xl font-bold text-[#121E17]">Bio-Peptide Eye Matrix Concentrate</h3>
+          </a>
+          <p class="text-xs text-zinc-500 font-mono mt-1 mb-4">Peptides + Green Coffee Ferment</p>
+          <div class="rounded-2xl bg-[#F7F8F6] p-6 mb-4">
+            <a href="./product-eye-matrix.html">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Eye Matrix Cylinder" class="product-card-img h-48 mx-auto object-contain" />
+            </a>
+          </div>
+          <p class="text-xs text-[#4A5750] leading-relaxed mb-4">
+            De-puffs and firms the delicate periorbital eyelid area using cold-pressed botanical caffeine and peptides.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#E2E8E4] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#121E17]">$62.00 / 15ml</span>
+          <div class="flex items-center gap-2">
+            <a href="./product-eye-matrix.html" class="text-xs font-mono text-zinc-500 hover:text-black underline">Details</a>
+            <button onclick="addToRoutine({ id: 'eye-matrix', name: 'Bio-Peptide Eye Matrix Concentrate', step: 'Targeted: Eye Zone', actives: 'Peptides + Green Coffee', price: 62.00, volume: '15ml Pump', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80' })" class="btn-botanical text-[10px] py-2 px-4">
+              + Add To Routine
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#E2E8E4] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-zinc-500">
+      <div class="flex items-center gap-3">
+        <span class="font-serif tracking-widest font-bold uppercase text-[#121E17]">AURA BOTANICA</span>
+        <span>• SoHo Atelier NYC</span>
+      </div>
+      <p class="text-zinc-400">© 2026 Aura Botanica Labs. Clean Botanical Skincare Demo.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Routine Drawer (Cart) -->
+  <div id="routine-backdrop" onclick="closeRoutineDrawer()" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="routine-drawer" class="fixed top-0 right-0 h-full w-full max-w-md frosted-drawer z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col font-sans text-[#121E17]">
+    
+    <div class="p-6 border-b border-[#E2E8E4] flex items-center justify-between bg-white">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif font-bold text-lg text-[#121E17]">Your Daily Skin Routine</h3>
+        <span class="routine-badge-count bg-[#1C3326] text-white text-[10px] font-mono px-2 py-0.5 rounded-full font-bold">1</span>
+      </div>
+      <button onclick="closeRoutineDrawer()" class="p-2 text-zinc-400 hover:text-black">✕</button>
+    </div>
+
+    <div id="routine-items-list" class="flex-grow overflow-y-auto px-6 py-2"></div>
+
+    <div class="p-6 border-t border-[#E2E8E4] bg-white space-y-4">
+      <div class="flex justify-between text-xs font-mono text-zinc-500">
+        <span>Routine Subtotal</span>
+        <span id="routine-subtotal">$68.00</span>
+      </div>
+
+      <div id="routine-discount-box"></div>
+
+      <div class="flex items-center justify-between border-t border-[#E2E8E4] pt-3">
+        <span class="text-xs uppercase font-bold text-[#121E17]">Total Billed</span>
+        <span id="routine-total" class="font-mono text-2xl font-bold text-[#1C3326]">$68.00</span>
+      </div>
+
+      <button onclick="triggerRoutineCheckout()" class="w-full btn-botanical justify-center py-4 text-xs uppercase tracking-wider font-bold shadow-lg">
+        Proceed To Clinical Checkout →
+      </button>
+    </div>
+
+  </aside>
+
+  <script src="./src/js/main.js"></script>
+  <script>
+    function filterCatalog(category) {
+      const cards = document.querySelectorAll('.catalog-card');
+      const pills = document.querySelectorAll('.cat-pill');
+
+      pills.forEach(p => {
+        p.classList.remove('bg-[#1C3326]', 'text-white');
+        p.classList.add('bg-white', 'text-[#4A5750]');
+      });
+      event.target.classList.remove('bg-white', 'text-[#4A5750]');
+      event.target.classList.add('bg-[#1C3326]', 'text-white');
+
+      cards.forEach(c => {
+        if (category === 'all' || c.getAttribute('data-category').includes(category)) {
+          c.style.display = 'flex';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

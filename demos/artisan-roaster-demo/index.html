@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KURA Coffee Roasters | Brooklyn, NYC | Micro-Lot Specialty Coffee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            roast: {
+              950: '#0A0807',
+              900: '#120F0D',
+              850: '#191513',
+              800: '#221D1A',
+              700: '#342C27',
+              accent: '#C59B63',
+              gold: '#D8AF79',
+              cream: '#F8F5F0'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0A0807] text-[#F8F5F0] min-h-screen flex flex-col font-sans selection:bg-[#C59B63] selection:text-black">
+
+  <!-- Top Announcement Ribbon -->
+  <div class="bg-gradient-to-r from-amber-950/90 via-[#1F1916] to-amber-950/90 border-b border-amber-900/30 text-xs py-2 px-4 text-center tracking-wider text-amber-200/90 flex items-center justify-center gap-3">
+    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+    <span>COMPLIMENTARY CARBON-NEUTRAL NYC DELIVERY ON ORDERS OVER $60 • ROASTED FRESH TO ORDER</span>
+    <span class="hidden md:inline-block text-amber-500/40">|</span>
+    <a href="./wholesale.html" class="hidden md:inline-block underline hover:text-white transition">Partner With Our Brooklyn Roastery →</a>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Mobile menu trigger -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden text-zinc-300 hover:text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <!-- Brand Monogram / Logo -->
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-950/30 group-hover:border-amber-400 transition-colors">
+          <span class="font-serif text-amber-300 font-bold text-lg">K</span>
+        </div>
+        <div>
+          <span class="font-serif tracking-widest text-xl font-bold uppercase text-zinc-100 group-hover:text-amber-200 transition">KURA</span>
+          <span class="block text-[9px] tracking-[0.28em] text-amber-500/80 uppercase">Roasters • Brooklyn</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-zinc-300">
+        <a href="./shop.html" class="hover:text-amber-400 transition">Single Origins</a>
+        <a href="./product.html" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          <span>Signature Reserve</span>
+          <span class="bg-amber-500/20 text-amber-300 text-[9px] px-1.5 py-0.5 rounded border border-amber-500/30">NEW</span>
+        </a>
+        <a href="./story.html" class="hover:text-amber-400 transition">Our Craft & Motion</a>
+        <a href="./wholesale.html" class="hover:text-amber-400 transition">Wholesale B2B</a>
+      </div>
+
+      <!-- Action Icons (Search, Bag Drawer) -->
+      <div class="flex items-center gap-5">
+        <a href="./wholesale.html" class="hidden sm:inline-flex btn-gold text-xs py-2 px-4">
+          Wholesale Portal
+        </a>
+        <button onclick="openCartDrawer()" class="relative p-2.5 rounded-full border border-zinc-800 bg-zinc-900/80 hover:border-amber-500/50 text-zinc-300 hover:text-white transition group">
+          <svg class="w-5 h-5 text-amber-200/90 group-hover:scale-105 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="cart-count-badge absolute -top-1 -right-1 w-5 h-5 rounded-full bg-amber-500 text-black text-[10px] font-extrabold flex items-center justify-center shadow-md">1</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#120F0D] border-b border-zinc-800 px-6 py-6 space-y-4 text-sm uppercase tracking-wider font-medium">
+      <a href="./shop.html" class="block text-zinc-200 hover:text-amber-400">Single Origins</a>
+      <a href="./product.html" class="block text-zinc-200 hover:text-amber-400">Signature Reserve (Guji Uraga)</a>
+      <a href="./story.html" class="block text-zinc-200 hover:text-amber-400">Our Craft & Process</a>
+      <a href="./wholesale.html" class="block text-zinc-200 hover:text-amber-400">Wholesale Roastery Program</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Motion Video Ambience -->
+  <header class="relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-zinc-900">
+    <!-- Ambient Background Media -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1920&q=85" 
+        alt="Roasting Coffee Beans" 
+        class="w-full h-full object-cover object-center filter brightness-40 scale-105 transform animate-pulse-slow"
+      />
+      <!-- Dynamic Video Layer (Ready for client's hyper-motion video) -->
+      <!--
+      <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
+        <source src="/videos/hero-hyper-motion.mp4" type="video/mp4" />
+      </video>
+      -->
+      <div class="absolute inset-0 video-overlay"></div>
+    </div>
+
+    <!-- Hero Content Container -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-950/60 border border-amber-500/40 text-amber-300 text-xs tracking-widest uppercase mb-8 backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span>Hyper-Motion Demo Concept • Specialty Coffee Category</span>
+      </div>
+
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight text-white leading-[1.08] mb-6">
+        Coffee Elevated <br />
+        <span class="gold-gradient-text italic font-serif">To Pure Sensory Art.</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-base md:text-lg text-zinc-300 font-light leading-relaxed mb-10">
+        Direct-trade micro-lots sourced from high-altitude volcanic terroirs. Profiled in Brooklyn using precision thermal telemetry and mathematical roast curve control.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="./shop.html" class="btn-gold text-sm px-8 py-3.5 w-full sm:w-auto text-center">
+          Explore Single Origins
+          <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+        <button onclick="openVideoLightbox('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', '4K Hyper-Motion Product Cinematic Reel')" class="btn-outline text-sm px-8 py-3.5 w-full sm:w-auto text-center flex items-center justify-center gap-2 group">
+          <svg class="w-4 h-4 text-amber-400 group-hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Hyper-Motion Reel</span>
+        </button>
+      </div>
+
+      <!-- Trust Elements -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-zinc-800/60 text-left">
+        <div>
+          <span class="block text-2xl font-serif text-amber-300">88.5+</span>
+          <span class="text-xs text-zinc-400 uppercase tracking-wider">SCA Cupping Score Min.</span>
+        </div>
+        <div>
+          <span class="block text-2xl font-serif text-amber-300">100%</span>
+          <span class="text-xs text-zinc-400 uppercase tracking-wider">Farm Direct-Trade</span>
+        </div>
+        <div>
+          <span class="block text-2xl font-serif text-amber-300">48h</span>
+          <span class="text-xs text-zinc-400 uppercase tracking-wider">Roast-To-Door NYC Dispatch</span>
+        </div>
+        <div>
+          <span class="block text-2xl font-serif text-amber-300">0.0g</span>
+          <span class="text-xs text-zinc-400 uppercase tracking-wider">Plastic Recyclable Bags</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Sensory Section: Featured Micro-Lots -->
+  <section class="py-24 px-6 max-w-7xl mx-auto w-full">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="badge-gold mb-3">Seasonal Harvest 2026</span>
+        <h2 class="text-3xl md:text-5xl font-serif text-zinc-100">Featured Single Origins</h2>
+      </div>
+      <a href="./shop.html" class="text-xs font-semibold tracking-widest text-amber-300 uppercase hover:text-amber-200 transition flex items-center gap-1">
+        Browse Complete 12-Lot Catalog →
+      </a>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img 
+            src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80" 
+            alt="Ethiopia Guji Uraga Natural" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
+          />
+          <div class="absolute top-4 left-4">
+            <span class="badge-gold">Natural Process</span>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span class="text-xs font-bold px-2 py-1 bg-black/70 backdrop-blur-md text-amber-300 rounded border border-amber-500/20">SCA 89.2</span>
+          </div>
+          <!-- Quick Action Overlay -->
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button 
+              onclick="addToCart({ id: 'ethiopia-guji', name: 'Ethiopia Guji Uraga Natural', roast: 'Light Roast • Peach & Jasmine', price: 24.00, image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80' })" 
+              class="w-full btn-gold text-xs py-2.5 justify-center shadow-lg"
+            >
+              Quick Add • $24
+            </button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500/90 uppercase font-semibold mb-1">Guji, Oromia • 2,150 MASL</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition">
+            <a href="./product.html">Ethiopia Guji Uraga</a>
+          </h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4 leading-relaxed">
+            Candied white peach, wild jasmine blossoms, and bergamot with a silky honey finish.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$24.00 / 12 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Specs →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img 
+            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" 
+            alt="Colombia Huila Pink Bourbon" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
+          />
+          <div class="absolute top-4 left-4">
+            <span class="badge-gold">Washed Anaerobic</span>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span class="text-xs font-bold px-2 py-1 bg-black/70 backdrop-blur-md text-amber-300 rounded border border-amber-500/20">SCA 90.5</span>
+          </div>
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button 
+              onclick="addToCart({ id: 'colombia-pink-bourbon', name: 'Colombia Huila Pink Bourbon', roast: 'Light-Medium • Papaya & Pink Grapefruit', price: 28.00, image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80' })" 
+              class="w-full btn-gold text-xs py-2.5 justify-center shadow-lg"
+            >
+              Quick Add • $28
+            </button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500/90 uppercase font-semibold mb-1">San Adolfo, Huila • 1,800 MASL</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition">
+            <a href="./product.html">Colombia Pink Bourbon</a>
+          </h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4 leading-relaxed">
+            Rare botanical mutation yielding tropical papaya, pink grapefruit zest, and raw turbinado sugar.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$28.00 / 12 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Specs →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card-luxury rounded-2xl overflow-hidden group flex flex-col justify-between">
+        <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900">
+          <img 
+            src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" 
+            alt="Kenya Nyeri Gondo Peaberry" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
+          />
+          <div class="absolute top-4 left-4">
+            <span class="badge-gold">Double Washed</span>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span class="text-xs font-bold px-2 py-1 bg-black/70 backdrop-blur-md text-amber-300 rounded border border-amber-500/20">SCA 89.8</span>
+          </div>
+          <div class="absolute inset-x-4 bottom-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
+            <button 
+              onclick="addToCart({ id: 'kenya-peaberry', name: 'Kenya Nyeri Gondo Peaberry', roast: 'Medium-Light • Blackcurrant & Lime', price: 26.00, image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80' })" 
+              class="w-full btn-gold text-xs py-2.5 justify-center shadow-lg"
+            >
+              Quick Add • $26
+            </button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-[11px] tracking-widest text-amber-500/90 uppercase font-semibold mb-1">Mount Kenya, Nyeri • 1,950 MASL</div>
+          <h3 class="font-serif text-xl text-white group-hover:text-amber-300 transition">
+            <a href="./product.html">Kenya Nyeri Peaberry</a>
+          </h3>
+          <p class="text-xs text-zinc-400 mt-2 mb-4 leading-relaxed">
+            Intense blackcurrant cordials, sparkling lime acidity, and rich dark amber honey sweetness.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+            <span class="text-sm font-semibold text-zinc-200">$26.00 / 12 oz</span>
+            <a href="./product.html" class="text-xs text-amber-400 hover:underline">View Specs →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hyper-Motion Feature Showcase Banner -->
+  <section class="py-20 bg-gradient-to-b from-[#0A0807] via-[#161210] to-[#0A0807] border-y border-amber-950/40 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="badge-gold mb-3">Hyper-Motion Visual Engine</span>
+        <h2 class="text-3xl md:text-5xl font-serif text-zinc-100 leading-tight mb-6">
+          Capture The Kinetic Drama Of Specialty Roasting.
+        </h2>
+        <p class="text-zinc-300 text-sm md:text-base leading-relaxed mb-6 font-light">
+          Physical products don't sell through static squares. They sell through tactile desire—the high-frame-rate crack of green beans expanding, the dense bloom of a morning Chemex, and the light refracts through micro-foam.
+        </p>
+        <ul class="space-y-3 mb-8 text-xs text-zinc-400">
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Sub-millimeter macro motion capture of espresso extraction</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Ultra-smooth scroll scrubbing powered by WebM/MP4 dual streaming</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Zero-lag mobile responsive playback with battery-saver mode</span>
+          </li>
+        </ul>
+        <button onclick="openVideoLightbox('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', 'Kinetic Roasting & Extraction Showcase')" class="btn-gold text-xs">
+          Open 4K Motion Reel
+        </button>
+      </div>
+
+      <!-- Interactive Motion Card Video Preview -->
+      <div class="relative group cursor-pointer" onclick="openVideoLightbox('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', 'Roasting Artistry')">
+        <div class="rounded-3xl overflow-hidden border border-amber-500/30 shadow-2xl relative aspect-video bg-zinc-900">
+          <img 
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=80" 
+            alt="Espresso Extraction" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-80"
+          />
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <div class="w-16 h-16 rounded-full bg-amber-500/90 text-black flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-amber-400 transition-all duration-300">
+              <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
+            <span>Brooklyn Roastery Batch #482</span>
+            <span class="text-amber-300 font-semibold">120 FPS Motion Capture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wholesale B2B Banner -->
+  <section class="py-20 px-6 max-w-7xl mx-auto w-full text-center">
+    <div class="rounded-3xl p-12 md:p-16 border border-amber-900/40 bg-gradient-to-br from-[#181310] via-[#100D0B] to-[#181310] relative overflow-hidden">
+      <div class="max-w-2xl mx-auto">
+        <span class="badge-gold mb-4">For Cafes, Restaurants & Luxury Boutiques</span>
+        <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Elevate Your Guest Experience</h2>
+        <p class="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">
+          We equip premier establishments across Manhattan, Brooklyn, and Queens with custom roast profiles, La Marzocco machine setups, and barista craft certification.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="./wholesale.html" class="btn-gold text-xs px-8 py-3 w-full sm:w-auto">
+            Apply For Wholesale Partnership
+          </a>
+          <a href="mailto:wholesale@kuracoffee.com" class="btn-outline text-xs px-8 py-3 w-full sm:w-auto">
+            Request Sample Flight
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="bg-[#080605] border-t border-zinc-900 py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-950/30">
+            <span class="font-serif text-amber-300 font-bold">K</span>
+          </div>
+          <span class="font-serif tracking-widest text-lg font-bold uppercase text-white">KURA COFFEE</span>
+        </div>
+        <p class="text-xs text-zinc-400 leading-relaxed max-w-sm mb-6">
+          A modern digital experience and hyper-motion showcase created for premium specialty roasters and physical-product founders.
+        </p>
+        <p class="text-[11px] text-zinc-500">
+          Demo Prototype • Hosted on Cloudflare Pages
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-zinc-200 mb-4">Explore</h4>
+        <ul class="space-y-2 text-xs text-zinc-400">
+          <li><a href="./shop.html" class="hover:text-amber-300 transition">Single Origins</a></li>
+          <li><a href="./product.html" class="hover:text-amber-300 transition">Reserve Lots</a></li>
+          <li><a href="./story.html" class="hover:text-amber-300 transition">Our Craft & Story</a></li>
+          <li><a href="./wholesale.html" class="hover:text-amber-300 transition">Wholesale Roastery</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-zinc-200 mb-4">Locations</h4>
+        <p class="text-xs text-zinc-400 leading-relaxed mb-2">
+          <strong>Roastery & Tasting Room</strong><br />
+          18 Grattan St, Bushwick<br />
+          Brooklyn, NY 11206
+        </p>
+        <p class="text-xs text-zinc-500">
+          Open Daily: 7:30 AM – 5:00 PM
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-zinc-200 mb-4">Newsletter</h4>
+        <p class="text-xs text-zinc-400 mb-3">Access private micro-lot drops 24 hours before public release.</p>
+        <form onsubmit="event.preventDefault(); triggerDemoLeadSuccess('Reserve List Access Granted', 'You have been granted priority 24-hour access to private micro-lot drops from our Brooklyn roastery.');" class="space-y-2">
+          <input type="email" required placeholder="Enter your email" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400" />
+          <button type="submit" class="w-full btn-gold text-xs py-2 justify-center">Join Reserve List</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-zinc-900/80 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500">
+      <p>© 2026 KURA Coffee Roasters Demo. Crafted for high-conversion physical product outreach.</p>
+      <div class="flex gap-4 mt-4 sm:mt-0">
+        <a href="#" class="hover:text-zinc-300">Privacy</a>
+        <a href="#" class="hover:text-zinc-300">Terms</a>
+        <a href="#" class="hover:text-zinc-300">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Luxury Cart Drawer Component -->
+  <div id="cart-backdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#120F0D] border-l border-zinc-800 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <!-- Header -->
+    <div class="p-6 border-b border-zinc-800/80 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif text-lg text-white">Your Roastery Bag</h3>
+        <span class="cart-count-badge badge-gold">1</span>
+      </div>
+      <button onclick="closeCartDrawer()" class="p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Free Delivery Progress Bar -->
+    <div class="px-6 py-3 bg-zinc-900/50 border-b border-zinc-800/50">
+      <div class="text-[11px] text-zinc-300 mb-1.5" id="shipping-text">
+        Add <span class="text-amber-400 font-semibold">$36.00</span> more for Free NYC Delivery
+      </div>
+      <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+        <div id="shipping-progress" class="bg-gradient-to-r from-amber-600 to-amber-400 h-full transition-all duration-300" style="width: 40%"></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div id="cart-items-container" class="flex-grow overflow-y-auto px-6 py-2">
+      <!-- Injected dynamically via main.js -->
+    </div>
+
+    <!-- Footer / Checkout -->
+    <div class="p-6 border-t border-zinc-800/80 bg-[#0E0C0A]">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-xs uppercase tracking-wider text-zinc-400">Subtotal</span>
+        <span id="cart-subtotal" class="font-serif text-xl font-bold text-amber-300">$24.00</span>
+      </div>
+      <p class="text-[11px] text-zinc-500 mb-4">Taxes and NYC courier delivery calculated at checkout.</p>
+      <button onclick="triggerDemoCheckout()" class="w-full btn-gold text-xs py-3.5 justify-center text-center font-bold tracking-wider uppercase">
+        Proceed To Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Hyper-Motion Fullscreen Video Lightbox Modal -->
+  <div id="video-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl bg-zinc-950 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl">
+      <div class="p-4 border-b border-zinc-800 flex items-center justify-between bg-zinc-900">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+          <h3 id="modal-video-title" class="text-sm font-semibold text-white tracking-wide">Cinematic Reel</h3>
+        </div>
+        <button onclick="closeVideoLightbox()" class="text-zinc-400 hover:text-white p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="aspect-video bg-black flex items-center justify-center relative overflow-hidden">
+        <video id="modal-video-player" controls playsinline class="w-full h-full object-contain">
+          Your browser does not support the video tag.
+        </video>
+        
+        <!-- Animated High-Motion Reel Fallback (Displays if offline / blocked) -->
+        <div id="modal-video-fallback" class="hidden absolute inset-0 bg-[#0F0C0A] flex flex-col items-center justify-center p-8 text-center">
+          <div class="relative w-20 h-20 mb-6 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full border-2 border-amber-500/30 animate-ping"></div>
+            <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/60 flex items-center justify-center shadow-2xl">
+              <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-950/80 border border-amber-500/40 text-amber-300 text-[10px] tracking-widest uppercase mb-3">
+            Hyper-Motion Product Reel • 120 FPS
+          </span>
+          <h4 class="font-serif text-2xl text-white font-bold mb-2">Tactile Macro Motion Active</h4>
+          <p class="text-xs text-zinc-400 max-w-md leading-relaxed mb-6 font-light">
+            In demonstration mode. In production, drop your raw 4K hyper-motion videos into the <code class="text-amber-300">/videos/</code> directory to stream full-fidelity uncompressed footage.
+          </p>
+          <div class="flex items-center gap-4 bg-zinc-900/90 border border-zinc-800 rounded-full px-5 py-2 text-xs text-zinc-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>4K HDR • 60 FPS • 10-Bit ProRES Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>

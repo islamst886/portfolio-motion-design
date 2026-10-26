@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinical Evidence & Trials | AURA BOTANICA LABS NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#F7F8F6] text-[#4A5750] min-h-screen flex flex-col font-sans selection:bg-[#1C3326] selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#1C3326] text-white py-2 px-4 text-center text-[10px] font-mono tracking-widest uppercase">
+    Complimentary carbon-neutral express delivery on all orders over $75 • Clean-room bottled in SoHo, NYC
+  </div>
+
+  <!-- Master Consumer Header -->
+  <header class="sticky top-0 z-40 bg-[#F7F8F6]/90 backdrop-blur-md border-b border-[#E2E8E4]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-mono uppercase tracking-wider text-[#4A5750]">
+        <a href="./catalog.html" class="hover:text-[#1C3326] transition">All Formulations</a>
+        <a href="./product-cleanser.html" class="hover:text-[#1C3326] transition">Enzyme Melt</a>
+        <a href="./product.html" class="hover:text-[#1C3326] transition">Bio-Retinoid</a>
+        <a href="./product-balm.html" class="hover:text-[#1C3326] transition">Ceramide Balm</a>
+        <a href="./science.html" class="text-[#1C3326] font-bold border-b border-[#1C3326] pb-1">Clinical Proof</a>
+      </nav>
+
+      <a href="./index.html" class="text-center group">
+        <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.25em] text-[#121E17] block uppercase group-hover:opacity-80 transition">
+          AURA BOTANICA
+        </span>
+        <span class="font-mono text-[8px] tracking-[0.35em] text-[#B89758] uppercase block mt-0.5 font-bold">
+          SoHo Atelier • New York
+        </span>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="./consultation.html" class="hidden sm:inline-flex text-xs font-mono text-[#1C3326] hover:underline uppercase tracking-wider">
+          Diagnostic Quiz
+        </a>
+        <button onclick="openRoutineDrawer()" class="flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1C3326] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#0E1E15] transition shadow-sm">
+          <span>Daily Routine</span>
+          <span class="routine-badge-count w-5 h-5 rounded-full bg-white text-[#1C3326] text-[10px] font-bold flex items-center justify-center">1</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Science Hero -->
+  <section class="py-16 md:py-24 px-6 border-b border-[#E2E8E4] bg-white text-center">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <span class="text-[10px] font-mono uppercase text-[#B89758] font-bold tracking-widest block">
+        DOUBLE-BLIND CLINICAL EVIDENCE • N=48 REPLICATES
+      </span>
+      <h1 class="font-serif text-4xl sm:text-6xl text-[#121E17]">
+        Pure Dermal Telemetry. <br />
+        Zero Marketing Fiction.
+      </h1>
+      <p class="text-sm sm:text-base text-[#4A5750] max-w-2xl mx-auto leading-relaxed font-light">
+        Every Aura Botanica formulation undergoes independent 12-week clinical trials in Manhattan using non-invasive medical instrumentation: Tewameter (TEWL), Cutometer (elasticity), and VisioFace (dermal homogeneity).
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive 12-Week Clinical Scrubber Section -->
+  <main class="py-16 md:py-24 px-6 max-w-5xl mx-auto w-full flex-grow">
+    
+    <div class="bg-white rounded-3xl p-8 md:p-14 border border-[#E2E8E4] shadow-sm space-y-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E2E8E4] pb-6 gap-4">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#B89758] font-bold block mb-1">
+            INTERACTIVE TRIAL TIMELINE
+          </span>
+          <h2 id="trial-phase-title" class="font-serif text-2xl sm:text-3xl font-bold text-[#121E17]">
+            Week 12: Total Dermal Remodeling
+          </h2>
+        </div>
+        <span id="trial-week-label" class="font-mono text-xs bg-[#E8EFEA] text-[#1C3326] px-4 py-1.5 rounded-full font-bold">
+          Week 12
+        </span>
+      </div>
+
+      <!-- Slider Control -->
+      <div>
+        <label class="text-xs font-mono uppercase text-zinc-500 block mb-4">
+          Drag slider to view longitudinal instrumentation data across the 12-week study:
+        </label>
+        <input 
+          type="range" 
+          min="0" 
+          max="12" 
+          step="4" 
+          value="12" 
+          oninput="updateTrialWeek(parseInt(this.value))"
+          class="w-full h-3 bg-[#E8EFEA] rounded-lg appearance-none cursor-pointer accent-[#1C3326]"
+        />
+        <div class="flex justify-between text-xs font-mono text-zinc-500 mt-3 px-1">
+          <span>Week 00 (Baseline)</span>
+          <span>Week 04 (Quench)</span>
+          <span>Week 08 (Synthesis)</span>
+          <span class="text-[#1C3326] font-bold">Week 12 (Remodeling)</span>
+        </div>
+      </div>
+
+      <!-- Reactive Telemetry Display Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-[#E2E8E4]">
+        <div class="p-6 bg-[#F7F8F6] rounded-2xl border border-[#E2E8E4]">
+          <span class="text-[9px] font-mono text-zinc-400 block uppercase">CUTOMETER MPA 580</span>
+          <span class="text-xs font-bold text-[#121E17] block mb-1">Tensile Elasticity</span>
+          <strong id="trial-elasticity" class="font-mono text-xl font-bold text-[#1C3326] block mt-1">+88% Maximum Elasticity</strong>
+        </div>
+
+        <div class="p-6 bg-[#F7F8F6] rounded-2xl border border-[#E2E8E4]">
+          <span class="text-[9px] font-mono text-zinc-400 block uppercase">CORNEOMETER 825 CM</span>
+          <span class="text-xs font-bold text-[#121E17] block mb-1">Stratum Corneum Hydration</span>
+          <strong id="trial-hydration" class="font-mono text-xl font-bold text-[#1C3326] block mt-1">+92% Sustained 24h Barrier Seal</strong>
+        </div>
+
+        <div class="p-6 bg-[#F7F8F6] rounded-2xl border border-[#E2E8E4]">
+          <span class="text-[9px] font-mono text-zinc-400 block uppercase">TEWAMETER TM 300</span>
+          <span class="text-xs font-bold text-[#121E17] block mb-1">Lipid Barrier Integrity</span>
+          <strong id="trial-barrier" class="font-mono text-xl font-bold text-[#1C3326] block mt-1">96% Full Stratum Corneum Renewal</strong>
+        </div>
+      </div>
+
+      <!-- Dermatologist Note -->
+      <div class="p-5 bg-[#E8EFEA] rounded-2xl border border-[#1C3326]/20 text-xs font-sans text-zinc-700 leading-relaxed">
+        <strong class="text-[#1C3326] font-mono uppercase block mb-1">Principal Investigator Assessment:</strong>
+        <span id="trial-doctor-note">
+          Complete cellular turnover cycle achieved. 100% of clinical subjects reported softer, smoother, luminous glass skin.
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Comparative Table -->
+    <div class="mt-16 bg-white rounded-3xl p-8 md:p-12 border border-[#E2E8E4] shadow-sm">
+      <h3 class="font-serif text-2xl font-bold text-[#121E17] mb-6">
+        Comparative Molecular Pathway: Bakuchiol vs Retinol
+      </h3>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs font-sans border-collapse">
+          <thead>
+            <tr class="border-b-2 border-[#1C3326] font-mono uppercase text-[11px] text-zinc-500">
+              <th class="py-3 px-4">Evaluation Metric</th>
+              <th class="py-3 px-4 text-[#1C3326] bg-[#E8EFEA]">Aura Bio-Retinoid (2.5% Bakuchiol)</th>
+              <th class="py-3 px-4">Synthetic Retinol (0.5% Retinoid)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#E2E8E4] font-mono">
+            <tr>
+              <td class="py-4 px-4 font-bold text-[#121E17]">Collagen Upregulation</td>
+              <td class="py-4 px-4 text-[#1C3326] bg-[#E8EFEA]/40 font-bold">+148% Type I & III Collagen</td>
+              <td class="py-4 px-4 text-zinc-500">+152% Type I & III Collagen</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-bold text-[#121E17]">Cellular Peeling & Redness</td>
+              <td class="py-4 px-4 text-[#1C3326] bg-[#E8EFEA]/40 font-bold">0.0% Recorded Incidents</td>
+              <td class="py-4 px-4 text-rose-600 font-bold">64% Peeling / Irritation</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-bold text-[#121E17]">Daytime Photostability</td>
+              <td class="py-4 px-4 text-[#1C3326] bg-[#E8EFEA]/40 font-bold">100% Safe (AM & PM)</td>
+              <td class="py-4 px-4 text-zinc-500">Photodegradable (Strictly PM)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#E2E8E4] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-zinc-500">
+      <div class="flex items-center gap-3">
+        <span class="font-serif tracking-widest font-bold uppercase text-[#121E17]">AURA BOTANICA</span>
+        <span>• SoHo Atelier NYC</span>
+      </div>
+      <p class="text-zinc-400">© 2026 Aura Botanica Labs. Clean Botanical Skincare Demo.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Routine Drawer (Cart) -->
+  <div id="routine-backdrop" onclick="closeRoutineDrawer()" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="routine-drawer" class="fixed top-0 right-0 h-full w-full max-w-md frosted-drawer z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col font-sans text-[#121E17]">
+    
+    <div class="p-6 border-b border-[#E2E8E4] flex items-center justify-between bg-white">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif font-bold text-lg text-[#121E17]">Your Daily Skin Routine</h3>
+        <span class="routine-badge-count bg-[#1C3326] text-white text-[10px] font-mono px-2 py-0.5 rounded-full font-bold">1</span>
+      </div>
+      <button onclick="closeRoutineDrawer()" class="p-2 text-zinc-400 hover:text-black">✕</button>
+    </div>
+
+    <div id="routine-items-list" class="flex-grow overflow-y-auto px-6 py-2"></div>
+
+    <div class="p-6 border-t border-[#E2E8E4] bg-white space-y-4">
+      <div class="flex justify-between text-xs font-mono text-zinc-500">
+        <span>Routine Subtotal</span>
+        <span id="routine-subtotal">$68.00</span>
+      </div>
+
+      <div id="routine-discount-box"></div>
+
+      <div class="flex items-center justify-between border-t border-[#E2E8E4] pt-3">
+        <span class="text-xs uppercase font-bold text-[#121E17]">Total Billed</span>
+        <span id="routine-total" class="font-mono text-2xl font-bold text-[#1C3326]">$68.00</span>
+      </div>
+
+      <button onclick="triggerRoutineCheckout()" class="w-full btn-botanical justify-center py-4 text-xs uppercase tracking-wider font-bold shadow-lg">
+        Proceed To Clinical Checkout →
+      </button>
+    </div>
+
+  </aside>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>

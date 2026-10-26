@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Craft & Hyper-Motion Philosophy | KURA Coffee Roasters NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#0A0807] text-[#F8F5F0] min-h-screen flex flex-col font-sans selection:bg-[#C59B63] selection:text-black">
+
+  <!-- Main Navigation Bar -->
+  <nav class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-950/30 group-hover:border-amber-400 transition-colors">
+          <span class="font-serif text-amber-300 font-bold text-lg">K</span>
+        </div>
+        <div>
+          <span class="font-serif tracking-widest text-xl font-bold uppercase text-zinc-100 group-hover:text-amber-200 transition">KURA</span>
+          <span class="block text-[9px] tracking-[0.28em] text-amber-500/80 uppercase">Roasters • Brooklyn</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-zinc-300">
+        <a href="./shop.html" class="hover:text-amber-400 transition">Single Origins</a>
+        <a href="./product.html" class="hover:text-amber-400 transition">Signature Reserve</a>
+        <a href="./story.html" class="text-amber-400 border-b border-amber-400 pb-1">Our Craft & Motion</a>
+        <a href="./wholesale.html" class="hover:text-amber-400 transition">Wholesale B2B</a>
+      </div>
+
+      <div class="flex items-center gap-5">
+        <button onclick="openCartDrawer()" class="relative p-2.5 rounded-full border border-zinc-800 bg-zinc-900/80 hover:border-amber-500/50 text-zinc-300 hover:text-white transition group">
+          <svg class="w-5 h-5 text-amber-200/90 group-hover:scale-105 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="cart-count-badge absolute -top-1 -right-1 w-5 h-5 rounded-full bg-amber-500 text-black text-[10px] font-extrabold flex items-center justify-center shadow-md">1</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Story Hero -->
+  <header class="py-24 px-6 max-w-5xl mx-auto text-center">
+    <span class="badge-gold mb-4">The Roasting Methodology</span>
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-8">
+      Where Precision Botany Meets <br />
+      <span class="gold-gradient-text italic font-serif">Kinetic Sensory Design.</span>
+    </h1>
+    <p class="text-zinc-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto font-light">
+      Founded in Bushwick, Brooklyn, KURA exists to prove that specialty coffee should not be masked by dark roasts or bitter caramelization. We profile every micro-lot to express its singular geographic genetic signature.
+    </p>
+  </header>
+
+  <!-- Interactive Story Timeline with Hyper-Motion Video Cards -->
+  <main class="max-w-7xl mx-auto px-6 pb-24 space-y-24">
+    
+    <!-- Step 1 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-amber-400 font-serif text-4xl block mb-2">01 /</span>
+        <h3 class="text-2xl md:text-3xl font-serif text-white mb-4">Direct High-Altitude Terroir Sourcing</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+          We do not buy from commodity auctions. We contract directly with independent producers farming above 1,800 MASL in volcanic microclimates. At these altitudes, cold mountain nights slow cherry maturation, concentrating complex sugars and delicate floral aromatics.
+        </p>
+        <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 text-xs text-zinc-300">
+          <strong class="text-amber-300">Transparency Metric:</strong> Paid an average of $4.85/lb Free On Board (FOB) across all 2026 lots—representing 285% of standard commercial market rates.
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden border border-zinc-800 aspect-video relative group cursor-pointer" onclick="openVideoLightbox('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', 'Terroir Harvest & Cherry Sorting')">
+        <img src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90" />
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-amber-500 text-black flex items-center justify-center group-hover:scale-110 transition shadow-xl">
+            <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4 flex justify-between text-[11px] text-zinc-300 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
+          <span>Yirgacheffe Mountain Basin</span>
+          <span class="text-amber-300 font-medium">Motion Clip: Hand Harvest</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-3xl overflow-hidden border border-zinc-800 aspect-video relative group cursor-pointer" onclick="openVideoLightbox('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', 'Loring Convection Thermodynamic Roasting')">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90" />
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-amber-500 text-black flex items-center justify-center group-hover:scale-110 transition shadow-xl">
+            <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4 flex justify-between text-[11px] text-zinc-300 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
+          <span>Brooklyn Roastery Loring S35</span>
+          <span class="text-amber-300 font-medium">Motion Clip: First Crack Dynamics</span>
+        </div>
+      </div>
+      <div>
+        <span class="text-amber-400 font-serif text-4xl block mb-2">02 /</span>
+        <h3 class="text-2xl md:text-3xl font-serif text-white mb-4">Loring Single-Pass Convection Roasting</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+          Traditional drum roasters burn bean surfaces with conductive heat contact. We roast exclusively on a Loring single-pass closed-loop system using 100% recirculating convective thermal air. The result is pure, radiant heat with zero smokiness or char.
+        </p>
+        <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 text-xs text-zinc-300">
+          <strong class="text-amber-300">Roast Curve Telemetry:</strong> Every batch logs Rate-of-Rise (RoR) data points every 200 milliseconds to guarantee batch-to-batch consistency within ±0.4°C.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-amber-400 font-serif text-4xl block mb-2">03 /</span>
+        <h3 class="text-2xl md:text-3xl font-serif text-white mb-4">Nitrogen-Flushed Botanical Sealing</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+          Freshly roasted coffee loses 60% of its aromatics within 72 hours if exposed to atmospheric oxygen. Within 90 seconds of completing roast cooling, our beans are packaged in multi-barrier recyclable pouches with a 99.8% nitrogen flush, suspending aging until opened in your kitchen.
+        </p>
+        <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 text-xs text-zinc-300">
+          <strong class="text-amber-300">Degassing Valve:</strong> Custom one-way valve allows internal CO₂ egress while preventing external oxygen intrusion.
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden border border-zinc-800 aspect-video relative group cursor-pointer" onclick="openVideoLightbox('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', 'Packaging & Seal Kinematics')">
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90" />
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-amber-500 text-black flex items-center justify-center group-hover:scale-110 transition shadow-xl">
+            <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4 flex justify-between text-[11px] text-zinc-300 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
+          <span>Bushwick Packaging Studio</span>
+          <span class="text-amber-300 font-medium">Motion Clip: Nitrogen Sealing</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-[#080605] border-t border-zinc-900 py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
+      <div class="flex items-center gap-3">
+        <span class="font-serif tracking-widest text-lg font-bold uppercase text-white">KURA COFFEE</span>
+        <span>• Brooklyn NYC</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="./index.html" class="hover:text-amber-300">Home</a>
+        <a href="./shop.html" class="hover:text-amber-300">Shop</a>
+        <a href="./product.html" class="hover:text-amber-300">Reserve</a>
+        <a href="./story.html" class="text-amber-300">Our Craft</a>
+        <a href="./wholesale.html" class="hover:text-amber-300">Wholesale</a>
+      </div>
+      <p class="text-[11px] text-zinc-500">© 2026 KURA Coffee Roasters Demo.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Luxury Cart Drawer Component -->
+  <div id="cart-backdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#120F0D] border-l border-zinc-800 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="p-6 border-b border-zinc-800/80 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif text-lg text-white">Your Roastery Bag</h3>
+        <span class="cart-count-badge badge-gold">1</span>
+      </div>
+      <button onclick="closeCartDrawer()" class="p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 py-3 bg-zinc-900/50 border-b border-zinc-800/50">
+      <div class="text-[11px] text-zinc-300 mb-1.5" id="shipping-text">
+        Add <span class="text-amber-400 font-semibold">$36.00</span> more for Free NYC Delivery
+      </div>
+      <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+        <div id="shipping-progress" class="bg-gradient-to-r from-amber-600 to-amber-400 h-full transition-all duration-300" style="width: 40%"></div>
+      </div>
+    </div>
+    <div id="cart-items-container" class="flex-grow overflow-y-auto px-6 py-2"></div>
+    <div class="p-6 border-t border-zinc-800/80 bg-[#0E0C0A]">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-xs uppercase tracking-wider text-zinc-400">Subtotal</span>
+        <span id="cart-subtotal" class="font-serif text-xl font-bold text-amber-300">$24.00</span>
+      </div>
+      <button onclick="triggerDemoCheckout()" class="w-full btn-gold text-xs py-3.5 justify-center text-center font-bold tracking-wider uppercase">
+        Proceed To Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Video Lightbox Modal -->
+  <div id="video-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl bg-zinc-950 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl">
+      <div class="p-4 border-b border-zinc-800 flex items-center justify-between bg-zinc-900">
+        <h3 id="modal-video-title" class="text-sm font-semibold text-white tracking-wide">Craft Footage</h3>
+        <button onclick="closeVideoLightbox()" class="text-zinc-400 hover:text-white p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="aspect-video bg-black flex items-center justify-center relative overflow-hidden">
+        <video id="modal-video-player" controls playsinline class="w-full h-full object-contain"></video>
+        <div id="modal-video-fallback" class="hidden absolute inset-0 bg-[#0F0C0A] flex flex-col items-center justify-center p-8 text-center">
+          <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/60 flex items-center justify-center shadow-2xl mb-4">
+            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-950/80 border border-amber-500/40 text-amber-300 text-[10px] tracking-widest uppercase mb-2">
+            Hyper-Motion Simulation
+          </span>
+          <h4 class="font-serif text-xl text-white font-bold mb-2">Loring Convection & Degassing Reel</h4>
+          <p class="text-xs text-zinc-400 max-w-md leading-relaxed">
+            In demonstration mode. Drop your ready 4K hyper-motion clip into <code class="text-amber-300">/videos/</code> to stream uncompressed footage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>

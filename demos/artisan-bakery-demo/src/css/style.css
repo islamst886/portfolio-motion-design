@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,800;1,6..96,400;1,6..96,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --font-serif: 'Bodoni Moda', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  /* Light High-Fashion Parisian Aesthetic */
+  --bg-cream: #FAF7F2;
+  --bg-surface: #FFFFFF;
+  --bg-sand: #F2ECE1;
+  --bg-terracotta-tint: #F7EFE9;
+  
+  --ink-primary: #191715;
+  --ink-secondary: #5C554E;
+  --ink-muted: #948A80;
+  
+  --accent-terracotta: #C25B3E;
+  --accent-terracotta-hover: #A8482D;
+  --accent-crust-gold: #D4903B;
+  --accent-butter: #F3C97C;
+  
+  --border-line: #E5DDD0;
+  --border-strong: #191715;
+  --border-terracotta: rgba(194, 91, 62, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-cream);
+  color: var(--ink-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CEBE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-terracotta);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Editorial Borders & Cards */
+.editorial-border {
+  border: 1px solid var(--border-line);
+}
+
+.card-editorial {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-line);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-editorial:hover {
+  border-color: var(--ink-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px -10px rgba(25, 23, 21, 0.08);
+}
+
+/* Editorial Buttons */
+.btn-terracotta {
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.85rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  border: 1px solid var(--accent-terracotta);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-terracotta:hover {
+  background: var(--accent-terracotta-hover);
+  border-color: var(--accent-terracotta-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(194, 91, 62, 0.25);
+}
+
+.btn-ink {
+  background: var(--ink-primary);
+  color: #FAF7F2;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.85rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  border: 1px solid var(--ink-primary);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-ink:hover {
+  background: #332D28;
+  border-color: #332D28;
+}
+
+.btn-editorial-outline {
+  background: transparent;
+  color: var(--ink-primary);
+  border: 1px solid var(--border-line);
+  font-weight: 500;
+  padding: 0.85rem 1.85rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-editorial-outline:hover {
+  border-color: var(--ink-primary);
+  background: #FFFFFF;
+}
+
+/* Editorial Tag */
+.tag-terracotta {
+  background: var(--bg-terracotta-tint);
+  color: var(--accent-terracotta);
+  border: 1px solid var(--border-terracotta);
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* Interactive Hotspot Pin for PDP */
+.hotspot-pin {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(194, 91, 62, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
+  position: relative;
+}
+
+.hotspot-pin:hover {
+  transform: scale(1.2);
+  background: var(--accent-terracotta-hover);
+}
+
+.hotspot-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(194, 91, 62, 0.6);
+  animation: pulse-ring 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Arch Frame */
+.arch-frame {
+  border-radius: 220px 220px 12px 12px;
+  overflow: hidden;
+}
+
+/* Bottom Floating Tasting Box Bar */
+.tasting-box-tray {
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-line);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.08);
+}

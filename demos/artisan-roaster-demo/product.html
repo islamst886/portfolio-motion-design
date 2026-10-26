@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethiopia Guji Uraga Natural | KURA Coffee Roasters</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#0A0807] text-[#F8F5F0] min-h-screen flex flex-col font-sans selection:bg-[#C59B63] selection:text-black">
+
+  <!-- Top Announcement Ribbon -->
+  <div class="bg-gradient-to-r from-amber-950/90 via-[#1F1916] to-amber-950/90 border-b border-amber-900/30 text-xs py-2 px-4 text-center tracking-wider text-amber-200/90 flex items-center justify-center gap-3">
+    <span>ROASTED IN BROOKLYN • LIMITED HARVEST MICRO-LOT: ONLY 42 BAGS REMAINING</span>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-950/30 group-hover:border-amber-400 transition-colors">
+          <span class="font-serif text-amber-300 font-bold text-lg">K</span>
+        </div>
+        <div>
+          <span class="font-serif tracking-widest text-xl font-bold uppercase text-zinc-100 group-hover:text-amber-200 transition">KURA</span>
+          <span class="block text-[9px] tracking-[0.28em] text-amber-500/80 uppercase">Roasters • Brooklyn</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-zinc-300">
+        <a href="./shop.html" class="hover:text-amber-400 transition">Single Origins</a>
+        <a href="./product.html" class="text-amber-400 border-b border-amber-400 pb-1">Signature Reserve</a>
+        <a href="./story.html" class="hover:text-amber-400 transition">Our Craft & Motion</a>
+        <a href="./wholesale.html" class="hover:text-amber-400 transition">Wholesale B2B</a>
+      </div>
+
+      <div class="flex items-center gap-5">
+        <button onclick="openCartDrawer()" class="relative p-2.5 rounded-full border border-zinc-800 bg-zinc-900/80 hover:border-amber-500/50 text-zinc-300 hover:text-white transition group">
+          <svg class="w-5 h-5 text-amber-200/90 group-hover:scale-105 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="cart-count-badge absolute -top-1 -right-1 w-5 h-5 rounded-full bg-amber-500 text-black text-[10px] font-extrabold flex items-center justify-center shadow-md">1</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-6 py-6 text-xs text-zinc-500 flex items-center gap-2">
+    <a href="./index.html" class="hover:text-zinc-300">Home</a>
+    <span>/</span>
+    <a href="./shop.html" class="hover:text-zinc-300">Single Origins</a>
+    <span>/</span>
+    <span class="text-amber-300">Ethiopia Guji Uraga Natural</span>
+  </div>
+
+  <!-- PDP Main Grid -->
+  <main class="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    
+    <!-- Left Column: Gallery & Hyper-Motion Preview (7 cols) -->
+    <div class="lg:col-span-7 space-y-6">
+      <!-- Main Display -->
+      <div class="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 aspect-[4/5] shadow-2xl">
+        <img 
+          id="main-product-image"
+          src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1200&q=85" 
+          alt="Ethiopia Guji Uraga Coffee Bag" 
+          class="w-full h-full object-cover transition-opacity duration-300"
+        />
+        <div class="absolute top-6 left-6 flex flex-col gap-2">
+          <span class="badge-gold">Natural Sun-Dried</span>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-black/80 backdrop-blur-md text-white rounded-full border border-white/10">SCA Cupping Score 89.25</span>
+        </div>
+        <!-- Hyper-Motion Button Badge -->
+        <button 
+          onclick="openVideoLightbox('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', 'Ethiopia Guji • Hyper-Motion Pour & Aroma Reel')"
+          class="absolute bottom-6 right-6 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-amber-500/90 text-black font-semibold text-xs shadow-2xl hover:bg-amber-400 hover:scale-105 transition"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch 4K Motion Reel</span>
+        </button>
+      </div>
+
+      <!-- Thumbnail Selector Row -->
+      <div class="grid grid-cols-4 gap-4">
+        <button onclick="changeProductImage('https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border-2 border-amber-500 aspect-square">
+          <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover" />
+        </button>
+        <button onclick="changeProductImage('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-zinc-800 hover:border-amber-500/50 aspect-square">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover" />
+        </button>
+        <button onclick="changeProductImage('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-zinc-800 hover:border-amber-500/50 aspect-square">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover" />
+        </button>
+        <button onclick="changeProductImage('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-zinc-800 hover:border-amber-500/50 aspect-square">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Column: Purchasing & Specifications (5 cols) -->
+    <div class="lg:col-span-5 flex flex-col justify-start">
+      <div class="border-b border-zinc-800 pb-6 mb-6">
+        <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold">Guji Uraga District • Oromia, Ethiopia</span>
+        <h1 class="text-3xl md:text-4xl font-serif text-white mt-1 mb-3">Ethiopia Guji Uraga Natural</h1>
+        
+        <!-- Flavor Notes -->
+        <div class="flex flex-wrap gap-2 my-4">
+          <span class="px-3 py-1 bg-amber-950/40 border border-amber-600/30 text-amber-200 text-xs rounded-full">Candied Peach</span>
+          <span class="px-3 py-1 bg-amber-950/40 border border-amber-600/30 text-amber-200 text-xs rounded-full">Wild Jasmine</span>
+          <span class="px-3 py-1 bg-amber-950/40 border border-amber-600/30 text-amber-200 text-xs rounded-full">Bergamot Tea</span>
+          <span class="px-3 py-1 bg-amber-950/40 border border-amber-600/30 text-amber-200 text-xs rounded-full">Wildflower Honey</span>
+        </div>
+
+        <div class="flex items-baseline gap-4 mt-4">
+          <span id="display-price" class="font-serif text-3xl font-bold text-white">$24.00</span>
+          <span class="text-xs text-zinc-400">Tax included • Free NYC Courier on orders > $60</span>
+        </div>
+      </div>
+
+      <!-- Size Selector -->
+      <div class="mb-6">
+        <label class="block text-xs uppercase tracking-wider font-semibold text-zinc-300 mb-2">Select Bag Size</label>
+        <div class="grid grid-cols-3 gap-3">
+          <button onclick="selectSize(this, 24, '12 oz (340g)')" class="size-btn p-3 rounded-xl border border-amber-500 bg-amber-950/20 text-center">
+            <span class="block text-xs font-semibold text-white">12 oz (340g)</span>
+            <span class="block text-[11px] text-amber-400 mt-0.5">$24.00</span>
+          </button>
+          <button onclick="selectSize(this, 58, '2 lb (907g)')" class="size-btn p-3 rounded-xl border border-zinc-800 bg-zinc-900/60 text-center hover:border-zinc-700">
+            <span class="block text-xs font-semibold text-zinc-300">2 lb (907g)</span>
+            <span class="block text-[11px] text-zinc-400 mt-0.5">$58.00</span>
+          </button>
+          <button onclick="selectSize(this, 115, '5 lb Bulk Bag')" class="size-btn p-3 rounded-xl border border-zinc-800 bg-zinc-900/60 text-center hover:border-zinc-700">
+            <span class="block text-xs font-semibold text-zinc-300">5 lb Bulk</span>
+            <span class="block text-[11px] text-zinc-400 mt-0.5">$115.00</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Grind Selector -->
+      <div class="mb-6">
+        <div class="flex justify-between items-center mb-2">
+          <label class="text-xs uppercase tracking-wider font-semibold text-zinc-300">Select Grind Profile</label>
+          <span class="text-[11px] text-amber-400">Whole Bean Recommended</span>
+        </div>
+        <select id="grind-select" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-zinc-200 focus:outline-none focus:border-amber-400">
+          <option value="Whole Bean">Whole Bean (Maximum Aromatics Preservation)</option>
+          <option value="Pour Over / Chemex">Pour Over / Chemex (Medium-Coarse)</option>
+          <option value="Espresso">Fine Espresso (9-Bar Extraction)</option>
+          <option value="French Press / Cold Brew">French Press / Cold Brew (Coarse)</option>
+        </select>
+      </div>
+
+      <!-- Purchase / Subscription Toggle -->
+      <div class="mb-8 p-4 rounded-2xl border border-amber-900/40 bg-zinc-900/40 space-y-3">
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input type="radio" name="purchase-type" value="onetime" checked onchange="togglePurchaseType('onetime')" class="text-amber-500 focus:ring-0" />
+          <span class="text-xs font-medium text-zinc-200">One-Time Delivery</span>
+        </label>
+        <label class="flex items-center justify-between cursor-pointer">
+          <div class="flex items-center gap-3">
+            <input type="radio" name="purchase-type" value="subscription" onchange="togglePurchaseType('sub')" class="text-amber-500 focus:ring-0" />
+            <span class="text-xs font-medium text-zinc-200">Subscribe & Deliver Fresh Every 2 Weeks</span>
+          </div>
+          <span class="badge-gold text-[10px]">Save 15%</span>
+        </label>
+      </div>
+
+      <!-- Action Button -->
+      <button 
+        id="add-pdp-btn"
+        onclick="handlePDPAddToCart()" 
+        class="w-full btn-gold text-xs py-4 justify-center text-center font-bold uppercase tracking-widest shadow-2xl mb-4"
+      >
+        Add To Bag • <span id="btn-price">$24.00</span>
+      </button>
+
+      <p class="text-[11px] text-center text-zinc-500 mb-8">
+        Roasted fresh every Monday & Thursday in Bushwick, Brooklyn.
+      </p>
+
+      <!-- Terroir Specs Accordion -->
+      <div class="border-t border-zinc-800 pt-6 space-y-4 text-xs">
+        <div class="grid grid-cols-2 gap-4 py-2 border-b border-zinc-800/60">
+          <span class="text-zinc-500 uppercase">Altitude</span>
+          <span class="text-zinc-200 text-right">2,150 – 2,300 Meters</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4 py-2 border-b border-zinc-800/60">
+          <span class="text-zinc-500 uppercase">Variety</span>
+          <span class="text-zinc-200 text-right">74110 & 74112 Heirloom</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4 py-2 border-b border-zinc-800/60">
+          <span class="text-zinc-500 uppercase">Processing</span>
+          <span class="text-zinc-200 text-right">21-Day Raised Bed Natural</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4 py-2 border-b border-zinc-800/60">
+          <span class="text-zinc-500 uppercase">Roast Profile</span>
+          <span class="text-zinc-200 text-right">Ultra-Light Filter Roast</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Slide-Over Luxury Cart Drawer Component -->
+  <div id="cart-backdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#120F0D] border-l border-zinc-800 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="p-6 border-b border-zinc-800/80 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif text-lg text-white">Your Roastery Bag</h3>
+        <span class="cart-count-badge badge-gold">1</span>
+      </div>
+      <button onclick="closeCartDrawer()" class="p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 py-3 bg-zinc-900/50 border-b border-zinc-800/50">
+      <div class="text-[11px] text-zinc-300 mb-1.5" id="shipping-text">
+        Add <span class="text-amber-400 font-semibold">$36.00</span> more for Free NYC Delivery
+      </div>
+      <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+        <div id="shipping-progress" class="bg-gradient-to-r from-amber-600 to-amber-400 h-full transition-all duration-300" style="width: 40%"></div>
+      </div>
+    </div>
+    <div id="cart-items-container" class="flex-grow overflow-y-auto px-6 py-2"></div>
+    <div class="p-6 border-t border-zinc-800/80 bg-[#0E0C0A]">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-xs uppercase tracking-wider text-zinc-400">Subtotal</span>
+        <span id="cart-subtotal" class="font-serif text-xl font-bold text-amber-300">$24.00</span>
+      </div>
+      <button onclick="triggerDemoCheckout()" class="w-full btn-gold text-xs py-3.5 justify-center text-center font-bold tracking-wider uppercase">
+        Proceed To Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Video Lightbox Modal -->
+  <div id="video-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl bg-zinc-950 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl">
+      <div class="p-4 border-b border-zinc-800 flex items-center justify-between bg-zinc-900">
+        <h3 id="modal-video-title" class="text-sm font-semibold text-white tracking-wide">Motion Reel</h3>
+        <button onclick="closeVideoLightbox()" class="text-zinc-400 hover:text-white p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="aspect-video bg-black flex items-center justify-center relative overflow-hidden">
+        <video id="modal-video-player" controls playsinline class="w-full h-full object-contain"></video>
+        <div id="modal-video-fallback" class="hidden absolute inset-0 bg-[#0F0C0A] flex flex-col items-center justify-center p-8 text-center">
+          <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/60 flex items-center justify-center shadow-2xl mb-4">
+            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-950/80 border border-amber-500/40 text-amber-300 text-[10px] tracking-widest uppercase mb-2">
+            Hyper-Motion Simulation
+          </span>
+          <h4 class="font-serif text-xl text-white font-bold mb-2">Macro Extraction & Pour Dynamics</h4>
+          <p class="text-xs text-zinc-400 max-w-md leading-relaxed">
+            In demonstration mode. Drop your ready 4K hyper-motion clip into <code class="text-amber-300">/videos/</code> to stream uncompressed footage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/js/main.js"></script>
+  <script>
+    let currentSelectedPrice = 24.00;
+    let currentSelectedSize = '12 oz (340g)';
+    let isSubscription = false;
+
+    function changeProductImage(src) {
+      const img = document.getElementById('main-product-image');
+      img.style.opacity = '0.4';
+      setTimeout(() => {
+        img.src = src;
+        img.style.opacity = '1';
+      }, 150);
+    }
+
+    function selectSize(btn, price, size) {
+      document.querySelectorAll('.size-btn').forEach(b => {
+        b.classList.remove('border-amber-500', 'bg-amber-950/20');
+        b.classList.add('border-zinc-800', 'bg-zinc-900/60');
+      });
+      btn.classList.remove('border-zinc-800', 'bg-zinc-900/60');
+      btn.classList.add('border-amber-500', 'bg-amber-950/20');
+
+      currentSelectedPrice = price;
+      currentSelectedSize = size;
+      updatePDPPrice();
+    }
+
+    function togglePurchaseType(type) {
+      isSubscription = (type === 'sub');
+      updatePDPPrice();
+    }
+
+    function updatePDPPrice() {
+      let finalPrice = currentSelectedPrice;
+      if (isSubscription) {
+        finalPrice = currentSelectedPrice * 0.85;
+      }
+      document.getElementById('display-price').textContent = `$${finalPrice.toFixed(2)}`;
+      document.getElementById('btn-price').textContent = `$${finalPrice.toFixed(2)}`;
+    }
+
+    function handlePDPAddToCart() {
+      const grind = document.getElementById('grind-select').value;
+      let finalPrice = isSubscription ? currentSelectedPrice * 0.85 : currentSelectedPrice;
+      
+      addToCart({
+        id: `ethiopia-guji-${currentSelectedSize.replace(/\s+/g, '')}`,
+        name: `Ethiopia Guji Uraga Natural ${isSubscription ? '(Sub)' : ''}`,
+        roast: 'Light Roast • Peach & Jasmine',
+        size: currentSelectedSize,
+        grind: grind,
+        price: finalPrice,
+        image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80'
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATELIER LEVAIN | Parisian Hearth Bakery & Viennoiserie NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF7F2',
+            surface: '#FFFFFF',
+            sand: '#F2ECE1',
+            ink: '#191715',
+            terracotta: '#C25B3E',
+            terracottadark: '#A8482D',
+            line: '#E5DDD0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FAF7F2] text-[#191715] min-h-screen flex flex-col font-sans selection:bg-[#C25B3E] selection:text-white">
+
+  <!-- Top Editorial Masthead Ticker -->
+  <div class="bg-[#F2ECE1] border-b border-[#E5DDD0] text-[11px] font-mono py-2 px-6 flex flex-col md:flex-row items-center justify-between gap-2 text-[#5C554E]">
+    <div class="flex items-center gap-3">
+      <span class="inline-block w-2 h-2 rounded-full bg-[#C25B3E] animate-pulse"></span>
+      <span>HEARTH TEMPER: 485°F • 68H RETARDATION IN PROGRESS • GREENPOINT ATELIER</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <span>TODAY'S COUNTER: <strong class="text-[#191715]">84% RESERVED</strong></span>
+      <span class="hidden md:inline text-zinc-300">|</span>
+      <a href="./catering.html" class="hover:text-[#C25B3E] transition underline">Michelin Restaurant Allocations →</a>
+    </div>
+  </div>
+
+  <!-- Primary Architectural Header -->
+  <header class="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E5DDD0]">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      
+      <!-- Brand Identity -->
+      <a href="./index.html" class="flex flex-col">
+        <span class="font-serif text-2xl md:text-3xl font-extrabold tracking-tight text-[#191715] uppercase leading-none">
+          ATELIER LEVAIN
+        </span>
+        <span class="font-mono text-[9px] tracking-[0.3em] uppercase text-[#C25B3E] mt-1">
+          Boulangerie & Viennoiserie d'Auteur • NYC
+        </span>
+      </a>
+
+      <!-- Minimalist Editorial Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-[#5C554E]">
+        <a href="./menu.html" class="hover:text-[#C25B3E] transition pb-1">The Counter</a>
+        <a href="./product.html" class="hover:text-[#C25B3E] transition pb-1">68h Miche Anatomy</a>
+        <a href="./craft.html" class="hover:text-[#C25B3E] transition pb-1">Fermentation Science</a>
+        <a href="./catering.html" class="hover:text-[#C25B3E] transition pb-1">Allocations</a>
+      </nav>
+
+      <!-- Morning Box Action Pill -->
+      <div class="flex items-center gap-4">
+        <button onclick="toggleCrustSound()" id="crust-sound-btn" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded border border-[#E5DDD0] bg-white text-[11px] font-mono text-[#5C554E] hover:border-[#191715] transition">
+          <span>🔊 Crust Sound ASMR</span>
+        </button>
+
+        <button onclick="openBoxDrawer()" class="flex items-center gap-3 px-4 py-2 rounded bg-[#191715] text-[#FAF7F2] text-xs font-mono uppercase tracking-wider hover:bg-[#C25B3E] transition group shadow-sm">
+          <span>Morning Box</span>
+          <span class="box-slot-count px-1.5 py-0.5 rounded bg-[#C25B3E] text-white text-[10px] font-bold">2/4</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section: High-Fashion Editorial Asymmetry -->
+  <section class="py-16 md:py-24 px-6 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-b border-[#E5DDD0]">
+    
+    <!-- Left Editorial Story Column (7 cols) -->
+    <div class="lg:col-span-7 space-y-6">
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#F2ECE1] border border-[#E5DDD0] text-[10px] font-mono tracking-widest uppercase text-[#C25B3E]">
+        <span>Hyper-Motion Demo Concept • Parisian Editorial Aesthetic</span>
+      </div>
+
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal leading-[1.02] tracking-tight text-[#191715]">
+        The Kinetic Beauty <br />
+        <span class="italic font-serif text-[#C25B3E]">Of Wild Ferment.</span>
+      </h1>
+
+      <p class="text-base md:text-lg text-[#5C554E] font-light max-w-xl leading-relaxed">
+        We do not use commercial yeast, rapid dough conditioners, or industrial rolling. Every loaf rests 68 hours in spruce bannetons, while our 27-layer viennoiserie is hand-sheeted at 14°C using 84% Normandy cultured butter.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+        <a href="./menu.html" class="btn-terracotta text-xs font-mono uppercase tracking-wider justify-center">
+          Curate 4-Piece Morning Box →
+        </a>
+        <a href="./product.html" class="btn-editorial-outline text-xs font-mono uppercase tracking-wider justify-center">
+          Inspect 68h Loaf Anatomy
+        </a>
+      </div>
+
+      <!-- Provenance Matrix -->
+      <div class="grid grid-cols-3 gap-6 pt-10 border-t border-[#E5DDD0] text-left">
+        <div>
+          <span class="font-serif text-2xl font-bold text-[#191715] block">68 Hours</span>
+          <span class="font-mono text-[10px] text-[#948A80] uppercase tracking-wider">Cold Retardation</span>
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-bold text-[#191715] block">84% Fat</span>
+          <span class="font-mono text-[10px] text-[#948A80] uppercase tracking-wider">Normandy Butter</span>
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-bold text-[#191715] block">14 Years</span>
+          <span class="font-mono text-[10px] text-[#948A80] uppercase tracking-wider">Mother Levain Culture</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Arch Media Canvas (5 cols) -->
+    <div class="lg:col-span-5 flex flex-col items-center">
+      <div class="relative w-full max-w-md arch-frame aspect-[3/4] border border-[#E5DDD0] bg-[#F2ECE1] shadow-xl overflow-hidden group">
+        <img 
+          src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=85" 
+          alt="Laminated Croissant Flaking" 
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
+        />
+        <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-[#191715]/90 via-[#191715]/40 to-transparent text-white">
+          <span class="font-mono text-[10px] uppercase text-[#E5A952] tracking-widest block mb-1">120 FPS Macro Capture</span>
+          <h4 class="font-serif text-xl font-bold">27-Layer Flake Shatter</h4>
+          <p class="text-xs text-zinc-300 font-light mt-1">Captured under high-speed thermal strobe lighting in our Greenpoint studio.</p>
+        </div>
+      </div>
+      <div class="mt-4 flex items-center gap-2 text-[11px] font-mono text-[#948A80]">
+        <span>Atelier Camera 01</span>
+        <span>•</span>
+        <button onclick="toggleCrustSound()" class="text-[#C25B3E] hover:underline font-bold">
+          Click to test sound crackle
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- The Marble Display Counter (Curate Your Box) -->
+  <section class="py-20 px-6 max-w-7xl mx-auto w-full">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b border-[#E5DDD0] pb-6">
+      <div>
+        <span class="tag-terracotta mb-2">Today's Morning Batch • Tray 01</span>
+        <h2 class="font-serif text-3xl md:text-5xl text-[#191715]">The Marble Display Counter</h2>
+      </div>
+      <p class="text-xs font-mono text-[#5C554E] max-w-xs">
+        Select pastries to add to your custom 4-piece morning box or reserve individual loaves.
+      </p>
+    </div>
+
+    <!-- Pastry Display Grid (4 items) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Item 1 -->
+      <div class="card-editorial p-5 flex flex-col justify-between group">
+        <div>
+          <div class="relative overflow-hidden aspect-square bg-[#F2ECE1] rounded mb-4">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Normandy Croissant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[9px] font-mono uppercase px-2 py-0.5 rounded text-[#191715] font-bold">27 Layers</span>
+          </div>
+          <span class="text-[10px] font-mono uppercase text-[#C25B3E] tracking-wider">Viennoiserie</span>
+          <h3 class="font-serif text-lg font-bold text-[#191715] mt-0.5 mb-1">Normandy Butter Croissant</h3>
+          <p class="text-xs text-[#5C554E] leading-relaxed mb-3">84% butterfat Charentes-Poitou butter, honeycomb interior, audible shatter crust.</p>
+        </div>
+        <div class="pt-4 border-t border-[#E5DDD0] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#191715]">$6.00</span>
+          <button onclick="addToBox({ id: 'croissant-classic', name: '27-Layer Normandy Croissant', price: 6.00, image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=400&q=80' })" class="text-xs font-mono uppercase tracking-wider text-[#C25B3E] hover:text-[#191715] font-bold">
+            + Add To Box
+          </button>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="card-editorial p-5 flex flex-col justify-between group">
+        <div>
+          <div class="relative overflow-hidden aspect-square bg-[#F2ECE1] rounded mb-4">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Country Sourdough Miche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[9px] font-mono uppercase px-2 py-0.5 rounded text-[#191715] font-bold">68h Retard</span>
+          </div>
+          <span class="text-[10px] font-mono uppercase text-[#C25B3E] tracking-wider">Hearth Sourdough</span>
+          <h3 class="font-serif text-lg font-bold text-[#191715] mt-0.5 mb-1">68-Hour Country Miche</h3>
+          <p class="text-xs text-[#5C554E] leading-relaxed mb-3">Red Fife & Spelt, dark caramelized blistered crust, hazelnut lactic tang.</p>
+        </div>
+        <div class="pt-4 border-t border-[#E5DDD0] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#191715]">$16.00</span>
+          <button onclick="addToBox({ id: 'country-miche', name: '68h Sourdough Miche', price: 16.00, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80' })" class="text-xs font-mono uppercase tracking-wider text-[#C25B3E] hover:text-[#191715] font-bold">
+            + Add To Box
+          </button>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="card-editorial p-5 flex flex-col justify-between group">
+        <div>
+          <div class="relative overflow-hidden aspect-square bg-[#F2ECE1] rounded mb-4">
+            <img src="https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?auto=format&fit=crop&w=600&q=80" alt="Pain Au Chocolat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[9px] font-mono uppercase px-2 py-0.5 rounded text-[#191715] font-bold">Triple Baton</span>
+          </div>
+          <span class="text-[10px] font-mono uppercase text-[#C25B3E] tracking-wider">Viennoiserie</span>
+          <h3 class="font-serif text-lg font-bold text-[#191715] mt-0.5 mb-1">Pain Au Chocolat Valrhona</h3>
+          <p class="text-xs text-[#5C554E] leading-relaxed mb-3">Three batons of Guanaja 70% dark chocolate enveloped in buttery flaky layers.</p>
+        </div>
+        <div class="pt-4 border-t border-[#E5DDD0] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#191715]">$7.00</span>
+          <button onclick="addToBox({ id: 'pain-chocolat', name: 'Pain Au Chocolat Valrhona', price: 7.00, image: 'https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?auto=format&fit=crop&w=400&q=80' })" class="text-xs font-mono uppercase tracking-wider text-[#C25B3E] hover:text-[#191715] font-bold">
+            + Add To Box
+          </button>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="card-editorial p-5 flex flex-col justify-between group">
+        <div>
+          <div class="relative overflow-hidden aspect-square bg-[#F2ECE1] rounded mb-4">
+            <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=600&q=80" alt="Toasted Sesame Batard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[9px] font-mono uppercase px-2 py-0.5 rounded text-[#191715] font-bold">Ancient Grain</span>
+          </div>
+          <span class="text-[10px] font-mono uppercase text-[#C25B3E] tracking-wider">Hearth Sourdough</span>
+          <h3 class="font-serif text-lg font-bold text-[#191715] mt-0.5 mb-1">Sesame Ancient Spelt Batard</h3>
+          <p class="text-xs text-[#5C554E] leading-relaxed mb-3">Encrusted in roasted sesame seeds with unbleached organic spelt and wild levain.</p>
+        </div>
+        <div class="pt-4 border-t border-[#E5DDD0] flex items-center justify-between">
+          <span class="font-mono text-sm font-bold text-[#191715]">$14.00</span>
+          <button onclick="addToBox({ id: 'sesame-batard', name: 'Sesame Spelt Batard', price: 14.00, image: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80' })" class="text-xs font-mono uppercase tracking-wider text-[#C25B3E] hover:text-[#191715] font-bold">
+            + Add To Box
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Feature: Loaf Anatomy Teaser -->
+  <section class="py-20 bg-[#F2ECE1] border-y border-[#E5DDD0] px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="tag-terracotta">Micro-Structure & Science</span>
+        <h2 class="font-serif text-3xl md:text-5xl text-[#191715] leading-tight">
+          How A 68-Hour Fermentation Shapes The Alveoli.
+        </h2>
+        <p class="text-sm md:text-base text-[#5C554E] font-light leading-relaxed">
+          Standard industrial bread uses fast-acting yeast that creates small, uniform, spongy air pockets that turn stale in 24 hours. Our 68-hour cold fermentation allows wild lactobacilli to synthesize natural aromatic acids while gently opening irregular, gelatinized honeycomb pockets.
+        </p>
+        <div class="pt-2">
+          <a href="./product.html" class="btn-ink text-xs font-mono uppercase tracking-wider">
+            Explore Interactive Hotspot Inspector →
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="bg-white border border-[#E5DDD0] p-6 rounded shadow-sm">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Crumb Cross Section" class="w-full h-64 object-cover rounded mb-4" />
+          <div class="flex items-center justify-between font-mono text-xs text-[#5C554E] pt-2 border-t border-[#E5DDD0]">
+            <span>Specimen: Red Fife Miche</span>
+            <span class="text-[#C25B3E] font-bold">Hydration: 86.4%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="bg-[#FAF7F2] border-t border-[#E5DDD0] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-[#5C554E]">
+      <div class="flex items-center gap-4">
+        <span class="font-serif text-xl font-bold text-[#191715]">ATELIER LEVAIN</span>
+        <span>• 105 Freeman St, Greenpoint NY</span>
+      </div>
+      <div class="flex gap-6 uppercase text-[11px]">
+        <a href="./menu.html" class="hover:text-[#C25B3E]">Counter</a>
+        <a href="./product.html" class="hover:text-[#C25B3E]">Loaf Anatomy</a>
+        <a href="./craft.html" class="hover:text-[#C25B3E]">Ferment Dial</a>
+        <a href="./catering.html" class="hover:text-[#C25B3E]">Allocations</a>
+      </div>
+      <p class="text-[#948A80]">© 2026 Atelier Levain. High-Fashion Editorial Demo.</p>
+    </div>
+  </footer>
+
+  <!-- BOTTOM SLIDE-UP TASTING BOX TRAY -->
+  <div id="box-backdrop" onclick="closeBoxDrawer()" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <aside id="morning-box-tray" class="fixed bottom-0 inset-x-0 z-50 tasting-box-tray transform translate-y-full transition-transform duration-300 ease-in-out p-6 md:p-8 max-w-4xl mx-auto rounded-t-2xl">
+    <div class="flex items-center justify-between pb-4 border-b border-[#E5DDD0] mb-6">
+      <div>
+        <h4 class="font-serif text-2xl font-bold text-[#191715]">Your 4-Pastry Morning Tasting Box</h4>
+        <p class="text-xs font-mono text-[#5C554E]">Curated fresh for tomorrow's dawn bake • Brooklyn & Manhattan delivery</p>
+      </div>
+      <button onclick="closeBoxDrawer()" class="p-2 text-[#948A80] hover:text-[#191715] font-mono text-sm">✕ Close</button>
+    </div>
+
+    <!-- 4 Visual Slots -->
+    <div id="box-slots-display" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <!-- Injected dynamically via main.js -->
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-[#E5DDD0] gap-4">
+      <div>
+        <span class="font-mono text-xs text-[#5C554E] block">Box Total (Taxes incl.)</span>
+        <span id="box-total-amount" class="font-mono text-2xl font-bold text-[#191715]">$10.50</span>
+      </div>
+      <button onclick="triggerMorningBoxOrder()" class="btn-terracotta w-full sm:w-auto text-xs font-mono uppercase tracking-wider justify-center">
+        Lock In Tomorrow's Morning Box →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Editorial Toast Container -->
+  <div id="editorial-toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>

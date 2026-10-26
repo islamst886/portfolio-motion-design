@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wholesale Coffee Program | KURA Coffee Roasters NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#0A0807] text-[#F8F5F0] min-h-screen flex flex-col font-sans selection:bg-[#C59B63] selection:text-black">
+
+  <!-- Top Announcement Ribbon -->
+  <div class="bg-gradient-to-r from-amber-950/90 via-[#1F1916] to-amber-950/90 border-b border-amber-900/30 text-xs py-2 px-4 text-center tracking-wider text-amber-200/90 flex items-center justify-center gap-3">
+    <span>NOW ONBOARDING NEW NYC PARTNERS FOR Q4 2026 • COMPLIMENTARY TASTING FLIGHT INCLUDED</span>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-950/30 group-hover:border-amber-400 transition-colors">
+          <span class="font-serif text-amber-300 font-bold text-lg">K</span>
+        </div>
+        <div>
+          <span class="font-serif tracking-widest text-xl font-bold uppercase text-zinc-100 group-hover:text-amber-200 transition">KURA</span>
+          <span class="block text-[9px] tracking-[0.28em] text-amber-500/80 uppercase">Roasters • Brooklyn</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-zinc-300">
+        <a href="./shop.html" class="hover:text-amber-400 transition">Single Origins</a>
+        <a href="./product.html" class="hover:text-amber-400 transition">Signature Reserve</a>
+        <a href="./story.html" class="hover:text-amber-400 transition">Our Craft & Motion</a>
+        <a href="./wholesale.html" class="text-amber-400 border-b border-amber-400 pb-1">Wholesale B2B</a>
+      </div>
+
+      <div class="flex items-center gap-5">
+        <button onclick="openCartDrawer()" class="relative p-2.5 rounded-full border border-zinc-800 bg-zinc-900/80 hover:border-amber-500/50 text-zinc-300 hover:text-white transition group">
+          <svg class="w-5 h-5 text-amber-200/90 group-hover:scale-105 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="cart-count-badge absolute -top-1 -right-1 w-5 h-5 rounded-full bg-amber-500 text-black text-[10px] font-extrabold flex items-center justify-center shadow-md">1</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Wholesale Header -->
+  <header class="py-20 px-6 max-w-5xl mx-auto text-center">
+    <span class="badge-gold mb-3">Wholesale & Hospitality Partnerships</span>
+    <h1 class="text-4xl md:text-6xl font-serif text-white mb-6">Partner With Our Brooklyn Roastery</h1>
+    <p class="text-zinc-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto font-light">
+      From neighborhood coffee bars in Williamsburg to Michelin-starred dining rooms in Manhattan, we provide custom roast profiles, commercial espresso equipment, and hands-on barista calibration.
+    </p>
+  </header>
+
+  <!-- Pillar Grid -->
+  <section class="max-w-7xl mx-auto px-6 mb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="card-luxury p-8 rounded-2xl">
+      <div class="w-12 h-12 rounded-xl bg-amber-950/40 border border-amber-500/30 flex items-center justify-center text-amber-300 mb-6 font-serif text-xl">
+        01
+      </div>
+      <h3 class="font-serif text-xl text-white mb-3">Custom Roast Profiling</h3>
+      <p class="text-xs text-zinc-400 leading-relaxed">
+        Work with our Head Roaster to create a proprietary espresso blend or private micro-lot rotation exclusive to your establishment.
+      </p>
+    </div>
+
+    <div class="card-luxury p-8 rounded-2xl">
+      <div class="w-12 h-12 rounded-xl bg-amber-950/40 border border-amber-500/30 flex items-center justify-center text-amber-300 mb-6 font-serif text-xl">
+        02
+      </div>
+      <h3 class="font-serif text-xl text-white mb-3">Equipment Consultation & Supply</h3>
+      <p class="text-xs text-zinc-400 leading-relaxed">
+        Authorized partner for La Marzocco, Mahlkönig, and Marco Beverage Systems. Wholesale pricing, installation, and 24/7 emergency dispatch.
+      </p>
+    </div>
+
+    <div class="card-luxury p-8 rounded-2xl">
+      <div class="w-12 h-12 rounded-xl bg-amber-950/40 border border-amber-500/30 flex items-center justify-center text-amber-300 mb-6 font-serif text-xl">
+        03
+      </div>
+      <h3 class="font-serif text-xl text-white mb-3">Barista Training Academy</h3>
+      <p class="text-xs text-zinc-400 leading-relaxed">
+        Unlimited access to our Bushwick training lab for your team. Dial-in fundamentals, sensory cupping, milk texturing, and preventive maintenance.
+      </p>
+    </div>
+  </section>
+
+  <!-- Wholesale Inquiry Form Section -->
+  <main class="max-w-4xl mx-auto px-6 pb-24 w-full">
+    <div class="rounded-3xl border border-zinc-800 bg-gradient-to-b from-[#161210] to-[#0D0B0A] p-8 md:p-12 shadow-2xl">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="badge-gold mb-2">Request A Tasting Flight</span>
+        <h2 class="text-2xl md:text-4xl font-serif text-white mb-2">Start The Conversation</h2>
+        <p class="text-xs text-zinc-400">Tell us about your space. We'll send a complimentary 3-lot sample flight to your door within 48 hours.</p>
+      </div>
+
+      <form id="wholesale-form" onsubmit="handleWholesaleSubmit(event)" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-zinc-300 mb-2">Contact Name *</label>
+            <input type="text" required placeholder="Elena Vance" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400" />
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-zinc-300 mb-2">Business Email *</label>
+            <input type="email" required placeholder="elena@yourcafe.com" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-zinc-300 mb-2">Company / Establishment *</label>
+            <input type="text" required placeholder="Devoción / Bakery Name" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400" />
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-zinc-300 mb-2">Neighborhood / Location *</label>
+            <input type="text" required placeholder="Williamsburg, Brooklyn or Manhattan" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-zinc-300 mb-2">Establishment Type</label>
+            <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-zinc-200 focus:outline-none focus:border-amber-400">
+              <option>Specialty Coffee Shop</option>
+              <option>Artisanal Bakery / Pastry Cafe</option>
+              <option>Fine Dining Restaurant</option>
+              <option>Boutique Hotel</option>
+              <option>Corporate Studio / Tech Office</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-zinc-300 mb-2">Estimated Weekly Volume</label>
+            <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-zinc-200 focus:outline-none focus:border-amber-400">
+              <option>10 – 25 lbs / week</option>
+              <option>25 – 50 lbs / week</option>
+              <option>50 – 100 lbs / week</option>
+              <option>100+ lbs / week (High Volume)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-zinc-300 mb-2">Additional Notes / Equipment Needs</label>
+          <textarea rows="4" placeholder="Tell us about your timeline, current espresso setup, or special roast requirements..." class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400"></textarea>
+        </div>
+
+        <button type="submit" class="w-full btn-gold text-xs py-4 justify-center text-center font-bold uppercase tracking-widest shadow-2xl">
+          Submit Wholesale Inquiry & Request Sample Flight →
+        </button>
+      </form>
+
+      <div id="form-success" class="hidden text-center py-8">
+        <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h3 class="font-serif text-2xl text-white mb-2">Inquiry Received</h3>
+        <p class="text-xs text-zinc-400 max-w-md mx-auto">
+          Thank you! Our Roastery Director will contact you within 24 hours to schedule your cupping session and dispatch your tasting box.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-[#080605] border-t border-zinc-900 py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
+      <div class="flex items-center gap-3">
+        <span class="font-serif tracking-widest text-lg font-bold uppercase text-white">KURA COFFEE</span>
+        <span>• Brooklyn NYC</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="./index.html" class="hover:text-amber-300">Home</a>
+        <a href="./shop.html" class="hover:text-amber-300">Shop</a>
+        <a href="./product.html" class="hover:text-amber-300">Reserve</a>
+        <a href="./story.html" class="hover:text-amber-300">Our Craft</a>
+        <a href="./wholesale.html" class="text-amber-300">Wholesale</a>
+      </div>
+      <p class="text-[11px] text-zinc-500">© 2026 KURA Coffee Roasters Demo.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Luxury Cart Drawer Component -->
+  <div id="cart-backdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#120F0D] border-l border-zinc-800 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="p-6 border-b border-zinc-800/80 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif text-lg text-white">Your Roastery Bag</h3>
+        <span class="cart-count-badge badge-gold">1</span>
+      </div>
+      <button onclick="closeCartDrawer()" class="p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 py-3 bg-zinc-900/50 border-b border-zinc-800/50">
+      <div class="text-[11px] text-zinc-300 mb-1.5" id="shipping-text">
+        Add <span class="text-amber-400 font-semibold">$36.00</span> more for Free NYC Delivery
+      </div>
+      <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+        <div id="shipping-progress" class="bg-gradient-to-r from-amber-600 to-amber-400 h-full transition-all duration-300" style="width: 40%"></div>
+      </div>
+    </div>
+    <div id="cart-items-container" class="flex-grow overflow-y-auto px-6 py-2"></div>
+    <div class="p-6 border-t border-zinc-800/80 bg-[#0E0C0A]">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-xs uppercase tracking-wider text-zinc-400">Subtotal</span>
+        <span id="cart-subtotal" class="font-serif text-xl font-bold text-amber-300">$24.00</span>
+      </div>
+      <button onclick="triggerDemoCheckout()" class="w-full btn-gold text-xs py-3.5 justify-center text-center font-bold tracking-wider uppercase">
+        Proceed To Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <script src="./src/js/main.js"></script>
+  <script>
+    function handleWholesaleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('wholesale-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

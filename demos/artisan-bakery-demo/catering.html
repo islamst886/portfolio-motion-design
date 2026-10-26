@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospitality & Restaurant Allocations | ATELIER LEVAIN NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#FAF7F2] text-[#191715] min-h-screen flex flex-col font-sans selection:bg-[#C25B3E] selection:text-white">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E5DDD0]">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <a href="./index.html" class="flex flex-col">
+        <span class="font-serif text-2xl md:text-3xl font-extrabold tracking-tight text-[#191715] uppercase leading-none">
+          ATELIER LEVAIN
+        </span>
+        <span class="font-mono text-[9px] tracking-[0.3em] uppercase text-[#C25B3E] mt-1">
+          Boulangerie & Viennoiserie d'Auteur • NYC
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-[#5C554E]">
+        <a href="./menu.html" class="hover:text-[#C25B3E] transition pb-1">The Counter</a>
+        <a href="./product.html" class="hover:text-[#C25B3E] transition pb-1">68h Miche Anatomy</a>
+        <a href="./craft.html" class="hover:text-[#C25B3E] transition pb-1">Fermentation Science</a>
+        <a href="./catering.html" class="text-[#C25B3E] border-b border-[#C25B3E] pb-1 font-bold">Allocations</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button onclick="openBoxDrawer()" class="flex items-center gap-3 px-4 py-2 rounded bg-[#191715] text-[#FAF7F2] text-xs font-mono uppercase tracking-wider hover:bg-[#C25B3E] transition group">
+          <span>Morning Box</span>
+          <span class="box-slot-count px-1.5 py-0.5 rounded bg-[#C25B3E] text-white text-[10px] font-bold">2/4</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-5xl mx-auto px-6 py-20 w-full flex-grow">
+    
+    <div class="max-w-3xl mb-16">
+      <span class="tag-terracotta mb-3">B2B Hospitality Allocations</span>
+      <h1 class="font-serif text-4xl md:text-6xl text-[#191715] mb-4">Restaurant & Event Bread Allocations</h1>
+      <p class="text-sm md:text-base text-[#5C554E] font-light leading-relaxed">
+        We reserve daily morning production quotas of our 68-hour wild sourdough and laminated viennoiserie for premier dining rooms, luxury boutique hotels, and design studios across New York City.
+      </p>
+    </div>
+
+    <!-- 3 Tier Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      
+      <div class="bg-white border border-[#E5DDD0] p-6 rounded">
+        <span class="font-mono text-[10px] uppercase text-[#C25B3E] tracking-widest block mb-2">Program 01</span>
+        <h4 class="font-serif text-xl font-bold text-[#191715] mb-2">Fine Dining Daily Bread Route</h4>
+        <p class="text-xs text-[#5C554E] leading-relaxed mb-4">
+          Direct dawn dispatch at 5:30 AM. Warm loaves delivered to your pastry chef or kitchen before morning service.
+        </p>
+        <span class="font-mono text-xs font-bold text-[#191715]">Daily Standing Orders</span>
+      </div>
+
+      <div class="bg-white border border-[#E5DDD0] p-6 rounded">
+        <span class="font-mono text-[10px] uppercase text-[#C25B3E] tracking-widest block mb-2">Program 02</span>
+        <h4 class="font-serif text-xl font-bold text-[#191715] mb-2">Studio Viennoiserie Crates</h4>
+        <p class="text-xs text-[#5C554E] leading-relaxed mb-4">
+          24 or 48-piece crates of freshly sheeted croissants, pain au chocolat, and seasonal cruffins for corporate client mornings.
+        </p>
+        <span class="font-mono text-xs font-bold text-[#191715]">Delivered by 8:30 AM</span>
+      </div>
+
+      <div class="bg-white border border-[#E5DDD0] p-6 rounded">
+        <span class="font-mono text-[10px] uppercase text-[#C25B3E] tracking-widest block mb-2">Program 03</span>
+        <h4 class="font-serif text-xl font-bold text-[#191715] mb-2">Bespoke Gala Bread Installations</h4>
+        <p class="text-xs text-[#5C554E] leading-relaxed mb-4">
+          Live carved 3kg miches, artisanal cultured butter flights with Maldon crystals, and towering viennoiserie stations.
+        </p>
+        <span class="font-mono text-xs font-bold text-[#191715]">Events 50 – 500 Guests</span>
+      </div>
+
+    </div>
+
+    <!-- Booking Form -->
+    <div class="bg-white border border-[#E5DDD0] rounded p-8 md:p-12 shadow-sm">
+      <div class="max-w-xl mb-8">
+        <h3 class="font-serif text-2xl md:text-3xl font-bold text-[#191715] mb-2">Request Allocation & Tasting Flight</h3>
+        <p class="text-xs font-mono text-[#5C554E]">We will dispatch a complimentary sample loaf & pastry crate to your kitchen within 48 hours.</p>
+      </div>
+
+      <form id="allocation-form" onsubmit="event.preventDefault(); document.getElementById('allocation-form').classList.add('hidden'); document.getElementById('allocation-success').classList.remove('hidden');" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block font-mono text-xs uppercase tracking-wider text-[#191715] mb-2 font-bold">Contact Name *</label>
+            <input type="text" required placeholder="Chef Laurent" class="w-full bg-[#FAF7F2] border border-[#E5DDD0] rounded p-3 text-xs font-mono text-[#191715] focus:outline-none focus:border-[#C25B3E]" />
+          </div>
+          <div>
+            <label class="block font-mono text-xs uppercase tracking-wider text-[#191715] mb-2 font-bold">Work Email *</label>
+            <input type="email" required placeholder="laurent@restaurant.com" class="w-full bg-[#FAF7F2] border border-[#E5DDD0] rounded p-3 text-xs font-mono text-[#191715] focus:outline-none focus:border-[#C25B3E]" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block font-mono text-xs uppercase tracking-wider text-[#191715] mb-2 font-bold">Establishment / Event Name *</label>
+            <input type="text" required placeholder="Le Bilboquet / Studio Name" class="w-full bg-[#FAF7F2] border border-[#E5DDD0] rounded p-3 text-xs font-mono text-[#191715] focus:outline-none focus:border-[#C25B3E]" />
+          </div>
+          <div>
+            <label class="block font-mono text-xs uppercase tracking-wider text-[#191715] mb-2 font-bold">Location / Neighborhood *</label>
+            <input type="text" required placeholder="SoHo, West Village, or Williamsburg" class="w-full bg-[#FAF7F2] border border-[#E5DDD0] rounded p-3 text-xs font-mono text-[#191715] focus:outline-none focus:border-[#C25B3E]" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block font-mono text-xs uppercase tracking-wider text-[#191715] mb-2 font-bold">Program Type</label>
+            <select class="w-full bg-[#FAF7F2] border border-[#E5DDD0] rounded p-3 text-xs font-mono text-[#191715] focus:outline-none focus:border-[#C25B3E]">
+              <option>Daily Restaurant Bread Allocation</option>
+              <option>Corporate Studio Morning Pastry Crate</option>
+              <option>Private Wedding / Gala Bread Station</option>
+              <option>Boutique Hotel Breakfast Program</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-mono text-xs uppercase tracking-wider text-[#191715] mb-2 font-bold">Estimated Daily Volume / Guest Count</label>
+            <select class="w-full bg-[#FAF7F2] border border-[#E5DDD0] rounded p-3 text-xs font-mono text-[#191715] focus:outline-none focus:border-[#C25B3E]">
+              <option>10 – 25 Loaves / Day</option>
+              <option>25 – 60 Loaves / Day</option>
+              <option>50 – 150 Guests (Event)</option>
+              <option>150+ Large Production</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-mono text-xs uppercase tracking-wider text-[#191715] mb-2 font-bold">Service Details & Special Requests</label>
+          <textarea rows="3" placeholder="Tell us about desired delivery times (e.g. 6:00 AM), preferred crust profiles, or launch dates..." class="w-full bg-[#FAF7F2] border border-[#E5DDD0] rounded p-3 text-xs font-mono text-[#191715] focus:outline-none focus:border-[#C25B3E]"></textarea>
+        </div>
+
+        <button type="submit" class="btn-terracotta w-full justify-center text-xs font-mono uppercase tracking-wider py-4">
+          Submit Allocation Request & Request Sample Crate →
+        </button>
+      </form>
+
+      <div id="allocation-success" class="hidden text-center py-8">
+        <span class="inline-block w-12 h-12 rounded-full bg-[#FAF7F2] text-[#C25B3E] border border-[#C25B3E] flex items-center justify-center mx-auto mb-4 text-xl">✓</span>
+        <h4 class="font-serif text-2xl font-bold text-[#191715] mb-2">Allocation Request Logged</h4>
+        <p class="text-xs font-mono text-[#5C554E] max-w-md mx-auto">
+          Our Roastery & Bakery Hospitality Director will review your volume and dispatch your complimentary sample box within 24 hours.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-[#FAF7F2] border-t border-[#E5DDD0] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-[#5C554E]">
+      <div class="flex items-center gap-4">
+        <span class="font-serif text-xl font-bold text-[#191715]">ATELIER LEVAIN</span>
+        <span>• Greenpoint NYC</span>
+      </div>
+      <p class="text-[#948A80]">© 2026 Atelier Levain. High-Fashion Editorial Demo.</p>
+    </div>
+  </footer>
+
+  <!-- BOTTOM SLIDE-UP TASTING BOX TRAY -->
+  <div id="box-backdrop" onclick="closeBoxDrawer()" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <aside id="morning-box-tray" class="fixed bottom-0 inset-x-0 z-50 tasting-box-tray transform translate-y-full transition-transform duration-300 ease-in-out p-6 md:p-8 max-w-4xl mx-auto rounded-t-2xl">
+    <div class="flex items-center justify-between pb-4 border-b border-[#E5DDD0] mb-6">
+      <div>
+        <h4 class="font-serif text-2xl font-bold text-[#191715]">Your 4-Pastry Morning Tasting Box</h4>
+        <p class="text-xs font-mono text-[#5C554E]">Curated fresh for tomorrow's dawn bake</p>
+      </div>
+      <button onclick="closeBoxDrawer()" class="p-2 text-[#948A80] hover:text-[#191715] font-mono text-sm">✕ Close</button>
+    </div>
+    <div id="box-slots-display" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6"></div>
+    <div class="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-[#E5DDD0] gap-4">
+      <div>
+        <span class="font-mono text-xs text-[#5C554E] block">Box Total (Taxes incl.)</span>
+        <span id="box-total-amount" class="font-mono text-2xl font-bold text-[#191715]">$10.50</span>
+      </div>
+      <button onclick="triggerMorningBoxOrder()" class="btn-terracotta w-full sm:w-auto text-xs font-mono uppercase tracking-wider justify-center">
+        Lock In Tomorrow's Morning Box →
+      </button>
+    </div>
+  </aside>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>

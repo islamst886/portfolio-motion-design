@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ectoin Hydro-Microbiome Elixir | AURA BOTANICA LABS NYC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#F7F8F6] text-[#4A5750] min-h-screen flex flex-col font-sans selection:bg-[#1C3326] selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#1C3326] text-white py-2 px-4 text-center text-[10px] font-mono tracking-widest uppercase">
+    Complimentary carbon-neutral express delivery on all orders over $75 • Clean-room bottled in SoHo, NYC
+  </div>
+
+  <!-- Master Consumer Header -->
+  <header class="sticky top-0 z-40 bg-[#F7F8F6]/90 backdrop-blur-md border-b border-[#E2E8E4]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-mono uppercase tracking-wider text-[#4A5750]">
+        <a href="./catalog.html" class="hover:text-[#1C3326] transition">All Formulations</a>
+        <a href="./product-cleanser.html" class="hover:text-[#1C3326] transition">Enzyme Melt</a>
+        <a href="./product.html" class="hover:text-[#1C3326] transition">Bio-Retinoid</a>
+        <a href="./product-balm.html" class="hover:text-[#1C3326] transition">Ceramide Balm</a>
+        <a href="./product-ectoin.html" class="text-[#1C3326] font-bold border-b border-[#1C3326] pb-1">Ectoin Elixir</a>
+        <a href="./science.html" class="hover:text-[#1C3326] transition">Clinical Proof</a>
+      </nav>
+
+      <a href="./index.html" class="text-center group">
+        <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.25em] text-[#121E17] block uppercase group-hover:opacity-80 transition">
+          AURA BOTANICA
+        </span>
+        <span class="font-mono text-[8px] tracking-[0.35em] text-[#B89758] uppercase block mt-0.5 font-bold">
+          SoHo Atelier • New York
+        </span>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="./consultation.html" class="hidden sm:inline-flex text-xs font-mono text-[#1C3326] hover:underline uppercase tracking-wider">
+          Diagnostic Quiz
+        </a>
+        <button onclick="openRoutineDrawer()" class="flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1C3326] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#0E1E15] transition shadow-sm">
+          <span>Daily Routine</span>
+          <span class="routine-badge-count w-5 h-5 rounded-full bg-white text-[#1C3326] text-[10px] font-bold flex items-center justify-center">1</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Product Breadcrumb -->
+  <div class="border-b border-[#E2E8E4] bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 text-xs font-mono text-zinc-500">
+      <a href="./index.html" class="hover:text-[#1C3326]">Home</a>
+      <span>/</span>
+      <a href="./catalog.html" class="hover:text-[#1C3326]">Formulary</a>
+      <span>/</span>
+      <span class="text-[#1C3326] font-bold">Ectoin Hydro-Microbiome Elixir</span>
+    </div>
+  </div>
+
+  <!-- PDP Main Hero -->
+  <main class="max-w-7xl mx-auto px-6 py-12 md:py-16 w-full flex-grow">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      <!-- Left Column: Product Gallery & 120 FPS Video -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="relative bg-white rounded-3xl border border-[#E2E8E4] p-8 md:p-14 text-center shadow-sm">
+          <div class="absolute top-6 left-6 z-10 flex flex-col items-start gap-1">
+            <span class="text-[9px] font-mono uppercase bg-[#1C3326] text-white px-2.5 py-0.5 rounded-full font-bold">
+              TARGETED : MICROBIOME RESISTANCE
+            </span>
+            <span class="text-[9px] font-mono text-[#1C3326] bg-[#E8EFEA] px-2.5 py-0.5 rounded-full font-bold">
+              pH 5.6 BLUE LIGHT SHIELD
+            </span>
+          </div>
+
+          <!-- 100% INANIMATE PRODUCT SHOT (Zero Humans/Animals) -->
+          <img id="pdp-ectoin-image" src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=1000&q=80" alt="Ectoin Essence Bottle" class="max-h-[460px] mx-auto object-contain transition-transform duration-500 hover:scale-105" />
+
+          <!-- Video Launch Button -->
+          <div class="mt-8 flex justify-center">
+            <button onclick="openSkincareVideo('./assets/videos/Beauty Product.mp4', '120 FPS Extremolyte Hydro-Shield Kinematics')" class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#1C3326] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#0E1E15] transition shadow-md">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>Watch 120 FPS Hydro-Shield Kinematics</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Single-Product Alternate Angle Thumbnails (Only This Product) -->
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white border-2 border-[#1C3326] p-3 rounded-2xl flex flex-col items-center justify-center text-center">
+            <span class="font-mono text-[10px] text-[#1C3326] font-bold block">Angle 01</span>
+            <span class="text-[9px] text-zinc-500">Frosted Glass Essence</span>
+          </div>
+          <div class="bg-white border border-[#E2E8E4] p-3 rounded-2xl flex flex-col items-center justify-center text-center">
+            <span class="font-mono text-[10px] text-[#1C3326] font-bold block">Angle 02</span>
+            <span class="text-[9px] text-zinc-500">Microbiome Ferment</span>
+          </div>
+          <div class="bg-white border border-[#E2E8E4] p-3 rounded-2xl flex flex-col items-center justify-center text-center">
+            <span class="font-mono text-[10px] text-[#1C3326] font-bold block">Angle 03</span>
+            <span class="text-[9px] text-zinc-500">Dispenser Spout</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Specs, Customizers, and Add To Routine -->
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-[#B89758] font-bold block mb-1">
+            FORMULATION NO. 05 • BATCH #882
+          </span>
+          <h1 class="font-serif text-3xl sm:text-4xl text-[#121E17] leading-tight">
+            Ectoin Hydro-Microbiome Elixir
+          </h1>
+          <div class="flex items-center gap-3 mt-3">
+            <span id="pdp-ectoin-price" class="font-mono text-2xl font-bold text-[#1C3326]">$58.00</span>
+            <span class="text-xs font-mono text-zinc-400">/ 50ml Frosted Essence Bottle</span>
+            <span class="ml-auto font-mono text-[10px] bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-0.5 rounded-full font-bold">
+              ✓ Microbiome-Friendly Certified
+            </span>
+          </div>
+        </div>
+
+        <p class="text-xs text-[#4A5750] leading-relaxed font-light">
+          Harnessing the defensive biochemistry of desert extremolytes. Pure bio-fermented Ectoin surrounds skin cells in an impenetrable hydration shell, deflecting HEV blue light radiation, air-conditioning desiccation, and airborne PM2.5 soot particles.
+        </p>
+
+        <!-- Interactive Protection Mode Selector -->
+        <div class="bg-white p-5 rounded-2xl border border-[#E2E8E4] space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase tracking-wider text-[#121E17] font-bold">Environmental Defense Mode:</span>
+            <span id="ectoin-mode-label" class="text-xs font-mono text-[#1C3326] font-bold">Urban Anti-Pollution Shield</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <button id="mode-urban-btn" onclick="switchEctoinMode('urban')" class="p-3 rounded-xl border-2 border-[#1C3326] bg-[#F7F8F6] text-left transition">
+              <strong class="text-xs font-bold text-[#121E17] block">Urban Pollution Shield</strong>
+              <span class="text-[10px] font-mono text-zinc-400">Repels PM2.5 Micro-Soot</span>
+            </button>
+            <button id="mode-screen-btn" onclick="switchEctoinMode('screen')" class="p-3 rounded-xl border border-[#E2E8E4] bg-white text-left transition hover:border-[#1C3326]">
+              <strong class="text-xs font-bold text-[#121E17] block">HEV Blue Light Filter</strong>
+              <span class="text-[10px] font-mono text-zinc-400">Inhibits Screen Oxidation</span>
+            </button>
+          </div>
+
+          <div class="p-3 bg-[#F7F8F6] rounded-xl border border-[#E2E8E4] text-[11px] font-mono text-zinc-600">
+            <span id="ectoin-mode-desc">Pat 3-5 drops directly into clean skin before serums. Creates an ionic micro-mesh that prevents environmental pollutants from penetrating pores.</span>
+          </div>
+        </div>
+
+        <!-- Packaging Format Selector -->
+        <div class="space-y-2">
+          <label class="text-xs font-mono uppercase tracking-wider font-bold text-[#121E17] block">Packaging Format:</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="border-2 border-[#1C3326] bg-white p-3.5 rounded-xl flex items-center justify-between cursor-pointer">
+              <div>
+                <input type="radio" name="format" value="bottle" checked onchange="updateEctoinFormat(58, '50ml Frosted Bottle')" class="accent-[#1C3326] mr-2" />
+                <span class="text-xs font-bold font-mono">50ml Bottle</span>
+              </div>
+              <span class="text-xs font-mono text-[#1C3326] font-bold">$58</span>
+            </label>
+            <label class="border border-[#E2E8E4] bg-white p-3.5 rounded-xl flex items-center justify-between cursor-pointer hover:border-[#1C3326]">
+              <div>
+                <input type="radio" name="format" value="refill" onchange="updateEctoinFormat(46, '50ml Eco Pod')" class="accent-[#1C3326] mr-2" />
+                <span class="text-xs font-bold font-mono">Eco Refill Pod</span>
+              </div>
+              <span class="text-xs font-mono text-zinc-500">$46</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Add to Routine Actions -->
+        <div class="flex items-center gap-4 pt-2">
+          <div class="flex items-center border border-[#E2E8E4] bg-white rounded-full px-3 py-3 text-xs font-mono">
+            <button onclick="decrementEctoinQty()" class="text-zinc-400 hover:text-black font-bold px-1">−</button>
+            <span id="ectoin-qty" class="px-3 font-bold">1</span>
+            <button onclick="incrementEctoinQty()" class="text-zinc-400 hover:text-black font-bold px-1">+</button>
+          </div>
+          <button onclick="executeEctoinAdd()" class="btn-botanical flex-grow py-4 text-xs tracking-wider shadow-lg">
+            + Add To Daily Routine
+          </button>
+        </div>
+
+        <!-- Technical Accreditations -->
+        <div class="border-t border-[#E2E8E4] pt-4 space-y-2 text-xs font-mono text-zinc-600">
+          <div class="flex justify-between py-1 border-b border-[#E2E8E4]">
+            <span>Active Molecule</span>
+            <strong class="text-[#121E17]">2% Pure Bio-Fermented Ectoin</strong>
+          </div>
+          <div class="flex justify-between py-1 border-b border-[#E2E8E4]">
+            <span>Microbiome Ferment</span>
+            <strong class="text-[#121E17]">Bifida Ferment + Postbiotic Complex</strong>
+          </div>
+          <div class="flex justify-between py-1">
+            <span>Dermal Compatibility</span>
+            <strong class="text-[#1C3326]">100% Non-Comedogenic • Eczema Safe</strong>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Related Formulations Section (Real Dedicated Links) -->
+    <section class="mt-20 pt-12 border-t border-[#E2E8E4]">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#B89758] font-bold tracking-widest block">COMPLEMENTARY RITUAL STEPS</span>
+          <h2 class="font-serif text-2xl font-bold text-[#121E17]">Pairs Clinically With</h2>
+        </div>
+        <a href="./catalog.html" class="text-xs font-mono text-[#1C3326] underline font-bold">View All 6 Formulations →</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Complement 1: Cleanser -->
+        <a href="./product-cleanser.html" class="bg-white p-6 rounded-2xl border border-[#E2E8E4] flex items-center gap-6 group hover:border-[#1C3326] transition shadow-sm">
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=80" alt="Cleanser" class="w-20 h-24 object-contain" />
+          <div>
+            <span class="text-[9px] font-mono text-[#1C3326] font-bold uppercase block">Step 01 : Cleanse</span>
+            <h3 class="font-serif text-lg font-bold text-[#121E17] group-hover:text-[#1C3326]">Squalane Botanical Enzyme Melt</h3>
+            <span class="font-mono text-xs text-[#1C3326] font-bold block mt-1">$48.00 • View Details ↗</span>
+          </div>
+        </a>
+
+        <!-- Complement 2: Bio-Retinoid -->
+        <a href="./product.html" class="bg-white p-6 rounded-2xl border border-[#E2E8E4] flex items-center gap-6 group hover:border-[#1C3326] transition shadow-sm">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" alt="Bio-Retinoid" class="w-20 h-24 object-contain" />
+          <div>
+            <span class="text-[9px] font-mono text-[#1C3326] font-bold uppercase block">Step 02 : Treat</span>
+            <h3 class="font-serif text-lg font-bold text-[#121E17] group-hover:text-[#1C3326]">Cellular Renewal Bio-Retinoid</h3>
+            <span class="font-mono text-xs text-[#1C3326] font-bold block mt-1">$68.00 • View Details ↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#E2E8E4] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-zinc-500">
+      <div class="flex items-center gap-3">
+        <span class="font-serif tracking-widest font-bold uppercase text-[#121E17]">AURA BOTANICA</span>
+        <span>• SoHo Atelier NYC</span>
+      </div>
+      <p class="text-zinc-400">© 2026 Aura Botanica Labs. Clean Botanical Skincare Demo.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Routine Drawer (Cart) -->
+  <div id="routine-backdrop" onclick="closeRoutineDrawer()" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+  <aside id="routine-drawer" class="fixed top-0 right-0 h-full w-full max-w-md frosted-drawer z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col font-sans text-[#121E17]">
+    <div class="p-6 border-b border-[#E2E8E4] flex items-center justify-between bg-white">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif font-bold text-lg text-[#121E17]">Your Daily Skin Routine</h3>
+        <span class="routine-badge-count bg-[#1C3326] text-white text-[10px] font-mono px-2 py-0.5 rounded-full font-bold">1</span>
+      </div>
+      <button onclick="closeRoutineDrawer()" class="p-2 text-zinc-400 hover:text-black">✕</button>
+    </div>
+    <div id="routine-items-list" class="flex-grow overflow-y-auto px-6 py-2"></div>
+    <div class="p-6 border-t border-[#E2E8E4] bg-white space-y-4">
+      <div class="flex justify-between text-xs font-mono text-zinc-500">
+        <span>Routine Subtotal</span>
+        <span id="routine-subtotal">$58.00</span>
+      </div>
+      <div id="routine-discount-box"></div>
+      <div class="flex items-center justify-between border-t border-[#E2E8E4] pt-3">
+        <span class="text-xs uppercase font-bold text-[#121E17]">Total Billed</span>
+        <span id="routine-total" class="font-mono text-2xl font-bold text-[#1C3326]">$58.00</span>
+      </div>
+      <button onclick="triggerRoutineCheckout()" class="w-full btn-botanical justify-center py-4 text-xs uppercase tracking-wider font-bold shadow-lg">
+        Proceed To Clinical Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <script src="./src/js/main.js"></script>
+  <script>
+    let ectoinPrice = 58.00;
+    let ectoinVolume = '50ml Frosted Bottle';
+    let ectoinQty = 1;
+
+    function updateEctoinFormat(price, volume) {
+      ectoinPrice = price;
+      ectoinVolume = volume;
+      document.getElementById('pdp-ectoin-price').textContent = `$${price.toFixed(2)}`;
+    }
+
+    function incrementEctoinQty() {
+      ectoinQty++;
+      document.getElementById('ectoin-qty').textContent = ectoinQty;
+    }
+
+    function decrementEctoinQty() {
+      if (ectoinQty > 1) {
+        ectoinQty--;
+        document.getElementById('ectoin-qty').textContent = ectoinQty;
+      }
+    }
+
+    function switchEctoinMode(mode) {
+      const urbanBtn = document.getElementById('mode-urban-btn');
+      const screenBtn = document.getElementById('mode-screen-btn');
+      const label = document.getElementById('ectoin-mode-label');
+      const desc = document.getElementById('ectoin-mode-desc');
+
+      if (mode === 'urban') {
+        urbanBtn.className = "p-3 rounded-xl border-2 border-[#1C3326] bg-[#F7F8F6] text-left transition";
+        screenBtn.className = "p-3 rounded-xl border border-[#E2E8E4] bg-white text-left transition hover:border-[#1C3326]";
+        label.textContent = "Urban Anti-Pollution Shield";
+        desc.textContent = "Pat 3-5 drops directly into clean skin before serums. Creates an ionic micro-mesh that prevents PM2.5 soot pollutants from penetrating pores.";
+      } else {
+        screenBtn.className = "p-3 rounded-xl border-2 border-[#1C3326] bg-[#F7F8F6] text-left transition";
+        urbanBtn.className = "p-3 rounded-xl border border-[#E2E8E4] bg-white text-left transition hover:border-[#1C3326]";
+        label.textContent = "HEV Blue Light Protective Filter";
+        desc.textContent = "Neutralizes reactive oxygen species (ROS) triggered by electronic monitors and phone displays, preventing digital photo-aging.";
+      }
+    }
+
+    function executeEctoinAdd() {
+      addToRoutine({
+        id: 'ectoin-elixir',
+        name: 'Ectoin Hydro-Microbiome Elixir',
+        step: 'Targeted: Microbiome',
+        volume: ectoinVolume,
+        actives: '2% Ectoin + Bifida Ferment',
+        price: ectoinPrice,
+        quantity: ectoinQty,
+        image: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=600&q=80'
+      });
+    }
+  </script>
+</body>
+</html>
