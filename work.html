@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selected Case Studies & Archetypes | KINETIC CRAFT STUDIOS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#FAF7F2] text-[#1C1815] min-h-screen flex flex-col font-sans selection:bg-[#B85D35] selection:text-white">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD3]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#B85D35] to-[#8C4724] p-[1px] shadow-sm">
+          <div class="w-full h-full bg-[#FAF7F2] rounded-xl flex items-center justify-center font-grotesk font-black text-[#B85D35] text-lg">
+            KC
+          </div>
+        </div>
+        <div>
+          <span class="font-grotesk tracking-wider text-base font-bold uppercase text-[#1C1815] block leading-none">
+            KINETIC CRAFT
+          </span>
+          <span class="font-mono text-[9px] tracking-[0.25em] text-[#B85D35] uppercase mt-0.5 block font-bold">
+            Flagship Engineering
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-[#6E6459]">
+        <a href="./index.html" class="hover:text-[#B85D35] transition">Featured</a>
+        <a href="./work.html" class="text-[#B85D35] font-bold border-b border-[#B85D35] pb-1">Case Studies (3)</a>
+        <a href="./motion.html" class="hover:text-[#B85D35] transition">Hyper-Motion Vault</a>
+        <!-- <a href="./services.html" class="hover:text-[#B85D35] transition">The 48h Offer</a> -->
+        <!-- <a href="./contact.html" class="hover:text-[#B85D35] transition">Book Audit</a> -->
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="refreshAllPageMedia(true)" title="Auto-Sync active: click to force refresh videos & images from disk" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-[#E8DFD3] text-[10px] font-mono text-[#6E6459] hover:text-[#B85D35] hover:border-[#B85D35] transition shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Auto-Sync Media</span>
+        </button>
+        <button onclick="openCommissionModal('Your Brand')" class="btn-warm px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider shadow-md font-bold">
+          Commission Flagship
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Work Hero -->
+  <section class="py-20 px-6 border-b border-[#E8DFD3] bg-[#F3ECE2]">
+    <div class="max-w-5xl mx-auto text-center space-y-4">
+      <span class="pill-warm text-[10px] font-mono px-3 py-1 rounded uppercase tracking-widest inline-block font-bold bg-white">
+        PROVEN LIVE ARCHETYPES
+      </span>
+      <h1 class="font-grotesk text-4xl sm:text-6xl font-bold text-[#1C1815]">
+        Architectural Case Studies
+      </h1>
+      <p class="text-xs sm:text-sm text-[#6E6459] max-w-xl mx-auto font-light leading-relaxed">
+        Every archetype is built from scratch with its own unique visual identity, distinct typography, and custom interactive engine. Never cookie-cutter.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="pt-8 flex flex-wrap items-center justify-center gap-3">
+        <button onclick="filterCaseStudies('all')" class="filter-pill-btn px-4 py-2 rounded-xl bg-[#B85D35] text-white font-bold text-xs font-mono uppercase transition shadow-sm">
+          All Formats (3)
+        </button>
+        <button onclick="filterCaseStudies('coffee')" class="filter-pill-btn px-4 py-2 rounded-xl bg-white text-[#6E6459] text-xs font-mono uppercase hover:border-[#B85D35] hover:text-[#B85D35] transition border border-[#E8DFD3]">
+          Beverage & Coffee
+        </button>
+        <button onclick="filterCaseStudies('bakery')" class="filter-pill-btn px-4 py-2 rounded-xl bg-white text-[#6E6459] text-xs font-mono uppercase hover:border-[#B85D35] hover:text-[#B85D35] transition border border-[#E8DFD3]">
+          Artisanal Bakery
+        </button>
+        <button onclick="filterCaseStudies('skincare')" class="filter-pill-btn px-4 py-2 rounded-xl bg-white text-[#6E6459] text-xs font-mono uppercase hover:border-[#B85D35] hover:text-[#B85D35] transition border border-[#E8DFD3]">
+          Botanical Skincare
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Main List -->
+  <main class="py-20 px-6 max-w-6xl mx-auto w-full flex-grow space-y-16">
+    
+    <!-- Case Study 01: Kura Coffee Roasters -->
+    <article class="case-study-card glow-card rounded-3xl p-8 md:p-12 border border-[#E8DFD3] bg-white shadow-sm" data-category="coffee">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="pill-warm text-[10px] font-mono px-2.5 py-1 rounded font-bold uppercase">ARCHETYPE 01</span>
+            <span class="text-xs font-mono text-[#6E6459]">Craft Beverage & Coffee Roasters</span>
+          </div>
+
+          <h2 class="font-grotesk text-3xl md:text-4xl font-bold text-[#1C1815] leading-tight">
+            Kura Coffee Roasters NYC
+          </h2>
+
+          <p class="text-xs text-[#6E6459] font-sans leading-relaxed">
+            Dark Onyx (#0A0807) and Bronze Gold (#C5A059) bespoke aesthetic tailored for high-ticket coffee subscription clubs. Features an interactive slide-over bag drawer with free-shipping meter, SCA cupping score pills, grind selectors, and an animated 120 FPS roaster video lightbox.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 text-xs font-mono text-[#6E6459] pt-2 border-t border-[#E8DFD3]">
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Color Theme</span>
+              <strong class="text-[#1C1815]">Dark Onyx + Bronze Gold</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Unique UX Hook</span>
+              <strong class="text-[#1C1815]">Slide-Over Bag Drawer + SCA Cupping</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Order Simulation</span>
+              <strong class="text-[#B85D35]">#KURA-NYC Custom Modal</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Pages Included</span>
+              <strong class="text-[#1C1815]">Shop, PDP, Story, Wholesale</strong>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="../artisan-roaster-demo/index.html" target="_blank" class="btn-warm px-6 py-3 rounded-xl text-xs uppercase tracking-wider font-bold shadow-md">
+              Explore Live Multi-Page Demo ↗
+            </a>
+            <button onclick="openShowreel('./assets/videos/Almarai.mp4', 'Kura Coffee & Beverage Hydrodynamics Reel (4K 120 FPS)')" class="btn-ghost px-5 py-3 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              ▶ Watch 120 FPS Reel
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="relative rounded-2xl overflow-hidden border border-[#E8DFD3] shadow-md bg-[#0A0807] aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=80" alt="Kura Coffee Showcase" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+              <span class="text-xs font-mono text-white">Live on Cloudflare Pages • Ready for Pitch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Case Study 02: Maison Levan Sourdough -->
+    <article class="case-study-card glow-card rounded-3xl p-8 md:p-12 border border-[#E8DFD3] bg-white shadow-sm" data-category="bakery">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="bg-[#C25B3E] text-white text-[10px] font-mono px-2.5 py-1 rounded font-bold uppercase shadow">ARCHETYPE 02</span>
+            <span class="text-xs font-mono text-[#6E6459]">Artisanal Patisseries & Bakeries</span>
+          </div>
+
+          <h2 class="font-grotesk text-3xl md:text-4xl font-bold text-[#1C1815] leading-tight">
+            Maison Levan Patisserie NYC
+          </h2>
+
+          <p class="text-xs text-[#6E6459] font-sans leading-relaxed">
+            High-fashion Parisian editorial aesthetic in warm cream (#FAF7F2) and baked terracotta (#C25B3E). Features an interactive 4-Slot "Morning Tasting Box" sliding bottom tray, Web Audio ASMR crust crackle synthesis, interactive hotspot crumb pins on PDP, and 68-hour fermentation scrub dials.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 text-xs font-mono text-[#6E6459] pt-2 border-t border-[#E8DFD3]">
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Color Theme</span>
+              <strong class="text-[#C25B3E]">#FAF7F2 Cream + Terracotta</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Unique UX Hook</span>
+              <strong class="text-[#1C1815]">4-Slot Tasting Box Tray + ASMR</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Order Simulation</span>
+              <strong class="text-[#C25B3E]">#LEV-2026 French Bulletin</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Pages Included</span>
+              <strong class="text-[#1C1815]">Menu, PDP, 68h Craft, Catering</strong>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="../artisan-bakery-demo/index.html" target="_blank" class="btn-warm px-6 py-3 rounded-xl text-xs uppercase tracking-wider font-bold shadow-md">
+              Explore Live Multi-Page Demo ↗
+            </a>
+            <button onclick="openShowreel('./assets/videos/Strawberry Flavoured.mp4', 'Maison Levan Confectionery & Cream Fluid Reel (4K 120 FPS)')" class="btn-ghost px-5 py-3 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              ▶ Watch 120 FPS Reel
+            </button>
+            <button onclick="openCommissionModal('Maison Levan')" class="btn-ghost px-5 py-3 rounded-xl text-xs font-mono uppercase font-bold">
+              Commission Archetype
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="relative rounded-2xl overflow-hidden border border-[#E8DFD3] shadow-md bg-[#FAF7F2] aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Maison Levan Showcase" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+              <span class="text-xs font-mono text-[#C25B3E]">Live on Cloudflare Pages • Ready for Pitch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Case Study 03: Aura Botanica Labs -->
+    <article class="case-study-card glow-card rounded-3xl p-8 md:p-12 border border-[#E8DFD3] bg-white shadow-sm" data-category="skincare">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="bg-[#1C3326] text-white text-[10px] font-mono px-2.5 py-1 rounded font-bold uppercase shadow">ARCHETYPE 03</span>
+            <span class="text-xs font-mono text-[#6E6459]">Botanical Skincare & Clinical Apothecary</span>
+          </div>
+
+          <h2 class="font-grotesk text-3xl md:text-4xl font-bold text-[#1C1815] leading-tight">
+            Aura Botanica Labs NYC
+          </h2>
+
+          <p class="text-xs text-[#6E6459] font-sans leading-relaxed">
+            Ultra-luxury consumer botanical skincare storefront in luminous porcelain (#F7F8F6) and deep forest eucalyptus (#1C3326). Features an interactive 3-step daily routine drawer (-15% bundle savings), interactive viscosity texture swatches (Dewy Fluid vs Velvet Balm), and a 12-week clinical study slider.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 text-xs font-mono text-[#6E6459] pt-2 border-t border-[#E8DFD3]">
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Color Theme</span>
+              <strong class="text-[#1C3326]">#F7F8F6 Porcelain + Eucalyptus</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Unique UX Hook</span>
+              <strong class="text-[#1C1815]">3-Step Routine Drawer + Viscosity Swatches</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Order Engine</span>
+              <strong class="text-[#1C3326]">#AURA-RX Prescription Modal</strong>
+            </div>
+            <div>
+              <span class="text-[#9C8E80] block text-[10px] uppercase font-bold">Pages Included</span>
+              <strong class="text-[#1C1815]">Formulations, PDP, Clinical Proof, Diagnostic</strong>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="../botanical-skincare-demo/index.html" target="_blank" class="btn-warm px-6 py-3 rounded-xl text-xs uppercase tracking-wider font-bold shadow-md">
+              Explore Live Multi-Page Demo ↗
+            </a>
+            <button onclick="openShowreel('./assets/videos/Beauty Product.mp4', 'Aura Botanica Serum Dropper & Fluid Kinematics (4K 120 FPS)')" class="btn-ghost px-5 py-3 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              ▶ Watch 120 FPS Reel
+            </button>
+            <button onclick="openCommissionModal('Aura Botanica Labs')" class="btn-ghost px-5 py-3 rounded-xl text-xs font-mono uppercase font-bold">
+              Commission Archetype
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="relative rounded-2xl overflow-hidden border border-[#E8DFD3] shadow-md bg-[#F7F8F6] aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=80" alt="Aura Botanica Showcase" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+              <span class="text-xs font-mono text-[#1C3326]">Live on Cloudflare Pages • Ready for Pitch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3D CGI Packshot Stills Showcase Section in Work -->
+    <section class="pt-8 border-t border-[#E8DFD3] space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="pill-warm text-[10px] font-mono px-3 py-1 rounded uppercase tracking-widest inline-block mb-2 font-bold bg-white">
+            PROPRIETARY 3D ASSETS
+          </span>
+          <h3 class="font-grotesk text-2xl md:text-3xl font-bold text-[#1C1815]">
+            Featured 3D CGI Product Packshots
+          </h3>
+        </div>
+        <a href="./motion.html" class="text-xs font-mono text-[#B85D35] hover:underline font-bold">
+          Explore All 8 Videos & 9 Stills in Motion Vault →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glow-card rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] cursor-pointer group" onclick="openImageLightbox('./assets/images/Match2.jpg', 'MATCH Blue Eau De Parfum 50ml', '8K FLUID SIMULATION', 'Subsurface glass refraction, buoyant lemon citrus slices, and dynamic micro-droplet water surface tension.')">
+          <div class="relative aspect-video overflow-hidden bg-[#0F141C]">
+            <img src="./assets/images/Match2.jpg" alt="MATCH Blue" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-2 left-2">
+              <span class="pill-warm text-[9px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">8K CYCLES</span>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <span class="font-grotesk text-sm font-bold text-[#1C1815]">MATCH Blue Perfume</span>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect ↗</span>
+          </div>
+        </div>
+
+        <div class="glow-card rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] cursor-pointer group" onclick="openImageLightbox('./assets/images/Almarai YoGo Flavor Lineup.jpg', 'Almarai YoGo 4-Flavor Splash Lineup', '8K DAIRY & FRUIT KINEMATICS', 'Dynamic yogurt wave collisions, suspended fresh fruit cuts, and vibrant brand packshot.')">
+          <div class="relative aspect-video overflow-hidden bg-[#FAF7F2]">
+            <img src="./assets/images/Almarai YoGo Flavor Lineup.jpg" alt="Almarai YoGo Lineup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-2 left-2">
+              <span class="bg-[#B85D35] text-white text-[9px] font-mono px-2 py-0.5 rounded font-bold shadow">YOGURT SPLASH</span>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <span class="font-grotesk text-sm font-bold text-[#1C1815]">Almarai YoGo Splash</span>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect ↗</span>
+          </div>
+        </div>
+
+        <div class="glow-card rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] cursor-pointer group" onclick="openImageLightbox('./assets/images/Cinematic Platter with Eggs & Sausage.jpg', 'Artisanal Gourmet Breakfast Platter', 'GRAVITY-DEFYING FOOD PHYSICS', 'Suspended potato crisps, herb particles, blistered sausage, and organic culinary lighting.')">
+          <div class="relative aspect-video overflow-hidden bg-[#181310]">
+            <img src="./assets/images/Cinematic Platter with Eggs & Sausage.jpg" alt="Artisanal Breakfast Platter" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-2 left-2">
+              <span class="bg-[#C25B3E] text-white text-[9px] font-mono px-2 py-0.5 rounded font-bold shadow">OCTANE FOOD</span>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <span class="font-grotesk text-sm font-bold text-[#1C1815]">Artisanal Platter</span>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect ↗</span>
+          </div>
+        </div>
+
+        <div class="glow-card rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] cursor-pointer group" onclick="openImageLightbox('./assets/images/Indonesian Nasi Goreng.jpg', 'Kinetic Wok Nasi Goreng', 'PARTICLE EXPLOSION DYNAMICS', 'Suspended aromatic grains, chili flakes, succulent prawns, and dynamic wok air currents.')">
+          <div class="relative aspect-video overflow-hidden bg-[#1E1109]">
+            <img src="./assets/images/Indonesian Nasi Goreng.jpg" alt="Indonesian Nasi Goreng" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-2 left-2">
+              <span class="pill-warm text-[9px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">HOUDINI DYNAMICS</span>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <span class="font-grotesk text-sm font-bold text-[#1C1815]">Kinetic Nasi Goreng</span>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect ↗</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#E8DFD3] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-[#6E6459]">
+      <div class="flex items-center gap-3">
+        <span class="font-grotesk tracking-widest font-bold uppercase text-[#1C1815]">KINETIC CRAFT STUDIOS</span>
+        <span>• Flagship Digital Engineering NYC</span>
+      </div>
+      <p class="text-[#9C8E80]">© 2026 Kinetic Craft Studios. Warm Editorial Multi-Page Portfolio.</p>
+    </div>
+  </footer>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 48-Hour Prototype Service | KINETIC CRAFT STUDIOS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#FAF7F2] text-[#1C1815] min-h-screen flex flex-col font-sans selection:bg-[#B85D35] selection:text-white">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD3]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#B85D35] to-[#8C4724] p-[1px] shadow-sm">
+          <div class="w-full h-full bg-[#FAF7F2] rounded-xl flex items-center justify-center font-grotesk font-black text-[#B85D35] text-lg">
+            KC
+          </div>
+        </div>
+        <div>
+          <span class="font-grotesk tracking-wider text-base font-bold uppercase text-[#1C1815] block leading-none">
+            KINETIC CRAFT
+          </span>
+          <span class="font-mono text-[9px] tracking-[0.25em] text-[#B85D35] uppercase mt-0.5 block font-bold">
+            Flagship Engineering
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-[#6E6459]">
+        <a href="./index.html" class="hover:text-[#B85D35] transition">Featured</a>
+        <a href="./work.html" class="hover:text-[#B85D35] transition">Case Studies (3)</a>
+        <a href="./motion.html" class="hover:text-[#B85D35] transition">Hyper-Motion Vault</a>
+        <!-- <a href="./services.html" class="hover:text-[#B85D35] transition">The 48h Offer</a> -->
+        <!-- <a href="./contact.html" class="hover:text-[#B85D35] transition">Book Audit</a> -->
+      </nav>
+
+      <button onclick="openCommissionModal('Your Brand')" class="btn-warm px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider shadow-md font-bold">
+        Commission Flagship
+      </button>
+    </div>
+  </header>
+
+  <!-- Notice: Page Temporarily Commented Out as Requested -->
+  <section class="py-24 px-6 text-center max-w-3xl mx-auto my-auto space-y-6">
+    <span class="pill-warm text-xs font-mono px-3 py-1 rounded font-bold uppercase bg-white">
+      CURRENTLY PAUSED
+    </span>
+    <h1 class="font-grotesk text-3xl sm:text-4xl font-bold text-[#1C1815]">
+      The 48-Hour Offer Is Temporarily On Pause
+    </h1>
+    <p class="text-xs sm:text-sm text-[#6E6459] leading-relaxed font-sans">
+      We are currently focusing exclusively on custom client commissions. You can explore our live client archetypes or commission a bespoke digital flagship directly.
+    </p>
+    <div class="pt-4 flex flex-wrap justify-center gap-4">
+      <a href="./work.html" class="btn-warm px-6 py-3 rounded-xl text-xs uppercase tracking-wider font-bold shadow-md">
+        Explore 3 Live Case Studies →
+      </a>
+      <a href="./index.html" class="btn-ghost px-6 py-3 rounded-xl text-xs uppercase tracking-wider font-mono font-bold">
+        Return To Featured Showcase
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 48-HOUR OFFER CONTENT (TEMPORARILY COMMENTED OUT AS REQUESTED) -->
+  <!-- ============================================================ -->
+  <!--
+  <section class="py-20 px-6 border-b border-white/10 bg-[#0C0E17]">
+    <div class="max-w-5xl mx-auto text-center space-y-4">
+      <span class="pill-purple text-[10px] font-mono px-3 py-1 rounded uppercase tracking-widest inline-block">
+        THE IRRESISTIBLE OUTREACH PROPOSITION
+      </span>
+      <h1 class="font-grotesk text-4xl sm:text-6xl font-bold text-white">
+        We Build It First. You Decide Later.
+      </h1>
+      <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto font-light leading-relaxed">
+        Stop taking risks on agencies that demand $15,000 upfront just to deliver generic Figma mockups. We construct a functional, high-motion multi-page prototype for your brand in 48 hours—hosted live on Cloudflare Pages.
+      </p>
+    </div>
+  </section>
+
+  <main class="py-20 px-6 max-w-6xl mx-auto w-full flex-grow space-y-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-[#12141C] border border-rose-500/30 rounded-3xl p-8 space-y-6">
+        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+          <span class="text-rose-400 font-mono text-xs uppercase font-bold">Standard Web Agency Model</span>
+          <span class="text-zinc-500 text-xs font-mono">$15k – $40k</span>
+        </div>
+        <ul class="space-y-4 text-xs font-mono text-zinc-400">
+          <li class="flex items-start gap-3">
+            <span class="text-rose-400 font-bold">✕</span>
+            <span>Demands 50% upfront deposit before writing a single line of code.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-rose-400 font-bold">✕</span>
+            <span>Sends 60-page PDF slide decks and static, non-interactive Figma wireframes.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-rose-400 font-bold">✕</span>
+            <span>Takes 3 to 6 months of endless discovery meetings and revision loops.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-rose-400 font-bold">✕</span>
+            <span>Standard off-the-shelf theme templates with no custom video kinematics or sensory UX.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-[#12141C] border border-cyan-400/50 rounded-3xl p-8 space-y-6 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-cyan-400 text-black text-[9px] font-mono uppercase font-bold px-4 py-1 rounded-bl-xl">
+          Zero Risk Guarantee
+        </div>
+        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+          <span class="text-cyan-400 font-mono text-xs uppercase font-bold">Kinetic Craft Studio Model</span>
+          <span class="text-emerald-400 text-xs font-mono font-bold">48-Hour Live Prototype</span>
+        </div>
+        <ul class="space-y-4 text-xs font-mono text-zinc-300">
+          <li class="flex items-start gap-3">
+            <span class="text-cyan-400 font-bold">✓</span>
+            <span>Zero upfront deposit. We build the full interactive multi-page experience first.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cyan-400 font-bold">✓</span>
+            <span>Dispatched as an active Cloudflare Pages live URL you can test on phone and desktop.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cyan-400 font-bold">✓</span>
+            <span>Complete turnaround in 48 hours accompanied by a bespoke 45-second Loom pitch.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cyan-400 font-bold">✓</span>
+            <span>Tailored 120 FPS product kinematics, custom sound design, and bespoke branded checkout modals.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  -->
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#E8DFD3] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-[#6E6459]">
+      <div class="flex items-center gap-3">
+        <span class="font-grotesk tracking-widest font-bold uppercase text-[#1C1815]">KINETIC CRAFT STUDIOS</span>
+        <span>• Flagship Digital Engineering NYC</span>
+      </div>
+      <p class="text-[#9C8E80]">© 2026 Kinetic Craft Studios. Warm Editorial Multi-Page Portfolio.</p>
+    </div>
+  </footer>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>

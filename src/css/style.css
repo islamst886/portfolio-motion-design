@@ -1,0 +1,122 @@
+/* KINETIC CRAFT STUDIOS — Warm Editorial Light Luxury Engine */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* Warm Soothing Light Palette (Kinfolk / Editorial Luxury) */
+  --bg-deep: #FAF7F2;        /* Warm linen alabaster base */
+  --bg-surface: #FFFFFF;     /* Crisp clean white */
+  --bg-section: #F3ECE2;     /* Warm toasted oat section */
+  --bg-card: #FFFFFF;        /* Pure white card */
+  --accent-amber: #B85D35;   /* Warm cognac terracotta */
+  --accent-bronze: #8C4724;  /* Deep roasted bronze */
+  --accent-gold: #C58B42;    /* Warm honey gold */
+  --text-main: #1C1815;      /* Deep rich espresso charcoal */
+  --text-muted: #6E6459;     /* Warm taupe sand */
+  --text-dim: #9C8E80;       /* Subtle muted warm */
+  --border-warm: #E8DFD3;    /* Delicate warm sand border */
+  --border-card: #ECE3D8;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-grotesk { font-family: 'Space Grotesk', sans-serif; }
+.font-mono { font-family: 'Space Mono', monospace; }
+
+/* Warm Sunlight Ambient Diffusion */
+.aurora-glow, .warm-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(200, 125, 85, 0.08) 0%, rgba(229, 169, 98, 0.04) 50%, transparent 75%);
+}
+
+.glow-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-warm);
+  box-shadow: 0 4px 20px -2px rgba(100, 80, 60, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  border-color: #B85D35;
+  box-shadow: 0 16px 36px -8px rgba(184, 93, 53, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Warm Cognac & Terracotta Primary Buttons */
+.btn-hyper, .btn-warm {
+  background: linear-gradient(135deg, #B85D35 0%, #8C4724 100%);
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-hyper:hover, .btn-warm:hover {
+  box-shadow: 0 8px 24px -4px rgba(184, 93, 53, 0.35);
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1px solid var(--border-warm);
+  color: var(--text-main);
+  background: #FFFFFF;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-ghost:hover {
+  border-color: #B85D35;
+  background: rgba(184, 93, 53, 0.05);
+  color: #B85D35;
+}
+
+/* Warm Light Tag Pills */
+.pill-warm, .pill-gold, .pill-cyan, .pill-purple {
+  background: rgba(184, 93, 53, 0.08);
+  border: 1px solid rgba(184, 93, 53, 0.25);
+  color: #B85D35;
+}
+
+.pill-terracotta {
+  background: rgba(140, 71, 36, 0.08);
+  border: 1px solid rgba(140, 71, 36, 0.25);
+  color: #8C4724;
+}
+
+/* Pulse Indicator */
+@keyframes warmPulseGlow {
+  0%, 100% { opacity: 0.3; transform: scale(0.98); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-glow {
+  animation: warmPulseGlow 4s infinite ease-in-out;
+}
+
+/* Custom Warm Light Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CEBE;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B85D35;
+}

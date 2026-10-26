@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyper-Motion Video Vault & 3D Kinematics | KINETIC CRAFT STUDIOS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/style.css" />
+</head>
+<body class="bg-[#FAF7F2] text-[#1C1815] min-h-screen flex flex-col font-sans selection:bg-[#B85D35] selection:text-white">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD3]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#B85D35] to-[#8C4724] p-[1px] shadow-sm">
+          <div class="w-full h-full bg-[#FAF7F2] rounded-xl flex items-center justify-center font-grotesk font-black text-[#B85D35] text-lg">
+            KC
+          </div>
+        </div>
+        <div>
+          <span class="font-grotesk tracking-wider text-base font-bold uppercase text-[#1C1815] block leading-none">
+            KINETIC CRAFT
+          </span>
+          <span class="font-mono text-[9px] tracking-[0.25em] text-[#B85D35] uppercase mt-0.5 block font-bold">
+            Motion Vault
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-[#6E6459]">
+        <a href="./index.html" class="hover:text-[#B85D35] transition">Featured</a>
+        <a href="./work.html" class="hover:text-[#B85D35] transition">Case Studies (3)</a>
+        <a href="./motion.html" class="text-[#B85D35] font-bold border-b border-[#B85D35] pb-1">Hyper-Motion Vault</a>
+        <!-- <a href="./services.html" class="hover:text-[#B85D35] transition">The 48h Offer</a> -->
+        <!-- <a href="./contact.html" class="hover:text-[#B85D35] transition">Book Audit</a> -->
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="refreshAllPageMedia(true)" title="Auto-Sync active: click to force refresh videos & images from disk" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-[#E8DFD3] text-[10px] font-mono text-[#6E6459] hover:text-[#B85D35] hover:border-[#B85D35] transition shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Auto-Sync Media</span>
+        </button>
+        <button onclick="openCommissionModal('Your Brand')" class="btn-warm px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider shadow-md font-bold">
+          Commission Flagship
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Motion Vault Hero -->
+  <section class="py-20 px-6 border-b border-[#E8DFD3] bg-[#F3ECE2]">
+    <div class="max-w-5xl mx-auto text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E8DFD3] text-[#B85D35] font-mono text-xs font-bold shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-[#B85D35] animate-ping"></span>
+        <span>120 FPS CINEMATIC ASSET REPOSITORY</span>
+      </div>
+      <h1 class="font-grotesk text-4xl sm:text-6xl font-bold text-[#1C1815]">
+        Hyper-Motion Kinematics Vault
+      </h1>
+      <p class="text-xs sm:text-sm text-[#6E6459] max-w-xl mx-auto font-light leading-relaxed">
+        We produce proprietary 3D fluid simulations, particle acoustics, and high-velocity product turntables optimized for instant web rendering.
+      </p>
+    </div>
+  </section>
+
+  <!-- Motion Vault Grid -->
+  <main class="py-20 px-6 max-w-7xl mx-auto w-full flex-grow space-y-24">
+    
+    <!-- 8 Broadcast-Grade Hyper-Motion Commercials -->
+    <div class="space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E8DFD3] pb-6">
+        <div>
+          <span class="pill-warm text-[10px] font-mono px-3 py-1 rounded uppercase tracking-widest inline-block mb-2 font-bold bg-white">
+            8 ACTIVE 120 FPS COMMERCIAL ARCHIVES
+          </span>
+          <h2 class="font-grotesk text-3xl md:text-4xl font-bold text-[#1C1815]">
+            Broadcast Hyper-Motion Commercials
+          </h2>
+        </div>
+        <span class="text-xs font-mono text-[#6E6459]">Proprietary 3D Fluid & Dynamic Physics</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Video Asset 01: Beauty Product Dropper -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm">
+          <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openShowreel('./assets/videos/Beauty Product.mp4', 'Botanical Dropper & Cosmetic Liquid Kinematics (4K 120 FPS)')">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+              <source src="./assets/videos/Beauty%20Product.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute top-3 left-3">
+              <span class="pill-warm text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                120 FPS FLUID
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-white/90 text-[#B85D35] flex items-center justify-center font-bold text-lg shadow-lg">▶</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-[#9C8E80] mb-1">
+                <span>COSMETIC & SKINCARE</span>
+                <span>BLENDER CYCLES</span>
+              </div>
+              <h3 class="font-grotesk text-lg font-bold text-[#1C1815]">Botanical Dropper Dispersion</h3>
+              <p class="text-xs text-[#6E6459] mt-1 font-mono">Micro-pipette fluid velocity, golden serum viscosity, and surface tension simulation.</p>
+            </div>
+            <button onclick="openShowreel('./assets/videos/Beauty Product.mp4', 'Botanical Dropper & Cosmetic Liquid Kinematics (4K 120 FPS)')" class="btn-ghost w-full py-2.5 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              Play in Lightbox ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Asset 02: Mirinda Liquid Splash -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm">
+          <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openShowreel('./assets/videos/Mirinda.mp4', 'Mirinda Citrus Splash & Droplet Dispersion (4K 120 FPS)')">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+              <source src="./assets/videos/Mirinda.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute top-3 left-3">
+              <span class="bg-[#B85D35] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold shadow">
+                HIGH-VELOCITY FLUID
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-white/90 text-[#B85D35] flex items-center justify-center font-bold text-lg shadow-lg">▶</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-[#9C8E80] mb-1">
+                <span>BEVERAGE & CITRUS</span>
+                <span>FLIP FLUIDS 120 FPS</span>
+              </div>
+              <h3 class="font-grotesk text-lg font-bold text-[#1C1815]">Mirinda Citrus Splash Velocity</h3>
+              <p class="text-xs text-[#6E6459] mt-1 font-mono">High-speed carbonated orange beverage droplet dispersion and explosive citrus dynamics.</p>
+            </div>
+            <button onclick="openShowreel('./assets/videos/Mirinda.mp4', 'Mirinda Citrus Splash & Droplet Dispersion (4K 120 FPS)')" class="btn-ghost w-full py-2.5 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              Play in Lightbox ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Asset 03: Bogenia Luxury Cosmetics -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm">
+          <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openShowreel('./assets/videos/Bogenia.mp4', 'Bogenia Luxury Cosmetics Commercial (4K 120 FPS)')">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+              <source src="./assets/videos/Bogenia.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute top-3 left-3">
+              <span class="pill-warm text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                COMMERCIAL CGI
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-white/90 text-[#B85D35] flex items-center justify-center font-bold text-lg shadow-lg">▶</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-[#9C8E80] mb-1">
+                <span>BEAUTY & GLAMOUR</span>
+                <span>ANAMORPHIC OPTICS</span>
+              </div>
+              <h3 class="font-grotesk text-lg font-bold text-[#1C1815]">Bogenia Luxury Cosmetics</h3>
+              <p class="text-xs text-[#6E6459] mt-1 font-mono">Broadcast-grade luxury cosmetic bottle turntable, silky fluid waves, and optical flare passes.</p>
+            </div>
+            <button onclick="openShowreel('./assets/videos/Bogenia.mp4', 'Bogenia Luxury Cosmetics Commercial (4K 120 FPS)')" class="btn-ghost w-full py-2.5 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              Play in Lightbox ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Asset 04: Almarai Premium Beverage -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm">
+          <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openShowreel('./assets/videos/Almarai.mp4', 'Almarai Beverage Kinematics & Hydrodynamics (4K 120 FPS)')">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+              <source src="./assets/videos/Almarai.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute top-3 left-3">
+              <span class="pill-terracotta text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                DAIRY & BEVERAGE
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-white/90 text-[#B85D35] flex items-center justify-center font-bold text-lg shadow-lg">▶</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-[#9C8E80] mb-1">
+                <span>BEVERAGE & DAIRY</span>
+                <span>120 FPS HYDRO</span>
+              </div>
+              <h3 class="font-grotesk text-lg font-bold text-[#1C1815]">Almarai Beverage Kinematics</h3>
+              <p class="text-xs text-[#6E6459] mt-1 font-mono">High-speed liquid stream collision, micro-bubble effervescence, and pristine bottle hero framing.</p>
+            </div>
+            <button onclick="openShowreel('./assets/videos/Almarai.mp4', 'Almarai Beverage Kinematics & Hydrodynamics (4K 120 FPS)')" class="btn-ghost w-full py-2.5 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              Play in Lightbox ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Asset 05: Strawberry Flavoured -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm">
+          <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openShowreel('./assets/videos/Strawberry Flavoured.mp4', 'Strawberry Confectionery Fluid Dynamics (4K 120 FPS)')">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+              <source src="./assets/videos/Strawberry%20Flavoured.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute top-3 left-3">
+              <span class="bg-[#C25B3E] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold shadow">
+                GOURMET PATISSERIE
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-white/90 text-[#B85D35] flex items-center justify-center font-bold text-lg shadow-lg">▶</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-[#9C8E80] mb-1">
+                <span>FRUIT & CONFECTIONERY</span>
+                <span>CREAM DYNAMICS</span>
+              </div>
+              <h3 class="font-grotesk text-lg font-bold text-[#1C1815]">Strawberry Confectionery Fluid</h3>
+              <p class="text-xs text-[#6E6459] mt-1 font-mono">Ripe strawberry splash impact, velvety cream viscosity, and airborne micro-droplet simulation.</p>
+            </div>
+            <button onclick="openShowreel('./assets/videos/Strawberry Flavoured.mp4', 'Strawberry Confectionery Fluid Dynamics (4K 120 FPS)')" class="btn-ghost w-full py-2.5 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              Play in Lightbox ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Asset 06: T-Shirt CGI Cloth Physics -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm">
+          <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openShowreel('./assets/videos/T-shirt CGI.mp4', '3D Apparel & Fabric Dynamics (4K 120 FPS)')">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+              <source src="./assets/videos/T-shirt%20CGI.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute top-3 left-3">
+              <span class="pill-warm text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                CLOTH PHYSICS
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-white/90 text-[#B85D35] flex items-center justify-center font-bold text-lg shadow-lg">▶</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-[#9C8E80] mb-1">
+                <span>APPAREL & TEXTILE</span>
+                <span>MARVELOUS DYNAMICS</span>
+              </div>
+              <h3 class="font-grotesk text-lg font-bold text-[#1C1815]">3D Apparel & Fabric Dynamics</h3>
+              <p class="text-xs text-[#6E6459] mt-1 font-mono">Complex volumetric cloth draping, wind aerodynamics, and woven cotton micro-fiber detail.</p>
+            </div>
+            <button onclick="openShowreel('./assets/videos/T-shirt CGI.mp4', '3D Apparel & Fabric Dynamics (4K 120 FPS)')" class="btn-ghost w-full py-2.5 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              Play in Lightbox ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Asset 07: Adybuzz Kinetic Brand Velocity -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm">
+          <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openShowreel('./assets/videos/Adybuzz.mp4', 'Adybuzz Kinetic Brand Velocity (4K 120 FPS)')">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+              <source src="./assets/videos/Adybuzz.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute top-3 left-3">
+              <span class="bg-[#1C1815] text-[#FAF7F2] text-[10px] font-mono px-2 py-0.5 rounded font-bold shadow">
+                BRAND KINETICS
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-white/90 text-[#B85D35] flex items-center justify-center font-bold text-lg shadow-lg">▶</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-[#9C8E80] mb-1">
+                <span>AGENCY & MOTION</span>
+                <span>SPATIAL DESIGN</span>
+              </div>
+              <h3 class="font-grotesk text-lg font-bold text-[#1C1815]">Adybuzz Kinetic Brand Velocity</h3>
+              <p class="text-xs text-[#6E6459] mt-1 font-mono">Dynamic kinetic typography, dimensional brand acceleration, and modern velocity framing.</p>
+            </div>
+            <button onclick="openShowreel('./assets/videos/Adybuzz.mp4', 'Adybuzz Kinetic Brand Velocity (4K 120 FPS)')" class="btn-ghost w-full py-2.5 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              Play in Lightbox ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Asset 08: Almarai YoGo Commercial -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm">
+          <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openShowreel('./assets/videos/Almarai YoGo.mp4', 'Almarai YoGo Hyper-Motion Commercial (4K 120 FPS)')">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+              <source src="./assets/videos/Almarai%20YoGo.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute top-3 left-3">
+              <span class="bg-[#B85D35] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold shadow">
+                YOGURT DRINK FLUID
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-white/90 text-[#B85D35] flex items-center justify-center font-bold text-lg shadow-lg">▶</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-[#9C8E80] mb-1">
+                <span>BEVERAGE & DAIRY</span>
+                <span>AI & CGI HYPER-MOTION</span>
+              </div>
+              <h3 class="font-grotesk text-lg font-bold text-[#1C1815]">Almarai YoGo Hyper-Motion Launch</h3>
+              <p class="text-xs text-[#6E6459] mt-1 font-mono">Hyper-velocity dairy fluid dynamics, zero-gravity fruit dispersion, and rocket-boosted product acceleration.</p>
+            </div>
+            <button onclick="openShowreel('./assets/videos/Almarai YoGo.mp4', 'Almarai YoGo Hyper-Motion Commercial (4K 120 FPS)')" class="btn-ghost w-full py-2.5 rounded-xl text-xs font-mono uppercase font-bold hover:text-[#B85D35]">
+              Play in Lightbox ↗
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3D CGI Photorealistic Stills Gallery -->
+    <div class="space-y-8 pt-12 border-t border-[#E8DFD3]">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E8DFD3] pb-6">
+        <div>
+          <span class="pill-warm text-[10px] font-mono px-3 py-1 rounded uppercase tracking-widest inline-block mb-2 font-bold bg-white">
+            RAYTRACED PACKSHOTS & CULINARY PHYSICS
+          </span>
+          <h2 class="font-grotesk text-3xl md:text-4xl font-bold text-[#1C1815]">
+            Photorealistic 3D Still Stills & Packshots
+          </h2>
+        </div>
+        <span class="text-xs font-mono text-[#6E6459]">Click Any Image for 8K Inspection</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Photo 01: Match2.jpg -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Match2.jpg', 'MATCH Blue Eau De Parfum 50ml', '8K FLUID SIMULATION', 'Subsurface glass refraction, buoyant lemon citrus slices, and dynamic micro-droplet water surface tension.')">
+          <div class="relative aspect-square overflow-hidden bg-[#0F141C]">
+            <img src="./assets/images/Match2.jpg" alt="MATCH Blue Eau De Parfum" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="pill-warm text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                FRAGRANCE & SPLASH
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">MATCH Blue Eau De Parfum 50ml</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Liquid immersion, lemon slices, mint leaves, and micro-bubble physics.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+        <!-- Photo 02: Cinematic Platter -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Cinematic Platter with Eggs & Sausage.jpg', 'Artisanal Breakfast Platter', 'GRAVITY-DEFYING FOOD PHYSICS', 'Suspended golden crisps, herb particles, blistered sausage, and organic culinary lighting.')">
+          <div class="relative aspect-square overflow-hidden bg-[#181310]">
+            <img src="./assets/images/Cinematic Platter with Eggs & Sausage.jpg" alt="Artisanal Breakfast Platter" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="bg-[#C25B3E] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold shadow">
+                GOURMET CULINARY
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">Artisanal Gourmet Breakfast Platter</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Suspended potato crisps, herbs, blistered artisanal sausage, and rim lighting.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+        <!-- Photo 03: Indonesian Nasi Goreng -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Indonesian Nasi Goreng.jpg', 'Kinetic Wok Nasi Goreng', 'PARTICLE EXPLOSION DYNAMICS', 'Suspended aromatic grains, chili flakes, succulent prawns, and dynamic wok air currents.')">
+          <div class="relative aspect-square overflow-hidden bg-[#1E1109]">
+            <img src="./assets/images/Indonesian Nasi Goreng.jpg" alt="Kinetic Wok Nasi Goreng" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="pill-warm text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                WOK ACCELERATION
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">Kinetic Wok Nasi Goreng</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Particle scattering of grains, chili peppers, and succulent prawns.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+        <!-- Photo 04: Match.jpg -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Match.jpg', 'MATCH Monolith Horizon Pedestal', 'ARCHITECTURAL ENVIRONMENT', 'Brutalist pedestal overlooking a dusk metropolitan skyline with golden hour ray dispersion.')">
+          <div class="relative aspect-square overflow-hidden bg-[#151D28]">
+            <img src="./assets/images/Match.jpg" alt="MATCH Monolith Horizon Pedestal" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="bg-[#1C1815] text-[#FAF7F2] text-[10px] font-mono px-2 py-0.5 rounded font-bold shadow">
+                ENVIRONMENT CGI
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">MATCH Monolith Over Horizon</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Architectural pedestal overlooking dusk skyline with atmospheric volumetric haze.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+        <!-- Photo 05: Hyper Realistic Action Scene 3 -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Hyper Realistic Action Scene 3.jpg', 'Suspended Culinary Particle Burst', 'HIGH-SPEED MACRO', 'Centrifugal spice dispersion, sesame seed velocity vectors, and glistening culinary glaze.')">
+          <div class="relative aspect-square overflow-hidden bg-[#1A1412]">
+            <img src="./assets/images/Hyper Realistic Action Scene 3.jpg" alt="Suspended Culinary Particle Burst" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="pill-terracotta text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                BURST PARTICLES
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">Suspended Ingredient Choreography</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Centrifugal spice scattering, airborne sesame seeds, and savory glazes.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+        <!-- Photo 06: Hyper Realistic Action Scene 2 -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Hyper Realistic Action Scene 2.jpg', 'Dynamic Culinary Tower Architecture', 'STRUCTURAL FOOD CGI', 'Layered ingredients in suspended dynamic equilibrium with micro-seasoning details.')">
+          <div class="relative aspect-square overflow-hidden bg-[#160E08]">
+            <img src="./assets/images/Hyper Realistic Action Scene 2.jpg" alt="Dynamic Culinary Tower" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="pill-warm text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                STRUCTURAL CGI
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">Dynamic Culinary Tower</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Layered ingredients in suspended dynamic equilibrium with micro-seasoning details.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+        <!-- Photo 07: Hyper Realistic Action Scene 1 -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Hyper Realistic Action Scene.jpg', 'Kinetic Noodle Bowl Action', 'THERMAL CONVECTION RENDER', 'Curved noodle strand geometry, sunny-side yolk sheen, and airborne herb particle simulation.')">
+          <div class="relative aspect-square overflow-hidden bg-[#1A120B]">
+            <img src="./assets/images/Hyper Realistic Action Scene.jpg" alt="Kinetic Noodle Bowl" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="pill-warm text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                STEAM & TEXTURE
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">Kinetic Gourmet Noodle Platter</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Noodle spline geometry, sunny egg yolk surface tension, and micro-herb scatter.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+        <!-- Photo 08: Almarai YoGo Flavor Lineup.jpg -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Almarai YoGo Flavor Lineup.jpg', 'Almarai YoGo 4-Flavor Splash Lineup', '8K DAIRY & FRUIT KINEMATICS', 'Dynamic yogurt wave collisions, suspended fresh fruit cuts, and vibrant brand packshot.')">
+          <div class="relative aspect-square overflow-hidden bg-[#FAF7F2]">
+            <img src="./assets/images/Almarai YoGo Flavor Lineup.jpg" alt="Almarai YoGo Flavor Lineup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="bg-[#B85D35] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold shadow">
+                DAIRY & FRUIT SPLASH
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">Almarai YoGo 4-Flavor Splash Lineup</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Four-flavor bottle lineup with dynamic yogurt cream waves, fresh sliced strawberries, peaches, mango, and blueberries.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+        <!-- Photo 09: Almarai YoGo Rocket Launch.jpg -->
+        <div class="glow-card rounded-3xl overflow-hidden flex flex-col group border border-[#E8DFD3] bg-white shadow-sm cursor-pointer" onclick="openImageLightbox('./assets/images/Almarai YoGo Rocket Launch.jpg', 'Almarai YoGo Rocket Booster Takeoff', 'CONCEPTUAL PRODUCT CAMPAIGN', 'Titanium thruster flame simulation, atmospheric cloud volume, and high-impact commercial packaging.')">
+          <div class="relative aspect-square overflow-hidden bg-[#F3ECE2]">
+            <img src="./assets/images/Almarai YoGo Rocket Launch.jpg" alt="Almarai YoGo Rocket Launch" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="pill-warm text-[10px] font-mono px-2 py-0.5 rounded font-bold bg-white shadow">
+                ROCKET CGI CAMPAIGN
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+            <div>
+              <h4 class="font-grotesk text-base font-bold text-[#1C1815]">Almarai YoGo Rocket Takeoff</h4>
+              <p class="text-xs text-[#6E6459] font-mono mt-1">Conceptual bottle rocket takeoff with dual thrusters, billowing atmospheric clouds, and high-energy launch aesthetics.</p>
+            </div>
+            <span class="text-xs font-mono text-[#B85D35] font-bold">Inspect 8K Render ↗</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Live Client Delivery Guarantee Card -->
+    <div class="p-8 rounded-3xl bg-white border border-[#E8DFD3] text-xs font-mono text-[#6E6459] space-y-3 shadow-sm">
+      <div class="flex items-center gap-2 text-[#B85D35] font-bold">
+        <span>⚡ 100% Native Edge Streaming:</span>
+      </div>
+      <p class="text-[#6E6459] leading-relaxed">
+        All 8 video reels and 9 high-resolution renders above are bundled and streamed directly from <code class="text-[#1C1815] bg-[#FAF7F2] border border-[#E8DFD3] px-2 py-0.5 rounded">creative-studio-portfolio/assets/</code>. Our custom lightweight video pipeline guarantees zero stutter and instantaneous playback on desktop, tablet, and mobile.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#E8DFD3] py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-[#6E6459]">
+      <div class="flex items-center gap-3">
+        <span class="font-grotesk tracking-widest font-bold uppercase text-[#1C1815]">KINETIC CRAFT STUDIOS</span>
+        <span>• Flagship Digital Engineering NYC</span>
+      </div>
+      <p class="text-[#9C8E80]">© 2026 Kinetic Craft Studios. Warm Editorial Multi-Page Portfolio.</p>
+    </div>
+  </footer>
+
+  <script src="./src/js/main.js"></script>
+</body>
+</html>
