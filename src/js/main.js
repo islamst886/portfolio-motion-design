@@ -185,9 +185,9 @@ window.openShowreel = function(videoUrl, title = 'Hyper-Motion Cinematic Showree
             <button onclick="closeShowreel()" class="btn-ghost text-xs px-6 py-2.5 rounded-lg font-mono">
               Close Vault
             </button>
-            <button onclick="openCommissionModal('Your Brand')" class="btn-warm text-xs px-6 py-2.5 rounded-lg font-bold">
+            <!-- <button onclick="openCommissionModal('Your Brand')" class="btn-warm text-xs px-6 py-2.5 rounded-lg font-bold">
               Commission Custom Reel →
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -268,9 +268,9 @@ window.openImageLightbox = function(imgSrc, title = '3D CGI Product Packshot', t
 
       <div class="p-4 border-t border-[#E8DFD3] bg-[#FAF7F2] flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-[#6E6459] gap-2">
         <span>${desc}</span>
-        <button onclick="openCommissionModal('${title}')" class="btn-warm text-[11px] px-4 py-1.5 rounded-lg font-bold">
+        <!-- <button onclick="openCommissionModal('${title}')" class="btn-warm text-[11px] px-4 py-1.5 rounded-lg font-bold">
           Commission This Style →
-        </button>
+        </button> -->
       </div>
     </div>
   `;
