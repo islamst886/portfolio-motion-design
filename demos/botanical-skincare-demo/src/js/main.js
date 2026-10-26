@@ -61,10 +61,8 @@ window.refreshAllPageMedia = function(showToast = false) {
   }
 };
 
-window.addEventListener('focus', () => window.refreshAllPageMedia(false));
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') window.refreshAllPageMedia(false);
-});
+// Optional: media refresh can be triggered manually via window.refreshAllPageMedia(true)
+// window.addEventListener('focus', () => window.refreshAllPageMedia(false));
 
 function startBotanicalLiveWatcher() {
   if (location.protocol === 'file:') return;
@@ -428,49 +426,82 @@ window.updateTrialWeek = function(week) {
 };
 
 // ==========================================
-// VIDEO LIGHTBOX (120 FPS KINEMATICS)
+// INTERACTIVE 120 FPS FLUID KINEMATICS LABORATORY (INSTANT LOAD • ZERO BUFFERING)
 // ==========================================
-window.openSkincareVideo = function(videoUrl, title = '120 FPS Fluid Dispersion') {
+let skincareCanvasAnimId = null;
+let fluidRipples = [];
+let fluidParticles = [];
+
+window.openSkincareVideo = function(videoUrl, title = '120 FPS Fluid Dispersion Kinematics') {
   let modal = document.getElementById('skincare-video-modal');
   if (!modal) {
     modal = document.createElement('div');
     modal.id = 'skincare-video-modal';
-    modal.className = 'fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4';
+    modal.className = 'fixed inset-0 z-50 bg-[#0A140F]/85 backdrop-blur-md flex items-center justify-center p-4';
     document.body.appendChild(modal);
   }
 
-  const freshUrl = window.getFreshMediaUrl(videoUrl);
-
   modal.innerHTML = `
-    <div class="relative w-full max-w-4xl bg-white border border-[#1C3326] rounded-2xl overflow-hidden shadow-2xl">
-      <div class="p-4 border-b border-[#E2E8E4] flex items-center justify-between bg-[#F7F8F6]">
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-[#1C3326] animate-ping"></span>
-          <h3 class="font-mono text-xs font-bold uppercase text-[#121E17] tracking-wider">${title}</h3>
+    <div class="relative w-full max-w-4xl bg-[#0E1E15] border border-[#1C3326] rounded-3xl overflow-hidden shadow-2xl text-white">
+      <!-- Header -->
+      <div class="p-4 md:px-6 border-b border-white/10 flex items-center justify-between bg-[#152B1E]">
+        <div class="flex items-center gap-3">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
+          <div>
+            <h3 class="font-serif text-sm md:text-base font-bold text-white tracking-wide">${title}</h3>
+            <span class="text-[10px] font-mono text-emerald-300 uppercase tracking-widest block">Laboratory Optical Dispersion Analysis</span>
+          </div>
         </div>
-        <button onclick="closeSkincareVideo()" class="text-zinc-400 hover:text-black font-mono text-sm px-2">✕</button>
+        <button onclick="closeSkincareVideo()" class="text-white/60 hover:text-white font-mono text-base px-3 py-1 bg-white/5 rounded-full hover:bg-white/10 transition">✕</button>
       </div>
 
-      <div class="aspect-video bg-[#121E17] flex items-center justify-center relative overflow-hidden">
-        <video id="skin-video-player" controls autoplay playsinline src="${freshUrl}" class="w-full h-full object-contain">
-          <source src="${freshUrl}" type="video/mp4" />
-        </video>
+      <!-- Main Kinematic Stage -->
+      <div class="relative aspect-video w-full bg-[#07100B] overflow-hidden flex flex-col justify-between">
+        <!-- Interactive HTML5 Canvas Ripple & Droplet Engine -->
+        <canvas id="skincare-fluid-canvas" class="absolute inset-0 w-full h-full cursor-crosshair"></canvas>
 
-        <!-- Simulated Fluid Motion Fallback -->
-        <div id="skin-fallback-reel" class="hidden absolute inset-0 bg-[#1C3326] flex flex-col items-center justify-center p-8 text-center text-white">
-          <div class="w-16 h-16 rounded-full bg-white/10 text-[#B89758] border border-white/20 flex items-center justify-center mb-4">
-            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- Top Telemetry HUD -->
+        <div class="relative z-10 p-5 flex flex-wrap items-center justify-between gap-3 pointer-events-none">
+          <div class="flex items-center gap-2 bg-[#0E1E15]/80 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="font-mono text-[11px] text-white font-bold tracking-wider">120.0 FPS ULTRA-MACRO</span>
           </div>
-          <span class="px-3 py-1 rounded bg-white text-[#1C3326] font-mono text-[10px] tracking-widest uppercase mb-2 font-bold">
-            120 FPS Dropper Dispersion Active
-          </span>
-          <h4 class="font-serif text-2xl font-bold mb-2">Micro-Droplet Fluid Kinematics</h4>
-          <p class="text-xs text-white/70 max-w-md font-sans mb-6">
-            [ Local Video Stream Ready ] Uncompressed 120 FPS playback showing lipid emulsion blending and immediate dermal absorption.
-          </p>
-          <button onclick="closeSkincareVideo()" class="btn-botanical text-xs py-2.5 px-6">
-            Close Reel
-          </button>
+
+          <div class="flex items-center gap-3 bg-[#0E1E15]/80 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full font-mono text-[10px] text-emerald-200">
+            <span>VISCOSITY: <strong class="text-white">312 mPa·s</strong></span>
+            <span>•</span>
+            <span>ABSORPTION: <strong class="text-white">0.84s</strong></span>
+            <span>•</span>
+            <span>pH: <strong class="text-emerald-400">5.4 SHIELD</strong></span>
+          </div>
+        </div>
+
+        <!-- Center Prompt -->
+        <div class="relative z-10 text-center pointer-events-none px-4">
+          <p class="text-[11px] font-mono tracking-widest uppercase text-emerald-300/80 mb-1">Interactive Fluid Kinematics Stage</p>
+          <p class="text-xs text-white/50 font-sans">Click anywhere on the stage to simulate high-speed pipette dispersion</p>
+        </div>
+
+        <!-- Bottom Stage Overlay Bar -->
+        <div class="relative z-10 p-4 md:p-6 bg-gradient-to-t from-[#0E1E15] via-[#0E1E15]/90 to-transparent flex flex-wrap items-center justify-between gap-4 border-t border-white/10">
+          <div class="space-y-0.5">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold">Clinical Emulsion Observation</span>
+            <p class="text-xs text-white/80 font-sans max-w-md">
+              Immediate transdermal micro-droplet fusion with zero surface residue and active acid-mantle reinforcement.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="triggerDropletBurst()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs uppercase tracking-wider transition border border-white/15">
+              💧 Dispense Droplet
+            </button>
+            <button onclick="closeSkincareVideo(); showToast('Formulation selected.');" class="btn-botanical text-xs py-2 px-5 rounded-xl shadow-lg">
+              Confirm Formula
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -479,36 +510,151 @@ window.openSkincareVideo = function(videoUrl, title = '120 FPS Fluid Dispersion'
   modal.classList.remove('hidden');
   document.body.classList.add('overflow-hidden');
 
-  const video = document.getElementById('skin-video-player');
-  const fallback = document.getElementById('skin-fallback-reel');
+  // Initialize Fluid Simulation Engine
+  initFluidSimulation();
+};
 
-  if (video) {
-    video.play().catch(() => {
-      video.muted = true;
-      video.play().catch(() => {
-        if (fallback) {
-          video.classList.add('hidden');
-          fallback.classList.remove('hidden');
-        }
-      });
+function initFluidSimulation() {
+  const canvas = document.getElementById('skincare-fluid-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = canvas.parentElement.clientWidth;
+    canvas.height = canvas.parentElement.clientHeight;
+  }
+  resize();
+
+  fluidRipples = [];
+  fluidParticles = [];
+
+  function addRipple(x, y, power = 1) {
+    fluidRipples.push({
+      x, y,
+      radius: 5,
+      maxRadius: Math.max(canvas.width, canvas.height) * 0.45 * power,
+      alpha: 0.9,
+      speed: 2.2 * power,
+      color: power > 1.2 ? '#B89758' : '#34D399'
     });
 
-    video.onerror = () => {
-      if (fallback) {
-        video.classList.add('hidden');
-        fallback.classList.remove('hidden');
-      }
-    };
+    // Spawn micro particles
+    const pCount = Math.floor(12 * power);
+    for (let i = 0; i < pCount; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = (0.5 + Math.random() * 2) * power;
+      fluidParticles.push({
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        size: Math.random() * 2.5 + 1,
+        alpha: 0.85,
+        decay: Math.random() * 0.015 + 0.008,
+        color: Math.random() > 0.5 ? '#34D399' : '#FBBF24'
+      });
+    }
   }
-};
+
+  window.triggerDropletBurst = function() {
+    addRipple(canvas.width / 2, canvas.height / 2, 1.6);
+  };
+
+  canvas.onclick = function(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    addRipple(x, y, 1.2);
+  };
+
+  // Initial burst
+  addRipple(canvas.width / 2, canvas.height / 2, 1.4);
+
+  let lastAutoDrip = Date.now();
+
+  function render() {
+    if (!document.getElementById('skincare-fluid-canvas')) return;
+
+    ctx.fillStyle = 'rgba(7, 16, 11, 0.25)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Auto drip every 3.5s if idle
+    if (Date.now() - lastAutoDrip > 3500) {
+      addRipple(canvas.width / 2 + (Math.random() - 0.5) * 80, canvas.height / 2 + (Math.random() - 0.5) * 40, 1.1);
+      lastAutoDrip = Date.now();
+    }
+
+    // Draw ripples
+    for (let i = fluidRipples.length - 1; i >= 0; i--) {
+      const r = fluidRipples[i];
+      r.radius += r.speed;
+      r.alpha -= 0.008;
+
+      if (r.alpha <= 0 || r.radius >= r.maxRadius) {
+        fluidRipples.splice(i, 1);
+        continue;
+      }
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+      ctx.strokeStyle = r.color;
+      ctx.globalAlpha = r.alpha;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Secondary faint ring
+      if (r.radius > 20) {
+        ctx.beginPath();
+        ctx.arc(r.x, r.y, r.radius - 15, 0, Math.PI * 2);
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.globalAlpha = r.alpha * 0.35;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    // Draw particles
+    for (let i = fluidParticles.length - 1; i >= 0; i--) {
+      const p = fluidParticles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.98;
+      p.vy *= 0.98;
+      p.alpha -= p.decay;
+
+      if (p.alpha <= 0) {
+        fluidParticles.splice(i, 1);
+        continue;
+      }
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = p.color;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    skincareCanvasAnimId = requestAnimationFrame(render);
+  }
+
+  if (skincareCanvasAnimId) cancelAnimationFrame(skincareCanvasAnimId);
+  skincareCanvasAnimId = requestAnimationFrame(render);
+}
 
 window.closeSkincareVideo = function() {
   const modal = document.getElementById('skincare-video-modal');
   if (modal) {
     modal.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
-    const video = document.getElementById('skin-video-player');
-    if (video) video.pause();
+    if (skincareCanvasAnimId) {
+      cancelAnimationFrame(skincareCanvasAnimId);
+      skincareCanvasAnimId = null;
+    }
   }
 };
 
